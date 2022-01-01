@@ -1,0 +1,86 @@
+<!doctype>
+<html>
+	<head>
+		<title>金币明细</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		
+		<include file="Common:top" />
+<div id="changeThings">
+			<!-- <div class="wenxinshow"> -->
+				<!-- <p class="coinP">温馨提示:</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+			<!-- </div> -->
+			<h3 class="changePw">推广链接/二维码</h3>
+			<!-- <div class="QR_code"> -->
+				<!-- <p class="codeTitle">果园推广链接</p> -->
+				<!-- <div class="codePic"> -->
+					<!-- <img src="/Public/qrcode/201706211124278807.png"> -->
+					<!-- <img src="/Public/qrcode/201706211124278807.png"> -->
+				<!-- </div> -->
+				<!-- <p class="netAddr codeTitle">www.taobao.12345.com</p> -->
+			<!-- </div> -->
+			<div class="QR_code">
+				<p class="codeTitle">农场推广链接</p>
+				<div class="codePic">
+					<img src="/Public/qrcode/201706211124278807.png">
+				</div>
+				<p class="netAddr codeTitle">http://<?php echo $_SERVER['SERVER_NAME'].'/index.php?m=reg&online='.session('uid'); ?></p>
+			</div>
+
+			<!-- <div class="wenxinshow big"> -->
+				<!-- <p class="coinP">温馨提示:</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+			<!-- </div> -->
+
+			<h3 class="changePw">推广码</h3>
+			<div class="iptStyle">
+				<span class="allType l">我的推广码</span>
+				<input type="text" placeholder="{$Think.session.uid}" readonly="" class="ipt">
+			</div>
+			<div class="wenxinshow" style="background:#fff;">
+				<!-- <p class="coinP">温馨提示:</p> -->
+				<!-- <p class="coinP">暂只能查询一个月内的数据</p> -->
+			</div>
+
+		</div>
+	</body>	
+	<script type="text/javascript" src="js/layui.js"></script>
+	<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  var start = {
+    //min: laydate.now()
+    min:'2000-01-01 23:59:59'
+    ,max: '2099-06-16 23:59:59'
+    ,istoday: false
+    ,choose: function(datas){
+    }
+  }; 
+  document.getElementById('LAY_demorange_s').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+  document.getElementById('LAY_demorange_s1').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+});
+</script>
+</html>

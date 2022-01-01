@@ -1,0 +1,37 @@
+<include file="Common:header" />
+    <title>后台管理-支付管理</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li>
+                    <a href="{:U('Pay/index')}">未支付</a>
+                </li>
+                <li>
+                    <a href="{:U('Pay/paid')}">已支付</a>
+                </li>
+                <li>
+                    <a href="{:U('Pay/settle')}">已退回</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('Pay/count')}">支付统计</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active">
+                <div align="center" style="font-size:14px;line-height: 30px;">截止{$time|date='Y-m-d H:i:s',###}，您已经处理了   <b style="color:#FF0000;">{$payScore}</b>   个申请， 共计支付了￥   <b style="color:#FF0000;">{$paymoney}</b>   元<br>，还有  <b style="color:#FF0000;">{$nopay}</b> 个未处理申请，还需要支付￥   <b style="color:#FF0000;">{$nomoney}</b>   元</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

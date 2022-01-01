@@ -1,0 +1,107 @@
+﻿<html class="pixel-ratio-3 retina ios ios-9 ios-9-1 ios-gt-8 ios-gt-7 ios-gt-6"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/Public/web/css/lib.css?2">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0">
+   <meta content="telephone=no" name="format-detection">
+    <title>个人资料</title>
+    <script src="/Public/web/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="/Public/web/css/weui.min.css">
+    <link rel="stylesheet" href="/Public/web/css/jquery-weui.min.css">
+    <link href="/Public/web/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Public/web/fonts/iconfont.css" rel="stylesheet">
+    <script src="/Public/web/js/layer.js"></script><link href="http:/china4.green-entrepreneurship.cc/Public/web/js/need/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+</head>
+<body>
+    <!--顶部开始-->
+    <header class="header">
+        <span class="header_l"><a href="javascript:history.go(-1);"><i class="fa fa-chevron-left"></i></a></span>
+        <span class="header_c">个人资料</span>
+        <span style="position: absolute;right: 10%;top: 0px;text-align:center;width:20%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; "></span>
+		<span style="position: absolute;right: 40px;top: 0px;text-align:center;width:70px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; ">未来之星</span>
+        <span class="header_r"><a href="/"><i class="fa fa-user"></i></a></span>
+    </header>
+    <div class="height40;"></div>
+    <!--顶部结束-->
+    <!--列表开始-->
+	
+	<form action="index.php?m=user&a=data3" method="POST" id="first_form" onsubmit="return false" style="margin-bottom:20px;font-size:14px">
+		<ul style="width: 80%;margin-left: 10%;color: #000">
+	
+		<li style="text-align: center;width:100%"><div style="width: 60px;height: 60px;margin-bottom: 10px;border-radius: 100%" src=""></div></li>
+			
+			<!-- <li style="height: 30px;line-height: 30px;width:100%">身&nbsp;&nbsp;&nbsp;&nbsp;份：<span></span>&nbsp;&nbsp; 普通会员 </li> -->
+			<li style="height: 30px;line-height: 30px;margin-top: 5px;width:100%">会员帐号：&nbsp;&nbsp;&nbsp;{$Think.session.username}</li>
+			<li style="height: 30px;line-height: 30px;margin-top: 5px;width:100%">会员等级：&nbsp;&nbsp;&nbsp;
+					会员(未激活)																														<span class="fr" style="height: 30px;line-height: 30px;background-color: #05B6A3;display: inline-block;width: 30%;text-align: center;font-size: 0.8em;border-radius: 5px;color: #fff"><a style="color:#fff" href="index.php?m=user&a=mimagl">密码修改</a></span>
+			</li>	
+			<li style="height: 30px;line-height: 30px;margin-top: 5px;width:100%"><span style="display:inline-block;width:28%;">昵&nbsp;&nbsp;&nbsp;&nbsp;称：</span>
+			<input type="text" name="nickname" id="nickname" value="{$nickname}" style="height: 30px;line-height: 30px;width: 69%;border-radius: 5px;border: 1px solid #eeeeee;padding-left: 5px">
+			</li>
+			
+				<li style="height: 30px;line-height: 30px;margin-top: 5px;width:100%"><span style="display:inline-block;">支&nbsp;&nbsp;付&nbsp;&nbsp;宝：</span>
+			<input type="text" name="zfb" id="zfb" value="{$zfb}" style="height: 30px;line-height: 30px;width: 69%;border-radius: 5px;border: 1px solid #eeeeee;padding-left: 5px">
+
+				</li>
+				<li><input type="submit" id="wancheng" value="完成" style="width: 100%;height: 30px;line-height: 30px;border-radius: 5px;border: 0px; background-color:#05B6A3;margin-top: 5px;color: #FFFFFF;-webkit-appearance: none;"></li>	
+		</ul>
+	</form>
+	<script>
+		$(function(){
+			$("#wancheng").click(function(){
+				console.log($("#first_form").serialize())
+				$.ajax({
+				      url:"index.php?m=user&a=data3",
+					  type:"post",
+					  data:{nickname:$("#nickname").val(),zfb:$("#zfb").val()},
+					  dataType:"json",
+					  success:function(data){
+						  console.log(data);
+						  data=JSON.parse(data);
+						  if(data.stas ==1){
+						    $.alert(data.info);
+						  }else{
+						    $.alert("修改失败");
+						  }
+					  },error:function(){
+					    $.alert("网络错误");
+					  },complete:function(){
+					  $.hideLoading();
+					  }
+				  })
+			})
+			
+		})
+	</script>
+	<div style="width: 100%;margin-left: 10%;color: #000">
+			</div>
+	<form action="index.php?m=user&a=smrz" id="myform7" method="POST" style="margin-bottom:10px;font-size:14px">
+		<ul style="width: 80%;margin-left: 10%;color: #000">
+	
+					
+			<li><input type="submit" value="实名认证" style="width:100%;height:30px;line-height: 30px;border-radius: 5px;border: 0px; background-color:#05B6A3;margin-top: 5px;color: #FFFFFF;-webkit-appearance: none;"></li>	
+		</ul>
+	</form>
+	<div style="width: 100%;margin-left: 10%;color: #000">
+				<span style="font-size:12px;text-align:center;color:red;">新注册会员完成实名认证后，即可获得免费云矿机。</span>
+	</div>
+
+<!--底部开始-->
+<style>
+    .footer ul li{
+        width: 25%;
+    }
+</style>
+		<div class="footer">
+     <ul>
+        <li><a href="index.php?m=jiaoyi&a=kjsc" class="block"><i class="iconfont">&#xe604;</i>矿机商城</a></li>
+		<li><a href="index.php?m=user&a=mykj" class="block"><i class="iconfont">&#xe601;</i>我的矿机</a></li>
+		<li><a href="index.php?m=jiaoyi" class="block"><i class="iconfont">&#xe645;</i>交易中心</a></li>
+        <li style="width:24%" ><a href="/" class="block"><i class="iconfont">&#xe684;</i>个人中心</a></li>
+    </ul>
+</div>
+<!--底部结束-->
+<script src="/Public/web/js/jquery-weui.min.js"></script>
+
+
+
+</body></html>

@@ -1,0 +1,85 @@
+<include file="Common:header" />
+    <title>后台管理-修改文章</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start">修改文章</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <form action="{:U('Article/save')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>文章标题</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="title" size="50" value="{$wz['title']}" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>作者名称</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="author" size="50" value="{$wz['author']}" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>浏览次数</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="browsenum" size="50" value="{$wz['browsenum']}" data-validate="plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>文章分类</label>
+                        </div>
+                        <div class="field">
+                            <select class="input input-auto" name="classid" id="ss">
+                                <volist name="list" id="v">
+                                <option value="{$v.id}">{$v.classname}</option>
+                                </volist>
+                                <script>document.getElementById('ss').value="{$wz.classid}";</script>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>文章内容</label>
+                        </div>
+                        <div class="field">
+                            <script id="container" name="content" type="text/plain">{$wz['content']|htmlspecialchars_decode}</script>
+                            <!-- 配置文件 -->
+                            <script type="text/javascript" src="__ROOT__/Public/ueditor/ueditor.config.js"></script>
+                            <!-- 编辑器源码文件 -->
+                            <script type="text/javascript" src="__ROOT__/Public/ueditor/ueditor.all.js"></script>
+                            <!-- 实例化编辑器 -->
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container');
+                            </script>
+                        </div>
+                    </div>
+                    <div class="form-button">
+                    <input type="hidden" name="id" value="{$wz['id']}">
+                    <button class="button bg-main" type="submit">确认发布</button>
+                    </div>
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,734 @@
+<html class="pixel-ratio-3 retina ios ios-9 ios-9-1 ios-gt-8 ios-gt-7 ios-gt-6"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/Public/web/css/lib.css?2">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta content="telephone=no" name="format-detection">
+    <title>我的交易</title>
+    <meta name="Keywords" content="PAAM">
+    <meta name="Description" content="PAAM">
+    <script src="/Public/web/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="/Public/web/css/weui.min.css">
+    <link rel="stylesheet" href="/Public/web/css/jquery-weui.min.css">
+    <script src="/Public/web/js/layer.js"></script><link href="http://china4.green-entrepreneurship.cc/Public/web/js/need/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+    <link href="/Public/web/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Public/web/fonts/iconfont.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Public/web/css/style.css">
+	
+	<script src="/Public/web/js/ajaxUplod.js"></script>
+</head>
+<body>
+
+<!--顶部开始-->
+<header class="header">
+    <span class="header_l"><a href="javascript:history.go(-1);"><i class="fa fa-chevron-left"></i></a></span>
+    <span class="header_c">我的交易</span>
+	<span style="position: absolute;right: 40px;top: 0px;text-align:center;width:70px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; ">未来之星</span>
+    <span class="header_r"><a href="/index.php/Home/Index/index"><i class="fa fa-user"></i></a></span>
+</header>
+<div class="height40"></div>
+<!--顶部结束-->
+<!--矿车列表-->
+<div style="width: 90%;margin-left: 5%;margin-top: 20px;overflow:hidden;border-radius:5px">
+    <p id="qiugoubg" onclick="showhidediv(&quot;qiugou&quot;)" style="float: left;width: 25%;text-align: center;background-color: #fff;height: 30px;line-height: 30px;">求购列表</p>
+    <p id="chushoubg" onclick="showhidediv(&quot;chushou&quot;)" style="float: left;width: 25%;text-align: center;background-color: #05B6A3;height: 30px;line-height: 30px;color:#fff">出售列表</p>
+    <p id="zzjybg" onclick="showhidediv(&quot;zzjy&quot;)" style="float: left;width: 25%;text-align: center;background-color: #05B6A3;;height: 30px;line-height: 30px;color:#fff">交易列表</p>
+    <p id="ywcjybg" onclick="showhidediv(&quot;ywcjy&quot;)" style="float: left;width: 25%;text-align: center;background-color: #05B6A3;;height: 30px;line-height: 30px;color:#fff">已完成列表</p>
+</div>
+<div id="qiugou" style="-left: 5%;margin-bottom:80px;margin-top:30px">
+        <ul class="myjy_head" style="font-weight: 700;width:100%;margin-left:0%;margin-top:-5px">
+            <li style="width: 18%">昵称</li>
+            <li style="width: 24%">个数(GEC)</li>
+            <li style="width: 20%">价格</li>
+            <li style="width: 20%">是否取消</li>
+            <li style="width: 18%">状态</li>
+        </ul>
+    <div>
+	<?php if($jymod==0){?>
+	<ul class="myjy_body" style="width:100%;margin-left:0%;margin-top:10px;background: #efeff4">
+            <foreach name="info1" item="v">			
+			<li style="width:25%;height:50px;overflow: hidden;display: inline-block">{$v.username}</li>
+            <li style="width:25%;height:50px;marginoverflow: hidden;display: inline-block">{$v.num}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"" class="money">{$v.price}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"">
+			<?php if($v['zt']==0){ ?>
+            <a href="#" id="{$v.id}" class="delqiugou" style="width: 90%;margin-left: 5%;display: block;height: 23px;line-height: 23px;text-align: center;background-color: #05B6A3;border-radius: 5px;color: #FFFFFF">取消</a>
+			<?php }?>
+			<?php if($v['zt']==1){ ?>
+            <a href="index.php?m=user&a=okzhifu&id={$v.id}" class="btnmaijia" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">确认付款</a>
+            <br>			
+		   <div id="zfb" style="position:fixed;top:px;left:5px;display:;">卖家支付宝{$v.zfb2}</div>
+		   <?php } ?>
+		   <?php if($v['zt']==2){ ?>
+		<a href="javascript:;" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">等待确认</a>
+		   <?php } ?>
+		   <?php if($v['zt']==3){ ?>
+		<a href="javascript:;" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">交易完成</a>
+		   <?php } ?>
+			</li>
+			</foreach>
+		</ul><?php }else{?>	
+		
+		<ul class="myjy_body" style="width:100%;margin-left:0%;margin-top:10px;background: #efeff4">
+            <foreach name="info1" item="v">			
+			<li style="width:25%;height:50px;overflow: hidden;display: inline-block">{$v.username}</li>
+            <li style="width:25%;height:50px;marginoverflow: hidden;display: inline-block">{$v.num}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"" class="money">{$v.price}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"">
+			<?php if($v['zt']==0){ ?>
+            <a href="#" id="{$v.id}" class="delqiugou" style="width: 90%;margin-left: 5%;display: block;height: 23px;line-height: 23px;text-align: center;background-color: #05B6A3;border-radius: 5px;color: #FFFFFF">取消</a>
+			<?php }?>
+			<?php if($v['zt']==1){ ?>
+            <a href="index.php?m=user&a=okzhifu&id={$v.id}" class="btnmaijia" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">交易完成 </a>
+		   <?php } ?>
+		   
+			</li>
+			</foreach>
+		</ul>
+		
+		
+		<?php }?>
+    </div>
+ </div>
+ 
+<div id="chushou" style="-left: 5%;margin-bottom:80px;margin-top:30px;display: none;width: 90%; margin-left: 5%;">
+    <ul class="myjy_head" style="font-weight: 700;width:100%;margin-left:0%;margin-top:-5px;">
+        <li style="width: 18%">昵称</li>
+        <li style="width: 24%">个数(GEC)</li>
+        <li style="width: 20%">价格</li>
+        <li style="width: 20%">是否取消</li>
+        <li style="width: 18%">状态</li>
+    </ul>
+    <div>
+	<?php if($jymod==0){?>
+	<ul class="myjy_body" style="width:100%;margin-left:0%;margin-top:10px;background: #efeff4">
+            <foreach name="info2" item="v">
+            <li style="width:25%;height:50px;overflow: hidden;display: inline-block">{$v.username}</li>
+            <li style="width:25%;height:50px;marginoverflow: hidden;display: inline-block">{$v.num}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"" class="money">{$v.price}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"">
+			<?php if($v['zt']==0){ ?>
+            <a href="#" id="{$v.id}" class="delqiugou" style="width: 90%;margin-left: 5%;display: block;height: 23px;line-height: 23px;text-align: center;background-color: #05B6A3;border-radius: 5px;color: #FFFFFF">取消</a>
+			<?php }?>
+			<?php if($v['zt']==1){ ?>
+            <a href="#" class="btnmaijia" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">等待付款</a>
+            <br>			
+		   <div  style="position:fixed;top:px;left:5px;display:block;">买家支付宝{$v.zfb}</div>
+		   <?php } ?>
+		   <?php if($v['zt']==2){ ?>
+		<a href="index.php?m=user&a=okshou&id={$v.id}" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">确认收款</a>
+		   <?php } ?>
+		   <?php if($v['zt']==3){ ?>
+		<a href="javascript:;" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">交易完成</a>
+		   <?php } ?>
+			</li>            </foreach>
+		</ul>
+<?php }else{ ?>
+
+<ul class="myjy_body" style="width:100%;margin-left:0%;margin-top:10px;background: #efeff4">
+            <foreach name="info2" item="v">
+            <li style="width:25%;height:50px;overflow: hidden;display: inline-block">{$v.username}</li>
+            <li style="width:25%;height:50px;marginoverflow: hidden;display: inline-block">{$v.num}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"" class="money">{$v.price}</li>
+            <li style="width:25%;height:50px;overflow:hidden;display:inline-block"">
+			<?php if($v['zt']==0){ ?>
+            <a href="#" id="{$v.id}" class="delqiugou" style="width: 90%;margin-left: 5%;display: block;height: 23px;line-height: 23px;text-align: center;background-color: #05B6A3;border-radius: 5px;color: #FFFFFF">取消</a>
+			<?php }?>
+			<?php if($v['zt']==1){ ?>
+            <a href="#" class="btnmaijia" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">交易完成</a>
+		   <?php } ?>
+		   
+			</li>            </foreach>
+		</ul>
+
+<?php  }?>		
+            </div>
+</div>
+<div id="zzjy" style="display:none;margin-bottom:80px;">
+    <div>
+	
+        <ul class="myjy_head" style="font-weight: 700">
+            <li style="width: 10%">操作</li>
+            <li style="width: 20%">昵称</li>
+            <li style="width: 15%">等级</li>
+            <li style="width: 35%">GEC</li>
+            <li style="width: 20%">价格</li>
+        </ul>
+		
+    </div>
+    <div class="myjiaoyi_list">
+		<ul class="myjy_body" style="width:100%;margin-left:0%;margin-top:10px;background:#efeff4">
+            <foreach name="info3" item="v">
+			<li style="width:25%;height:30px;overflow: hidden;display: inline-block">{$v.username}</li>
+            <li style="width:25%;height:30px;marginoverflow: hidden;display: inline-block">{$v.num}</li>
+            <li style="width:25%;height:30px;overflow:hidden;display:inline-block"" class="money">{$v.price}</li>
+            <li style="width:25%;height:30px;overflow:hidden;display:inline-block"">
+			<a href="#" class="csquxiao" style="width:90%;margin-left:5%;display:block;height:23px;line-height:23px;text-align:center;background-color:#05B6A3;border-radius:5px;color:#FFFFFF">删除</a>
+			</li>            
+            </foreach>
+		</ul>	
+	
+	 
+		<!-- 求购莱肯币菜单显示 -->
+				
+		<!-- 出售莱肯币显示菜单 -->
+		    </div>
+	
+</div>
+<div id="ywcjy" style="display: none;margin-bottom:80px;margin-top:-50px">
+    <table class="jyzx_list" style="margin-top:60px;border-collapse:collapse;width:90%;margin-left:5%">
+        <thead>
+        <tr style="width:100%;background-color:#eee;">
+            <th style="padding:10px 0">昵称</th>
+            <th style="padding:10px 0">等级</th>
+            <th style="padding:10px 0">GEC</th>
+            <th style="padding:10px 0">总价</th>
+          
+        </tr>
+        </thead>
+        <tbody>
+		<foreach name="info3" item="v">
+		  <tr style="background: #efeff4;width:100%;margin-left:0%;margin-top:10px;text-align:center;">
+		  <td>{$v.username}</td>
+          <td>矿工</td>
+          <td>{$v.price}</td>
+          <td>{$v.money}</td>
+          </tr>	
+		  </foreach>
+        </tbody>
+    </table>
+</div>
+<!--底部开始-->
+<style>
+    .footer ul li{
+        width: 25%;
+    }
+</style>
+		<div class="footer">
+    <ul>
+        <li><a href="index.php?m=jiaoyi&a=kjsc" class="block"><i class="iconfont">&#xe604;</i>矿机商城</a></li>
+		<li><a href="index.php?m=user&a=mykj" class="block"><i class="iconfont">&#xe601;</i>我的矿机</a></li>
+		<li><a href="index.php?m=jiaoyi" class="block"><i class="iconfont">&#xe645;</i>交易中心</a></li>
+        <li style="width:24%" ><a href="/" class="block"><i class="iconfont">&#xe684;</i>个人中心</a></li>
+    </ul>
+</div>
+
+<script>
+$(function(){
+	$(".kk").click(function(){
+		$.alert("请联系客服取消该订单。");
+	});
+})
+</script>
+<script>
+    document.getElementById('photo').addEventListener('change',function(e){
+        var files = this.files;
+        var img = new Image();
+        var reader = new FileReader();
+        reader.readAsDataURL(files[0]);
+        reader.onload = function(e){
+            var mb = (e.total/1024)/1024;
+            if(mb>= 2){
+                alert('文件大小大于2M');
+                return;
+            }
+            img.src = this.result;
+            img.style.height="100%";
+            document.getElementById('click').innerHTML = '';
+            document.getElementById('click').appendChild(img);
+            $(".div1").css({"background":"#FFF"});
+            $(".div2").html("<span style='float:right;margin-right:5px;color:#e4393c;'>成功</span>")
+        }
+    });
+</script>
+<!--底部结束-->
+<script src="/Public/web/js/jquery-weui.min.js"></script>
+
+
+<!-- 汇率转换 -->
+	<script>
+    $(function(){
+		$(".money").bind("click",function(){
+			var huilv=$(this).html();
+			$("#UpBox").fadeOut();
+			$.ajax({
+				url:"/index.php/Home/Info/huilv.html",
+				type:"get",
+				data:{id:$("#UpBox").find(".opid").val(),huilv:huilv},
+				dataType:"json",
+				success:function(data){
+				console.log(data);
+					$.modal({
+                        title: data.name,
+                        text: "美元："+huilv+"<br>"+"人民币："+data.rmb+"<br>"+"比特币："+data.btc,
+                        buttons:[
+                            { text: "确定", className: "default", onClick: function(){ } },
+                        ]
+                    })
+				},
+				error:function(){
+					$.alert("网络错误请重试");
+				}
+			})
+		})
+		$("#firmBtnFalse").bind("click",function(){
+			$("#UpBox").fadeOut();
+		})
+		})
+</script>
+<script>
+     function showhidediv(id) {
+        console.log(id);
+        var qiugou = document.getElementById("qiugou");
+        var chushou=document.getElementById("chushou");
+        var zhengzai = document.getElementById("zzjy");
+        var wancheng = document.getElementById('ywcjy');
+        var qiugoubg = document.getElementById("qiugoubg");
+        var chushoubg=document.getElementById("chushoubg");
+        var zhengzaibg = document.getElementById('zzjybg');
+        var wancehngbg = document.getElementById('ywcjybg');
+        if (id == "zzjy") {
+            wancheng.style.display = 'none';
+            zhengzai.style.display = 'block';
+            qiugou.style.display = 'none';
+            chushou.style.display = 'none';
+            qiugoubg.style.backgroundColor = "#05B6A3"
+			qiugoubg.style.color = "#fff"
+            chushoubg.style.backgroundColor = "#05B6A3"
+            chushoubg.style.color = "#fff"
+            zhengzaibg.style.backgroundColor = "#fff";
+			zhengzaibg.style.color = "#000";
+            wancehngbg.style.backgroundColor = "#05B6A3";
+			wancehngbg.style.color = "#fff";
+        }else if (id =='chushou') {
+            zhengzai.style.display = 'none';
+            wancheng.style.display = 'none';
+            qiugou.style.display = 'none';
+            chushou.style.display='block';
+            chushoubg.style.backgroundColor = "#fff";
+            qiugoubg.style.backgroundColor = "#05B6A3";
+            zhengzaibg.style.backgroundColor = "#05B6A3";
+            wancehngbg.style.backgroundColor = "#05B6A3";
+            qiugoubg.style.color= "#fff"
+            zhengzaibg.style.color = "#fff";
+            wancehngbg.style.color = "#fff";
+            chushoubg.style.color = "#000";
+        }else if (id =='ywcjy') {
+                zhengzai.style.display = 'none';
+                wancheng.style.display = 'block';
+                qiugou.style.display = 'none';
+                chushou.style.display = 'none';
+                qiugoubg.style.backgroundColor = "#05B6A3"
+                chushoubg.style.backgroundColor = "#05B6A3"
+                zhengzaibg.style.backgroundColor = "#05B6A3";
+				qiugoubg.style.color= "#fff"
+				chushoubg.style.color= "#fff"
+                zhengzaibg.style.color = "#fff";
+                wancehngbg.style.backgroundColor = "#fff";
+				wancehngbg.style.color = "#000";
+            }else if(id=='qiugou'){
+                chushou.style.display='none';
+                zhengzai.style.display = 'none';
+                wancheng.style.display = 'none';
+                qiugou.style.display = 'block';
+                qiugoubg.style.backgroundColor = "#fff";
+				qiugoubg.style.color = "#000";
+                zhengzaibg.style.backgroundColor = "#05B6A3";
+                chushoubg.style.backgroundColor = "#05B6A3";
+                wancehngbg.style.backgroundColor = "#05B6A3";
+				zhengzaibg.style.color = "#fff";
+                wancehngbg.style.color = "#fff";
+                chushoubg.style.color = "#fff";
+                }
+    }
+</script>
+<!--投诉-->
+<script>
+    $(".btntoushu").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else {
+            $.showLoading();
+            $.ajax({
+                url:"/index.php/Home/Info/gettime.html",
+                type:"get",
+                data:{id:oid},
+                dataType:"json",
+                success:function(data){
+                    var time=new Date().getTime();
+                    var time2=data*1000;
+                    if(time>time2){
+                       $.prompt("请输入您要投诉的内容", function () {
+                                $.ajax({
+                                    url: "/index.php/Home/Info/tousu.html",
+                                    ype: "get",
+                                    data: {id: oid, txt: $("#weui-prompt-input").val()},
+                                    success: function (data) {
+                                        console.log(data);
+                                        $.alert(data);
+                                    },
+                                    error: function () {
+                                        alert("网络错误请重试");
+                                    }
+                                });
+                            })
+
+                    }else{
+                        var time1=parseInt(time/1000);
+                        var dd=parseInt(parseInt(time2)/1000-time1);
+                        var h=parseInt(dd/3600);
+                        var m=parseInt(dd%3600/60);
+                        var s=parseInt(dd%3600%60);
+                        console.log(dd,h,m,s);
+                        h=h.toString().length==1?"0"+h:h;
+                        m=m.toString().length==1?"0"+m:m;
+                        s=s.toString().length==1?"0"+s:s;
+                        var str=h+":"+m+":"+s;
+                        $.alert(str,'现在无法投诉',function(){
+                          location.reload();
+                        });
+                        var djs=setInterval(function(){
+                            time1++;
+                            dd=parseInt(parseInt(time2)/1000-time1);
+                            h=parseInt(dd/3600);
+                            m=parseInt(dd%3600/60);
+                            s=parseInt(dd%3600%60);
+                            h=h.toString().length==1?"0"+h:h;
+                            m=m.toString().length==1?"0"+m:m;
+                            s=s.toString().length==1?"0"+s:s;
+                            str=h+":"+m+":"+s;
+                            if(parseInt(h)<=0&&parseInt(m)<=0&&parseInt(s)<=0){
+                               $(".weui_dialog_bd").html("可以投诉了,请重新点击");
+                               clearInterval(djs);
+                            }else{
+                               $(".weui_dialog_bd").html(str);
+                            }
+                        },1000);
+                    }
+
+                },error:function(){
+                    console.log("网络错误");
+                },complete:function(){
+                    $.hideLoading();
+                }    
+            });
+        }
+    })
+</script>
+<!--卖家信息-->
+<script>
+$(".btnmaijia").click(function(){
+  $("#zfb").show();
+});
+
+
+
+    $(".zfb").bind("click",function() {
+	
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+		$("#zfb").show();
+            //$.alert(oid);
+        }else {
+            $.ajax({
+                url:"/index.php/Home/Info/mjxx.html",
+                type: "get",
+                data: {id: oid, txt: $("#weui-prompt-input").val()},
+                success: function (data) {
+				console.log(data);
+                    $.modal({
+                        title: data.name,
+                        text: "<div style='text-align:left'>USD："+data.meiyuan+"<br>"+"RMB："+data.rmb+"<br>"+"BTC："+data.btc+"<br>"+"昵称："+data.ue_truename+"<br>"+"手机号："+data.phone+"<br>"+"BTC钱包："+data.btcaddress+"<br>"+"姓名："+data.zhxm+"<br>"+"银行名称："+data.yhmc+"<br>"+"银行卡号："+data.yhzh+"<br>"+"支付宝："+data.zfb+"</div>",
+                        buttons:[
+                            { text: "确定", className: "default", onClick: function(){ } },
+                        ]
+                    })
+                },
+                error: function () {
+                    $.alert("网络错误请重试");
+                }
+            });
+            }
+    })
+</script>
+<!--买家信息-->
+<script>
+    $(".btnmai").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else {
+            $.ajax({
+                url:"/index.php/Home/Info/maijia.html",
+                type: "get",
+                data: {id: oid, txt: $("#weui-prompt-input").val()},
+                success: function (data) {
+				console.log(data);
+                    $.modal({
+                        title: data.name,
+                        text: "<div style='text-align:left'>USD："+data.meiyuan+"<br/>"+"RMB："+data.rmb+"<br>"+"BTC："+data.btc+"<br>"+"昵称："+data.ue_truename+"<br>"+"手机号："+data.phone+"<br>"+"BTC钱包："+data.btcaddress+"<br>"+"姓名："+data.zhxm+"<br>"+"银行名称："+data.yhmc+"<br>"+"银行卡号："+data.yhzh+"<br>"+"支付宝："+data.zfb+"</div>",
+
+                        buttons:[
+                            { text: "确定", className: "default", onClick: function(){ } },
+                        ]
+                    })
+                },
+                error: function () {
+                    $.alert("网络错误请重试");
+                }
+            });
+            }
+    })
+</script>
+<!--图片-->
+<script>
+    $(".ckpicture").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else {
+            $.ajax({
+                url:"/index.php/Home/Info/cktp.html",
+                type: "get",
+                data: {id: oid},
+                success: function (data) {
+				  $.modal({
+                        title:"",
+                        text: "<img src=\""+data+"\" width='60%'>",
+                        buttons:[
+                            { text: "确定", className: "default", onClick: function(){ } },
+                        ]
+                    })
+                },
+                error: function () {
+                    $.alert("网络错误请重试");
+                }
+            });
+        }
+    })
+    $(".quxiao").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else {
+            $.confirm("您确定要取消订单吗？",function(){
+                $.ajax({
+                    url:"/index.php/Home/Info/qxdd.html",
+                    type: "get",
+                    data: {id: oid},
+                    success: function (data) {
+						console.log(data);
+                        $.alert(data);
+						location.href ="/index.php/Home/Info/myjiaoyi/";
+                    },
+                    error: function () {
+                        $.alert("网络错误请重试");
+                    }
+                });
+            })
+        }
+    })
+	//出售取消
+	 $(".csquxiao").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else {
+            $.confirm("您确定要取消订单吗？",function(){
+                $.ajax({
+                    url:"index.php?m=jiaoyi&a=cxqg",
+                    type: "get",
+                    data: {id: oid},
+                    success: function (data) {
+						console.log(data);
+                        $.alert(data);
+						location.href ="index.php?m=jiaoyi&a=myjiaoyi";
+                    },
+                    error: function () {
+                        $.alert("网络错误请重试");
+                    }
+                });
+            })
+        }
+    })
+	
+	
+    $(".wancheng").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else if(2==2){
+			$.alert("请等待对方付款完成！");
+		}else{
+            $.confirm("您确定要完成订单吗？",function(){
+                $.ajax({
+                    url:"/index.php/Home/Info/wancheng.html",
+                    type: "get",
+                    data: {id: oid},
+                    success: function (data) {
+					dataType:"json",
+					console.log(data.msg);
+                        if (data.status == 1) {
+                            $.alert(data.msg, function () {
+                                location.href ="/index.php/Home/Info/myjiaoyi/";
+                            });
+                        } else {
+
+                        $.alert(data);
+                    }
+                    },
+                    error: function() {
+                        $.alert("网络错误请重试");
+                    }
+                });
+            })
+        }
+    })
+	
+	
+	//出售订单完成
+	$(".cswancheng").bind("click",function() {
+        var oid="";
+        $(".xz").map(function(index,item){
+            if($(this).is(":checked")){
+                oid=$(this).val();
+            }
+        })
+        if(oid==""){
+            $.alert("请选择要操作的订单");
+        }else if(2==2){
+			$.alert("请等待对方付款完成！");
+		}else{
+            $.confirm("您确定要完成订单吗？",function(){
+                $.ajax({
+                    url:"/index.php/Home/Info/cswancheng.html",
+                    type: "get",
+                    data: {id: oid},
+                    success: function (data) {
+					dataType:"json",
+					console.log(data.msg);
+                        if (data.status == 1) {
+                            $.alert(data.msg, function () {
+                                location.href ="/index.php/Home/Info/myjiaoyi/";
+                            });
+                        } else {
+
+                        $.alert(data);
+                    }
+                    },
+                    error: function() {
+                        $.alert("网络错误请重试");
+                    }
+                });
+            })
+        }
+    })
+</script>
+
+<!--取消交易-->
+
+<script>
+	$(function(){
+		$(".delqiugou").click(function(){
+			var myid = $(this).attr("id");
+			console.log(myid);
+			$.confirm("是否确定取消",function(){
+				$.ajax({
+                    url:"index.php?m=jiaoyi&a=cexiao",
+                    type: "post",
+                    data: {id:myid},
+                    success: function (data) {
+					dataType:"json",
+					console.log(data.status);
+                        if (data.status == myid) {
+                            $.alert("删除成功", function () {
+                            	 location.reload()
+                            });
+                        } else {
+                        //$.alert(data.status);
+                        $.alert("删除失败");
+                        location.reload()
+                    }
+                    },
+                    error: function() {
+                        $.alert("网络错误请重试",function(){location.reload()});
+                    }
+                });
+			});
+				
+			
+		});
+		$(".delcs").click(function(){
+			var myid2 = $(this).attr("id");
+			console.log(myid2);
+			$.confirm("是否确定取消",function(){
+				$.ajax({
+                    url:"/index.php/Home/Info/delcs.html",
+                    type: "get",
+                    data: {id: myid2},
+                    success: function (data) {
+					dataType:"json",
+					console.log(data.status);
+                        if (data.status == myid2) {
+                            $.alert("删除成功", function () {
+                            	 location.reload()
+                            });
+                        } else {
+
+                        $.alert("删除失败");
+                        location.reload()
+                    }
+                    },
+                    error: function() {
+                        $.alert("网络错误请重试",function(){location.reload()});
+                    }
+                });
+			});
+				
+				
+						
+		}) 
+	})
+	
+</script>
+
+<p style="display:none;">
+<script language="javascript" type="text/javascript" src="//js.users.51.la/19110681.js"></script>
+		</p>
+
+</body></html>

@@ -1,0 +1,99 @@
+
+<!doctype>
+<html>
+	<head>
+		<title>金币提现</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="/Public/gold/rem_zy/css/style.css">
+		<link rel="stylesheet" href="/Public/gold/rem_zy/css/userCenter.css">
+		<link rel="stylesheet" type="text/css" href="/Public/gold/css/public.css"/>
+
+		<script src="/Public/gold/rem_zy/js/jquery.min.js"></script>
+
+		<script src="/Public/layer/layer.js"></script>
+		<script type="text/javascript" src="/Public/gold/rem_zy/js/index.js"></script>
+		<script type="text/javascript" src="/Public/assets/js/jquery.form.js"></script>		
+	</head>
+		<script>
+            $(function() {				
+				
+                $('#userCenter_coinWithdrawals').ajaxForm({
+                    beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+                    success: complete, // 这是提交后的方法
+                    dataType: 'json'
+                });
+
+                function checkForm(){
+					var all_gold = $("#all_gold").val();//总金币
+					var withdraw_gold = $("#withdraw_gold").val(); //提现金币
+					var password = $("#password").val(); //支付密码
+					
+					if(isNaN(withdraw_gold) || withdraw_gold > all_gold )
+					{
+                        layer.alert('提现金币不正确', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#withdraw_gold').focus();
+                        });
+                        return false;						
+					}
+					if( '' == $.trim(withdraw_gold))
+					{
+                        layer.alert('提现金币不正确', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#withdraw_gold').focus();
+                        });
+                        return false;					
+					}
+					
+
+				}
+
+                function complete(data){
+				
+                    if(data.status==1){
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                            window.location.href=data.url;
+                        });
+                    }else{
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                        });
+                        return false;
+                    }
+                }
+
+            })
+		</script>	
+	<body>
+		
+		<include file="Common:top" />
+<form method="post" id="userCenter_coinWithdrawals" action="/index.php?m=user&a=userCenter_coinWithdrawals&act=1">			
+		<div id="changeThings">
+			<h1 class="my">提现账户管理</h1>
+			<div class="notice2">
+				<h4 class="noticeP">您还未绑定提现账户</h4>
+				<!-- <p class="noticeP">温馨提示</p> -->
+				<p class="noticeP">1.绑定的收款账户开户人需与认证姓名一致</p>
+				<p class="noticeP">2.请仔细确认您的账号是否填写正确</p>
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">可用金币</span>
+				<input type="text" name="all_gold" id="all_gold" readonly value="{$gold}" placeholder="" class="ipt">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">支付宝</span>
+				<input type="text" name="bank_card_number" id="bank_card_number" readonly value="{$zfb}" placeholder="" class="ipt" style="width:5.0rem !important;">
+			</div>			
+			<div class="iptStyle">
+				<span class="allType l">提现金币</span>
+				<input type="text" name="withdraw_gold" id="withdraw_gold" value="" placeholder="" class="ipt">
+			</div>			
+						
+			
+			<button>提交</button>
+		</div>
+</form>
+	</body>	
+</html>

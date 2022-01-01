@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>申请提现 - {$Think.config.WEB_NAME}</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/account.css" />
+<script type="text/javascript" src="__PUBLIC__/js/mebmer.js"></script>
+</head>
+<body class="n0 u1">
+<!-- 页头 -->
+<include file="Common:top" />
+<!--页中-->
+<include file="Common:userlift" />
+<div class="right-con">
+   <p class="list-nav">当前位置：账户管理 &gt; 申请提现</p>
+   <form action="{:U('Pay/excrmb')}" method="post">
+       <div class="ziliao box">
+         <div class="div-list">
+         <span>可用{$Think.config.MONEY_NAME}：</span>
+         <span class="txt"><b class="f16" style="color: #ff5700;">{$ply.score}</b></span>
+         </div>
+         <div class="div-list">
+         <span>真实姓名：</span><input name="realname" value="{$ply.realname}" readonly="true" type="text">
+         <span class="ts"><i>*</i>与支付宝实名一致！</span>
+         </div>
+         <div class="div-list">
+         <span>支付宝账号：</span><input name="alipay" value="{$ply.alipay}" readonly="true" type="text">
+         <span class="ts"><i>*</i>将提现至此账号！</span>
+         </div>
+         <div class="div-list">
+         <span>提现金额：</span><input name="money" value="2" style="width:50px;" type="text" onkeyup="value=this.value.replace(/\D+/g,'')">&nbsp;元
+         <span class="ts"><i>*</i>首次最低{$Think.config.MIN_CASH}元即可提现！</span>
+         </div>
+         <input type="hidden" name="userid" value="{$ply.id}">
+         <input type="hidden" name="userlock" value="{$ply.userlock}">
+         <input type="hidden" name="username" value="{$ply.username}">
+         <input class="btn" value="确认提现" type="submit">
+       </div>
+    </form>
+  </div>
+</div>
+<!-- 页尾 -->
+<include file="Common:bottom" />

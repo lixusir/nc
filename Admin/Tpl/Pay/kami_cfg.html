@@ -1,0 +1,136 @@
+<include file="Common:header" />
+    <title>后台管理-下线邀请设置</title>
+</head>
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab border-sub" data-toggle="click">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start2">卡密生成</a></li>
+                <li class="active"><a href="#tab-css">未使用</a></li>
+				<li class="active"><a href="#wsy">已使用</a></li>
+            </ul>
+        </div>
+		
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start2">
+                <form action="admin.php?m=pay&a=kami_cfg&act=1" method="post" target=_blank>
+				
+                    <div class="form-group">
+                        <div class="label">
+                            <label>卡密金额   (<a href="index.php?m=user&a=zhsz" target=_blank style="color:red;">查看前台充值地址>>></a>)</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="money" value="" size="50" placeholder="" data-validate="required:必填" />
+                        </div>
+                    </div>
+					<br>
+                    <div class="form-button">
+                        <button class="button" type="submit">生成卡密</button>
+                    </div>
+                </form>
+            </div><br>
+			
+			<button class="button" type="button" onclick="javascript:window.open('admin.php?m=pay&a=kami_cfg&act=3');" >删除所有卡密</button>
+			
+	    <div class="panel admin-panel">
+        <div class="panel-head"><strong>卡密列表 </strong></div>
+        <div class="padding border-bottom">
+            <!--<input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选">
+            <input type="submit" class="button button-small border-yellow" onclick="{if(confirm('确认批量删除选中项?')){return true;}return false;}" value="批量删除">
+        -->
+		</div>
+		
+        <table class="table table-hover" id="tab-css">
+            <tbody><tr>
+                <th>序号</th>
+                <th>已使用卡密</th>
+				<th>金额</th>
+				<th>状态</th>
+                <th>添加时间</th>
+                <th>使用时间</th>
+				<th>使用会员</th>
+            </tr><foreach name="info4" item="v">
+            <tr>
+                
+                <td>{$v.id}</td>
+                <td>{$v.code}</td>
+				<td>{$v.money}元</td>
+				<td><?php if($v['zt']==0){echo '未使用';}else{echo '已使用';} ?></td>
+                <td>{$v.add_time}</td>
+				<td>{$v.user_time}</td>
+                <td>{$v.username}</td>
+                
+                <td>
+                    <a class="button border-yellow button-little" href="/admin.php?m=pay&a=kami_cfg&act=2&id={$v.id}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+                </td>
+            </tr> </foreach>      </tbody></table>
+			
+        <div class="panel-foot text-center">
+    </div>
+	
+	
+	
+	<table class="table table-hover" id="wsy">
+            <tbody><tr>
+                <th>序号</th>
+                <th>未使用卡密</th>
+				<th>金额</th>
+				<th>状态</th>
+                <th>添加时间</th>
+                <th></th>
+				<th></th>
+            </tr><foreach name="info3" item="v">
+            <tr>
+                
+                <td>{$v.id}</td>
+                <td>{$v.code}</td>
+				<td>{$v.money}元</td>
+				<td><?php if($v['zt']==0){echo '未使用';}else{echo '已使用';} ?></td>
+                <td>{$v.add_time}</td>
+				<td>{$v.user_time}</td>
+                <td>{$v.username}</td>
+                
+                <td>
+                    <a class="button border-yellow button-little" href="/admin.php?m=pay&a=kami_cfg&act=2&id={$v.id}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+                </td>
+            </tr> </foreach>      </tbody></table>
+			
+			
+			
+			
+			
+            <!--<div class="tab-panel" id="tab-css">
+                <form action="{:U('Score/red')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>用户ID</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="uid" size="50" placeholder="会员的数字ID" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>减少{$Think.config.MONEY_NAME}数量</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="score" size="50" placeholder="给会员的{$Think.config.MONEY_NAME}数量" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-button">
+                        <button class="button" type="submit">确定减少</button>
+                    </div>
+                </form>
+            </div>
+			-->
+        </div>
+		
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<include file="Common:header" />
+    <title>后台管理-支付管理</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li>
+                    <a href="{:U('Pay/index')}">未支付</a>
+                </li>
+                <li>
+                    <a href="{:U('Pay/paid')}">已支付</a>
+                </li>
+                <li class="active">
+                    <a href="{:U('Pay/settle')}">已退回</a>
+                </li>
+                <li>
+                    <a href="{:U('Pay/count')}">支付统计</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active">
+                <form method="post" action="#">
+                    <div class="panel admin-panel">
+                        <div class="padding border-bottom">
+                            <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
+                            <input type="button" class="button button-small border-yellow" value="批量删除" onclick="return confirm('确定批量删除选中项?')" />
+                        </div>
+                        <table class="table table-hover">
+                            <tr>
+                                <th>选择</th>
+                                <th>ID</th>
+                                <th>会员ID</th>
+                                <th>用户名</th>
+                                <th>用户状态</th>
+                                <th>申请时间</th>
+                                <th>真实姓名</th>
+                                <th>支付宝账号</th>
+                                <th>申请金额</th>
+                                <th>退回原因</th>
+                            </tr>
+                            <foreach name="list" item="pay">
+                            <tr>
+                                <td><input type="checkbox" name="id[]" value="{$pay['id']}" /></td>
+                                <td>{$pay['id']}</td>
+                                <td>{$pay['userid']}</td>
+                                <td>{$pay['username']}</td>
+                                <td><if condition="$pay.userlock eq '0'">正常<else />锁定</if></td>
+                                <td>{$pay['applytime']|date='Y-m-d',###}</td>
+                                <td>{$pay['realname']}</td>
+                                <td>{$pay['alipay']}</td>
+                                <td>{$pay['money']}</td>
+                                <td>{$pay['note']}</td>
+                            </tr>
+                            </foreach>
+                        </table>
+                        <div class="panel-foot text-center">
+                            {$page}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

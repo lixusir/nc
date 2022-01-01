@@ -1,0 +1,174 @@
+<include file="Common:header" />
+    <title>后台管理-网站设置</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+	<div class="tab" data-toggle="click">
+    <div class="tab-head">
+        <ul class="tab-nav">
+            <li class="active">
+                <a href="#tab-start2">网站设置</a>
+            </li>
+            <li>
+                <a href="#tab-css2">发信设置</a>
+            </li>
+            <li>
+                <a href="#tab-units2">SEO设置</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-body tab-body-bordered">
+        <div class="tab-panel active" id="tab-start2">
+            <form action="{:U('Setup/edit')}" method="post">
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站开关</label>
+                    </div>
+                    <div class="field">
+                        <div class="button-group radio">
+                            <label class="button <if condition='C("WEB_SWITCH")'>active</if>">
+                                <input name="WEB_SWITCH" value="1" checked="checked" type="radio">开启
+                            </label>
+                            <label class="button <if condition='!C("WEB_SWITCH")'>active</if>">
+                                <input name="WEB_SWITCH" value="0" type="radio">关闭
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>注册开关</label>
+                    </div>
+                    <div class="field">
+                        <div class="button-group radio">
+                            <label class="button <if condition='C("WEB_REG")'>active</if>">
+                                <input name="WEB_REG" value="1" checked="checked" type="radio">开启
+                            </label>
+                            <label class="button <if condition='!C("WEB_REG")'>active</if>">
+                                <input name="WEB_REG" value="0" type="radio">关闭
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站名称</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="WEB_NAME" size="50" value="{$Think.config.WEB_NAME}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>主关键词</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="KEYWORDS" size="50" value="{$Think.config.KEYWORDS}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站描述</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="DISCRIPTION" size="50" value="{$Think.config.DISCRIPTION}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>网站域名</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="DOMAINNAME" size="50" value="{$Think.config.DOMAINNAME}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>备案信息</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="ICP_RECORD" size="50" value="{$Think.config.ICP_RECORD}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>版权信息</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="COPYRIGHT" size="50" value="{$Think.config.COPYRIGHT}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>统计代码</label>
+                    </div>
+                    <div class="field">
+                        <textarea class="input input-auto" rows="5" cols="80" name="STATISTICS">{$Think.config.STATISTICS}
+                        </textarea>
+                    </div>
+                </div>
+                <div class="form-button">
+                    <button class="button" type="submit">保存设置</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-panel" id="tab-css2">
+            <form action="{:U('Setup/edit')}" method="post">
+                <div class="form-group">
+                    <div class="label">
+                        <label>SMTP 服务器</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="MAIL_HOST" size="50" value="{$Think.config.MAIL_HOST}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>邮箱名称</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="MAIL_USERNAME" size="50" value="{$Think.config.MAIL_USERNAME}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>发件邮箱</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="MAIL_FROM" size="50" value="{$Think.config.MAIL_FROM}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>邮箱密码</label>
+                    </div>
+                    <div class="field">
+                        <input type="password" class="input input-auto" name="MAIL_PASSWORD" size="50" value="{$Think.config.MAIL_PASSWORD}" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label>发件人昵称</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input input-auto" name="MAIL_FROMNAME" size="50" value="{$Think.config.MAIL_FROMNAME}" />
+                    </div>
+                </div>
+                <div class="form-button">
+                    <button class="button" type="submit">保存设置</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-panel" id="tab-units2">
+            开发中
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

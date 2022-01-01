@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'id', 1 => 'username', 2 => 'password', 3 => 'loginip', 4 => 'logintime', 5 => 'lock', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(11)', 'username' => 'varchar(50)', 'password' => 'varchar(32)', 'loginip' => 'char(15)', 'logintime' => 'int(10)', 'lock' => 'int(1)', ), );?>

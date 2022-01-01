@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,minimal-ui"/>
+	<!-- <script type="text/javascript" src="js/jquery-3.2.1.js"></script> -->
+	<link rel="stylesheet" href="css/usercenter.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/layer.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>	
+	<style type="text/css">
+		html,body,div,h1,h2,h3,h4,h5,h6,img,ul,li,p,dl,dd,dt,select,option,input,table,th,td{
+			margin: 0;
+			padding: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		.l{
+			float:left;
+		}
+		.r{
+			float:right;
+		}
+		.left{
+			float:left;
+		}
+		.right{
+			float:right;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			font-size:12px;
+			font:12px/1.5 "微软雅黑";
+		}
+		select,input{
+			border:none;
+		    outline:none
+		}
+		a{
+			text-decoration: none;
+			color: #3e3e3e;
+		}
+		button{
+			border: none;
+			outline: none;
+		}
+		#ex_head{
+		width: 100%;
+		height: 2.13rem;
+		background: url(images/01.png) no-repeat;
+		background-size: 100% 100%;
+		position: fixed;
+		top: 0;
+		z-index: 100;		
+		}
+		body {
+    width: 100%;
+    height: 100%;
+    <!-- background-image: url(images/ditu.jpg); -->
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+#ex_foot {
+    width: 100%;
+    height: 1.8rem;
+    background: url(images/xiamiantu.png) no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+    bottom: 0;
+}
+#ex_foot .fanhui {
+    margin-top: 1rem;
+    margin-left: 2.6rem;
+    display: block;
+    width: 2.66rem;
+    height: 0.74rem;
+}
+.clearfloat{
+	zoom:1;
+}
+.clearfloat:after{
+	display:block;
+	content:'';	
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.tag-list{
+	position:relative;
+	margin-bottom:0px;
+}
+.tag-item{
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+	padding:10px 15px;
+	border:1px solid #EEE;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	border-radius:3px;
+}
+.give-list{
+	position:relative;
+	margin-bottom:0px;
+}
+.give-item{
+	float:left;
+	
+	margin-bottom:20px;
+	padding:10px 15px;
+	border:1px solid #EEE;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	-ms-border-radius:3px;
+	border-radius:3px;
+}
+.tag-list .select{
+	border:1px solid #FF6600;
+	background:url(images/check-02.png) no-repeat right bottom;
+}
+.give-list .select{
+	border:1px solid #FF6600;
+	background:url(images/check-02.png) no-repeat right bottom;
+}
+#ex_title{
+    height: 0.78rem;
+    border-bottom: 1px solid #ccc;
+    color: #f49e1c;
+    padding-top: 0.25rem;
+    box-sizing: border-box;
+    text-indent: 0.3rem;
+    margin-top: 2.31rem;
+}
+	</style>
+</head>
+<body>
+<div id="ex_head"></div>
+	<!--<div class="wanjia_head" style="width: 7rem; height: 0.65rem;line-height: 0.65rem; font-size: 0.3rem; text-indent:0.24rem; border-bottom: 1px solid #ccc; margin: 0 auto;margin-top:2.13rem; ">攻略详情</div>-->
+	<h2 id="ex_title">攻略详情</h2>
+	<ul class="fourBtn" style="width: 7rem; height: 0.8rem; margin:0 auto;border-bottom:1px solid #ccc;margin-bottom:0.1rem;">
+		<li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center;
+		line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem;margin-left: 0.2rem; border-radius: 0.1rem;"><a href="javascript:;" onclick="alert('还没有')" style="color:#fff;">我的攻略</a></li>
+		<li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center;
+		line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem;border-radius: 0.1rem;"><a style="color:#fff;" href="javascript:;" onclick="alert('还没有')">打赏记录</a></li>
+		 <li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center; 
+		 line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem;border-radius: 0.1rem;"><a style="color:#fff;" href="javascript:;" onclick="alert('还没有')">玩家投稿</a></li> 
+		<li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center;
+		line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem; border-radius: 0.1rem;"><a href="/index.php?m=user&a=gonglue" style="color:#fff;">返回列表</a></li>
+	</ul>
+
+
+	<div style="display: block; top: 0; background: #fff; width: 100%; height:15rem; margin:0 auto;" class="tanchu">
+		<!-- <div class="wanjia_head" style="width: 7rem; height: 0.65rem;line-height: 0.65rem; font-size: 0.3rem; text-indent:0.24rem; border-bottom: 1px solid #ccc; margin: 0 auto;">玩家投稿</div> -->
+		<foreach name="info" item="v">
+		<div style="width: 7rem; height: 2.4rem; border-bottom: 1px solid #333; margin:0 auto;">
+			<div style="width: 100%; height: 0.4rem;">
+				<span>来源：</span><span>{$v.username}</span>
+				<ul style="display: inline-block;">
+					<li style="display: inline-block; width: 0.2rem; height: 0.25rem;"><img src="picture/jinpai.png" style="width: 100%; height: 100%;"></li>
+					<li style="display: inline-block; width: 0.2rem; height: 0.2rem;"><img src="picture/xingxing.png" style="width: 100%; height: 100%;"></li>
+					<li style="display: inline-block;width: 0.2rem; height: 0.2rem;"><img src="picture/xingxing.png" style="width: 100%; height: 100%;"></li>
+					<li style="display: inline-block;width: 0.2rem; height: 0.2rem;"><img src="picture/xingxing.png" style="width: 100%; height: 100%;"></li>
+					<li style="display: inline-block;width: 0.2rem; height: 0.2rem;"><img src="picture/xingxing.png" style="width: 100%; height: 100%;"></li>
+					<li style="display: inline-block;width: 0.2rem; height: 0.2rem;"><img src="picture/xingxing.png" style="width: 100%; height: 100%;"></li>
+				</ul>
+				<span>发表日期：</span><span>{$v.time}</span>
+				
+			</div>
+			<div>
+						</span>
+			</div>
+			<p style="width: 100%; height: 500px; line-height: 0.35rem; font-size: 0.3rem;">{$v.content}</p>
+		</div></foreach>
+		<div style="width: 7rem; height: 5.08rem; margin:0 auto;">
+			<div class="wanjia_head" style="width: 7rem; height: 0.65rem;line-height: 0.65rem; font-size: 0.3rem; text-indent:0.24rem; margin: 0 auto; color: #f4771c;"></div>
+			<ul style="width: 6.8rem; height:2.3rem; margin: 0 auto;">
+
+					<li style="width: 100%; height: 0.35rem; line-height: 0.35rem;"><span></span>
+					<a href="index.php?m=user&a=glview&id={$id}">
+					 {$title2}
+					</a></li>			</ul>
+			<ul class="evaluate_star" style="width: 100%; height: 2.2rem; border-bottom: 1px solid #333;">
+				<li style="width: 3.5rem; height: 1.06rem; float: left; padding-left: 0.2rem; box-sizing: border-box;">
+					<img src="picture/xingxinghao.png" style="display:block; width: 0.7rem; height: 0.7rem; float: left;">
+					<div style="width:2rem; height: 0.7rem; overflow: hidden; margin-left: 0.9rem;">
+						<p style="width: 100%; height: 0.3rem;">好评</p>
+						<p style="width: 100%; height: 0.3rem;"><span style="color: #ffb23a;" class="returnSum">{$haopin}</span>次<span></span></p>
+					</div>
+				</li>
+				<li style="width: 3.5rem; height: 1.06rem; float: left;padding-left: 0.2rem; box-sizing: border-box;">
+					<img src="picture/xingxingzhong.png" style="display:block; width: 0.7rem; height: 0.7rem; float: left;">
+					<div style="width:2rem; height: 0.7rem; overflow: hidden; margin-left: 0.9rem;">
+						<p style="width: 100%; height: 0.3rem;">中评</p>
+						<p style="width: 100%; height: 0.3rem;"><span style="color: #ffb23a;" class="returnSum">{$zongpin}</span>次<span></span></p>
+					</div>
+				</li>
+				<li style="width: 3.5rem; height: 1.06rem; float: left;padding-left: 0.2rem; box-sizing: border-box;">
+					<img src="picture/xingxingcha.png" style="display:block; width: 0.7rem; height: 0.7rem; float: left;">
+					<div style="width:2rem; height: 0.7rem; overflow: hidden; margin-left: 0.9rem;">
+						<p style="width: 100%; height: 0.3rem;">差评</p>
+						<p style="width: 100%; height: 0.3rem;"><span style="color: #ffb23a;" class="returnSum">{$chapin}</span>次<span></span></p>
+					</div>
+				</li>
+				<li style="width: 3.5rem; height: 1.06rem; float: left;padding-left: 0.2rem; box-sizing: border-box;">
+					<img src="picture/xingxingjubao.png" style="display:block; width: 0.7rem; height: 0.7rem; float: left;">
+					<div style="width:2rem; height: 0.7rem; overflow: hidden; margin-left: 0.9rem;">
+						<p style="width: 100%; height: 0.3rem;">举报</p>
+						<p style="width: 100%; height: 0.3rem;"><span style="color: #ffb23a;" class="returnSum">{$jubao}</span>次<span></span></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="dashang" style="width:7rem; height:auto; margin: 0.1rem auto;">
+			<h2 style="width:100%; height:0.7rem; line-eight:0.7rem;color: #f4771c; text-indent: 0.1rem;">打赏物品</h2>
+			<dl class="give-list clearfloat">									
+			<dd class="give-item" code="2" name="核桃"><span><img src="picture/593f499ba27ce.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="8" name="石榴"><span><img src="picture/593f4c4de30b1.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="9" name="红枣"><span><img src="picture/593f4d4b80858.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="10" name="葡萄"><span><img src="picture/593f4e0fab12d.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="14" name="哈密瓜"><span><img src="picture/593f4fd714a7d.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="15" name="香梨"><span><img src="picture/593f555e62f2c.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="16" name="沙漠果"><span><img src="picture/593f57eac3de7.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="17" name="人参果"><span><img src="picture/593f58e568485.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="18" name="薰衣草"><span><img src="picture/593f5dbc92ee8.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="19" name="沙漠人参"><span><img src="picture/593f5ffeb3c00.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="20" name="巴旦木"><span><img src="picture/593f7712159d1.png" width="35px" height="35x" /></span></dd><dd class="give-item" code="21" name="和田玉"><span><img src="picture/593f786e570bd.png" width="35px" height="35x" /></span></dd>			</dl>	
+		</div>
+		<div style="width: 7rem; height: 1.5rem; margin:0 auto; margin-top: 0.2rem;">
+			<h2 style="width:100%; height:0.7rem; line-eight:0.7rem;color: #f4771c; text-indent: 0.1rem;float:left;">打赏数量</h2>
+			<ul style="width: 100%; height: 0.73rem;">
+				<li style="width: 25%; height: 0.73rem; float: left;">
+					<input type="radio" name="reward_num" class="aced" value="10" style="display:inline-block;width: 0.24rem; height: 0.24rem; border:1px solid #ccc;"><span> 10个</span>
+				</li>
+				<li style="width: 25%; height: 0.73rem; float: left;">
+					<input type="radio" name="reward_num" class="aced" value="100" style="display:inline-block;width: 0.24rem; height: 0.24rem; border:1px solid #ccc;"><span> 100个</span>
+				</li>
+				<li style="width: 25%; height: 0.73rem; float: left;">
+					<input type="radio" name="reward_num" class="aced" value="1000" style="display:inline-block;width: 0.24rem; height: 0.24rem; border:1px solid #ccc;"><span> 1000个</span>
+				</li>
+			</ul>
+		</div>
+		<div style="width: 6.93rem; height: 0.65rem; border:1px solid #ccc; margin: 0 auto;display:none;">
+			<span style="display: inline-block; width: 1.2rem; height: 100%; background: #c3c3c3; float: left;
+			line-height: 0.65rem; text-align: center;">支付密码</span>
+			<input type="password" name="pay_password" class="pay_password" style="width: 5.5rem; height: 100%; text-indent: 0.2rem; float: left;" placeholder="请输入支付密码">
+		</div>
+		<button class="reward" style="display:block;  width: 6.76rem; height:0.75rem; background: #f4771c; margin:0.25rem auto;color: #fff; border-radius: 0.2rem; margin-bottom:1.8rem;">打赏作者</button>
+	</div>
+	<input type="hidden" name="is_reward" class="is_reward" value="8" >
+	<input type="hidden" name="reward_nums" id="reward_nums" value="0" />
+	<input type="hidden" name="article_id" id="article_id" value="{$id2}" />
+	<div id="ex_foot">
+            <a href="javascript:history.go(-1);"> <img src="picture/fanhuinongchang.png" class="fanhui"></a>
+	</div>	
+</body>
+	<script type="text/javascript">
+		function rem(size){
+		    var clientW=document.documentElement.clientWidth;
+		    var bili=clientW/size;
+		    var fontSize=bili*100;
+		    document.getElementsByTagName("html")[0].style.fontSize=fontSize+"px"
+		}
+		rem(750);
+
+	$(function(){
+		$(".tag-list .tag-item").click(function(){
+			var $this = $(this);
+			var tag_len = $(".tag-list .select").length;
+			if($this.hasClass('select')){
+				$this.removeClass('select');
+			}else{
+				if(tag_len >= 3)
+				{
+					alert("只能选择3个标签哦");
+					return false;
+				}			
+				$this.addClass('select');			
+			}
+				var new_lab = '';
+				$(".tag-list .select").each(function(i,v){
+					new_lab += $(".tag-list .select").eq(i).attr('code') + ',';					
+				})
+				$("#news_label").val(new_lab);	
+		})
+	})
+	$(function(){
+		$(".give-list .give-item").click(function(){
+			var $this = $(this);
+			$this.siblings().removeClass('select');
+			$this.addClass('select');
+			$("#reward").val($this.attr('code'));
+		})
+		
+		$(".aced").change(function(){
+			var reward_num_t = $(this).val();
+			$("#reward_nums").val(reward_num_t);
+		})
+		
+	})
+	$(function(){
+	   $(".reward").click(function(){
+			var is_reward = $(".is_reward").val();
+			var pay_password = $(".pay_password").val();
+			//if($.trim(pay_password) == '')
+			//{
+				//alert("请填写支付密码");
+				//return false;
+			//}
+			if(is_reward == 8)
+			{
+				var select_length = $(".give-list .select").length;
+				var reward_num = $(".aced:checked").length;
+ 				
+				if(select_length != 1)
+				{
+					alert("请选择打赏物品");
+					return false;
+				}
+				if(reward_num == 0) 
+				{ 
+					alert("请选择打赏数量"); 
+					return false;				
+				}			
+				
+			}
+			
+			var article_id = $("#article_id").val();
+			var news_columnid = $(".give-list .select").attr("code"); 
+			var reward_nums = $(".aced:checked").val();
+			if(isNaN(reward_nums))
+			{
+				alert("请选择正确数量");
+				return false;
+			}
+			$.ajax({
+				url:"/index.php?m=user&a=raidersReward",
+				type:'post',
+				data:{article_id:article_id,pay_password:pay_password,news_columnid:news_columnid,reward_nums:reward_nums},
+				dataType:'json',				
+				success:function(data){	
+			
+					if(data.code == 2 || data.code == 7)
+					{
+						alert(data.message);
+						window.location.href=window.location.href;
+					}else{
+						alert(data.message);
+						return false;
+					}					
+				},
+				error:function(){
+					alert("网络错误");
+					return false;
+				},
+				
+			})			
+			
+	   })
+	})	
+	
+	$(function(){
+		$(".evaluate_star li").click(function(){
+			var index = $(this).index();
+			var article_id = $("#article_id").val();
+			if(index == 0)
+			{
+				//好评
+			}else if(index == 1)
+			{
+				//中评
+			}else if(index == 2)
+			{
+				//差评
+			}else if(index == 3)
+			{
+				//举报
+			}
+			
+			$.ajax({
+				url:"/index.php?m=user&a=evaluate_star",
+				type:'post',
+				data:{index:index,article_id:article_id},				
+				dataType:'json',				
+				success:function(data){
+					$(".evaluate_star li").eq(index).find(".returnSum").text(data.column_sum);
+					return false;
+				},
+				error:function(){
+					alert("网络错误");
+					return false;
+				},
+				
+			})				
+		})
+	})
+		
+	</script>
+</html>

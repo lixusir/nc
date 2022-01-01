@@ -1,0 +1,141 @@
+<!doctype>
+<html>
+	<head>
+		<title>金币明细</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		
+		<include file="Common:top" />
+		<div id="changeThings">
+
+			<h3 class="changePw">可重生果实列表</h3>
+
+
+			<table cellspacing="0">
+				<thead>
+					<tr>
+						<th></th>
+						<th>果实</th>
+						<th>持有量</th>
+						<th>操作</th>
+					</tr>
+					
+				</thead>
+				<tbody>
+				
+				<tr>
+						<td>1</td>
+						<td>核桃</td>
+						<td>{$hetao}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="1">
+					</tr><tr>
+						<td>2</td>
+						<td>石榴</td>
+						<td>{$shiliu}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="2">
+					</tr><tr>
+						<td>3</td>
+						<td>红枣</td>
+						<td>{$hongzao}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="3">
+					</tr><tr>
+						<td>4</td>
+						<td>葡萄</td>
+						<td>{$putao}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="4">
+					</tr><tr>
+						<td>5</td>
+						<td>哈密瓜</td>
+						<td>{$hamigua}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="5">
+					</tr><tr>
+						<td>6</td>
+						<td>香梨</td>
+						<td>{$xiangli}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="6">
+					</tr><tr>
+						<td>7</td>
+						<td>沙漠果</td>
+						<td>{$shamoguo}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="7">
+					</tr><tr>
+						<td>8</td>
+						<td>人参果</td>
+						<td>{$renshenguo}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="8">
+					</tr><tr>
+						<td>9</td>
+						<td>薰衣草</td>
+						<td>{$xunyichao}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="9">
+					</tr><tr>
+						<td>10</td>
+						<td>沙漠人参</td>
+						<td>{$shamorenshen}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="10">
+					</tr><tr>
+						<td>11</td>
+						<td>巴旦木</td>
+						<td>{$badanmu}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="11">
+					</tr><tr>
+						<td>12</td>
+						<td>和田玉</td>
+						<td>{$hetianyu}</td>
+						<td onclick="reborn(this)">重生</td><input type="hidden" value="12">
+					</tr>
+                    
+					</tbody>
+			</table>
+		</div>
+	</body>	
+	<script>
+		function reborn(obj){
+			var goods_id=$(obj).next().val();
+			var count=$(obj).prev().text();
+			if(count < 1000)
+			{
+				alert("整1000个果实才能重生哦");
+				return false;
+			}
+			$.ajax({
+				url:"/index.php?m=user&a=ajaxReborn",
+				type:'post',
+				dateType:'json',
+				data:{'goods_id':goods_id,'count':count},
+				beforeSend:function(){
+					$("#mengban").show();
+				},
+				success:function(data){						
+					var data = eval("("+data+")");	
+
+					if(data.code == 1){
+						$("#mengban").hide();
+						alert(data.msg);
+						window.location.reload();
+						return false;
+					}else{
+						$("#mengban").hide();
+						alert(data.msg);
+						return false;
+					}
+				},
+				error:function(){
+					$("#mengban").hide();
+					alert('网络错误');
+				}
+			})
+		}
+		</script>	
+
+</html>

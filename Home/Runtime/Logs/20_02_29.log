@@ -1,0 +1,258 @@
+[ 2020-02-29T03:48:31+08:00 ] 10.168.1.132 /index.php?m=user&a=get_user
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Common\common.php 第 217 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000383s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `think_userlist` [ RunTime:0.005202s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: UPDATE `think_userlist` SET `dhzs`=0,`sign`=0 WHERE ( `userid` = null ) [ RunTime:0.000492s ]
+NOTIC: [8] Use of undefined constant kttime1 - assumed 'kttime1' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 474 行.
+SQL: SHOW COLUMNS FROM `think_userlist` [ RunTime:0.005946s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000349s ]
+NOTIC: [8] Use of undefined constant kttime2 - assumed 'kttime2' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 474 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000362s ]
+NOTIC: [8] Use of undefined constant kttime3 - assumed 'kttime3' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 474 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000302s ]
+NOTIC: [8] Use of undefined constant kttime4 - assumed 'kttime4' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 474 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000357s ]
+NOTIC: [8] Use of undefined constant kttime5 - assumed 'kttime5' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 475 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000615s ]
+NOTIC: [8] Use of undefined constant kttime6 - assumed 'kttime6' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 475 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000578s ]
+NOTIC: [8] Use of undefined constant kttime7 - assumed 'kttime7' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 475 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000385s ]
+NOTIC: [8] Use of undefined constant kttime8 - assumed 'kttime8' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 475 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000426s ]
+NOTIC: [8] Use of undefined constant kttime9 - assumed 'kttime9' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 476 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000401s ]
+NOTIC: [8] Use of undefined constant kttime10 - assumed 'kttime10' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 476 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000351s ]
+NOTIC: [8] Use of undefined constant kttime11 - assumed 'kttime11' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 476 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000301s ]
+NOTIC: [8] Use of undefined constant kttime12 - assumed 'kttime12' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 476 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: UPDATE `think_userlist` SET `dhzs`=0,`sign`=0,`lvl`=1 WHERE ( `userid` = null ) [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `think_crops_list` [ RunTime:0.001856s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000084s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000082s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000116s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000118s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000083s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000081s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000185s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000103s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000097s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000099s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000078s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000078s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000077s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000189s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000159s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000096s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000155s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000083s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000078s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000083s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000078s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_crops_list` WHERE ( `name` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8] Use of undefined constant config_pest_odds - assumed 'config_pest_odds' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 497 行.
+SQL: SHOW COLUMNS FROM `think_game_config` [ RunTime:0.002324s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000194s ]
+NOTIC: [8] Use of undefined constant config_drought_odds - assumed 'config_drought_odds' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 513 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000134s ]
+NOTIC: [8] Use of undefined constant config_weed_odds - assumed 'config_weed_odds' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 526 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000148s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000206s ]
+NOTIC: [8] Use of undefined constant autoshou_kttime - assumed 'autoshou_kttime' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 549 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000190s ]
+NOTIC: [8] Use of undefined constant config_auto_harvest_time - assumed 'config_auto_harvest_time' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 549 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000228s ]
+NOTIC: [8] Use of undefined constant autobozong_kttime - assumed 'autobozong_kttime' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 549 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000195s ]
+NOTIC: [8] Use of undefined constant config_auto_seed_time - assumed 'config_auto_seed_time' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 549 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: UPDATE `think_userlist` SET `autoshou`=0,`autobozong`=0 WHERE ( `userid` = null ) [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `think_congwu` [ RunTime:0.001440s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Use of undefined constant lvl - assumed 'lvl' D:\wwwroot\10.168.1.254\Home\Common\common.php 第 104 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_userlist` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000200s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8] Use of undefined constant sys_name - assumed 'sys_name' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 555 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000134s ]
+NOTIC: [8] Undefined index: sys_name D:\wwwroot\10.168.1.254\Home\Common\common.php 第 334 行.
+NOTIC: [8] Use of undefined constant jinyan - assumed 'jinyan' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 556 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000082s ]
+NOTIC: [8] Use of undefined constant nickname - assumed 'nickname' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 557 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000112s ]
+NOTIC: [8] Use of undefined constant cw_pingfen - assumed 'cw_pingfen' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 558 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000076s ]
+NOTIC: [8] Use of undefined constant xinyun - assumed 'xinyun' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 559 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000117s ]
+NOTIC: [8] Use of undefined constant shudu - assumed 'shudu' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 560 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000319s ]
+NOTIC: [8] Use of undefined constant attak - assumed 'attak' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 561 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000165s ]
+NOTIC: [8] Use of undefined constant defense - assumed 'defense' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 562 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000816s ]
+NOTIC: [8] Use of undefined constant lvl - assumed 'lvl' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 563 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000108s ]
+NOTIC: [8] Use of undefined constant hp - assumed 'hp' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 564 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000110s ]
+NOTIC: [8] Use of undefined constant pingfen - assumed 'pingfen' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 565 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000107s ]
+NOTIC: [8] Use of undefined constant tili - assumed 'tili' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 566 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000090s ]
+NOTIC: [8] Use of undefined constant jinyan - assumed 'jinyan' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 567 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000086s ]
+NOTIC: [8] Use of undefined constant jinyan - assumed 'jinyan' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 568 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000099s ]
+NOTIC: [8] Use of undefined constant lvl - assumed 'lvl' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 568 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000088s ]
+NOTIC: [8] Use of undefined constant lvl - assumed 'lvl' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 568 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000084s ]
+NOTIC: [8] Use of undefined constant lvl - assumed 'lvl' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 569 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000080s ]
+NOTIC: [8] Use of undefined constant lvl - assumed 'lvl' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 569 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000079s ]
+NOTIC: [8] Use of undefined constant config_pest_time - assumed 'config_pest_time' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 641 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000156s ]
+NOTIC: [8] Use of undefined constant config_pest_odds - assumed 'config_pest_odds' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 642 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000139s ]
+NOTIC: [8] Use of undefined constant config_pest_reduce - assumed 'config_pest_reduce' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 643 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000136s ]
+NOTIC: [8] Use of undefined constant config_drought_time - assumed 'config_drought_time' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 644 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000231s ]
+NOTIC: [8] Use of undefined constant config_drought_odds - assumed 'config_drought_odds' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 645 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000159s ]
+NOTIC: [8] Use of undefined constant config_drought_reduce - assumed 'config_drought_reduce' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 646 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000141s ]
+NOTIC: [8] Use of undefined constant config_weed_time - assumed 'config_weed_time' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 647 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000230s ]
+NOTIC: [8] Use of undefined constant config_weed_odds - assumed 'config_weed_odds' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 648 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000141s ]
+NOTIC: [8] Use of undefined constant config_weed_reduce - assumed 'config_weed_reduce' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 649 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000142s ]
+NOTIC: [8] Use of undefined constant config_weed_time2 - assumed 'config_weed_time2' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 650 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000138s ]
+NOTIC: [8] Use of undefined constant config_weed_odds2 - assumed 'config_weed_odds2' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 651 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000156s ]
+NOTIC: [8] Use of undefined constant config_weed_reduce2 - assumed 'config_weed_reduce2' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 652 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000138s ]
+NOTIC: [8] Use of undefined constant config_weed_time3 - assumed 'config_weed_time3' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 653 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000134s ]
+NOTIC: [8] Use of undefined constant config_bumper_count - assumed 'config_bumper_count' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 654 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_game_config` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000305s ]
+NOTIC: [8] Use of undefined constant pet_rose_heart - assumed 'pet_rose_heart' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 679 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000095s ]
+NOTIC: [8] Use of undefined constant pet_rose_heart - assumed 'pet_rose_heart' D:\wwwroot\10.168.1.254\Home\Lib\Action\UserAction.class.php 第 680 行.
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead D:\wwwroot\10.168.1.254\ThinkPHP\Lib\Core\Db.class.php 第 605 行.
+SQL: SELECT * FROM `think_congwu` WHERE ( `userid` = null ) LIMIT 1   [ RunTime:0.000089s ]
+

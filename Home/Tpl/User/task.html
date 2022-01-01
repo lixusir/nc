@@ -1,0 +1,163 @@
+<!doctype>
+<html>
+	<head>
+		<title>修改密码</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+
+		<script>
+            $(function() {
+
+                $('#memberUpdatePwd').ajaxForm({
+                    beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+                    success: complete, // 这是提交后的方法
+                    dataType: 'json'
+                });
+
+                function checkForm(){
+
+                    if( '' == $.trim($('#rePwd').val())){
+                        layer.alert('原密码不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#rePwd').focus();
+                        });
+                        return false;
+                    }
+
+                    if( '' == $.trim($('#newPwd').val())){
+                        layer.alert('新密码不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#newPwd').focus();
+                        });
+                        return false;
+                    }
+
+                    if( '' == $.trim($('#newPwdRe').val())){
+                        layer.alert('确认密码不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#newPwdRe').focus();
+                        });
+                        return false;
+                    }
+
+                    if('' != $.trim($('#newPwd').val()) && '' != $.trim($('#newPwdRe').val())){
+
+                        if($.trim($('#newPwd').val()) != $.trim($('#newPwdRe').val())){
+                            layer.alert('新密码与确认密码输入的不同', {icon: 6}, function(index){
+                                layer.close(index);
+                            });
+                            return false;
+						}
+
+					}
+
+
+
+				}
+
+                function complete(data){
+				
+                    if(data.status==1){
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                            window.location.href=data.url;
+                        });
+                    }else{
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                        });
+                        return false;
+                    }
+                }
+
+            })
+		</script>
+	</head>
+	<body>
+
+		<div id="head">
+			<p class="title l">淘金果园</p>
+			<ul class="user r">
+				<li class="l">
+					<img src="picture/yonghuzhongxin.png">
+				</li>
+				<li class="l">
+					<a href="/index.php/Farm/index.html">
+						<img src="picture/tuichu.png">
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="banner">
+			
+		</div>
+		<ul id="list">
+			<li class="keng"><span>+</span> 用户中心</li>
+			<li class="zhouyun">
+				<ul>
+					<li><a href="/index.php/Member/memberCenter.html">账户概要</a></li>
+					<li><a href="/index.php/Member/memberSafeCenter.html" style="color:#f4771c;">安全设置</a></li>
+					<!-- <li><a href="/index.php/Member/userCenter_Wallet.html">果园钱包</a></li> -->
+					<li><a href="/index.php/Member/userCenter_accountRecharge.html">账户充值</a></li>
+					<li><a href="/index.php/User/userCenter_coinWithdrawals.html">金币提现</a></li>
+					<li><a href="/index.php/User/userCenter_withdrawlog.html">提现记录</a></li>
+					<li><a href="/index.php/User/userCenter_coinDetail.html">金币明细</a></li>
+				</ul>
+			</li>
+			<li class="keng"><span>+</span> 农贸市场</li>
+			<li class="zhouyun">
+				<ul>
+					<li><a href="/index.php/Member/cropsEntrust.html">委托管理</a></li>
+					<li><a href="/index.php/Member/cropsTrade.html">交易记录</a></li>
+					<li><a href="/index.php/Member/cropsReborn.html">果实重生</a></li>
+					<li><a href="/index.php/Member/cropsRebornList.html">重生记录</a></li>
+					<li><a href="/index.php/User/cropsGive.html">果实赠送</a></li>
+					<li><a href="/index.php/Member/cropsGiveList.html">赠送记录</a></li>
+				</ul>
+			</li>
+			<li class="keng"><span>+</span> 推广中心</li>
+			<li class="zhouyun">
+				<ul>
+					<li><a href="/index.php/Member/centerLink.html">推广链接</a></li>
+					<li><a href="/index.php/Member/centerList.html">推广列表</a></li>
+					<li><a href="/index.php/Member/centerReward.html">推广奖励</a></li>
+					<!-- <li><a href="/index.php/Member/centerCode.html">补推广码</a></li> -->
+					<li><a href="/index.php/User/centerCode.html">补推广码</a></li>
+					<li><a href="/index.php/Member/centerContact.html">联系资料</a></li>
+					<li><a href="/index.php/Member/centerTeacher.html">我的导师</a></li>
+				</ul>
+			</li>
+		</ul>
+	
+		<form method="post" id="memberUpdatePwd" action="/index.php/Member/memberUpdatePwd.html">
+		<div id="changeThings">
+			<h1 class="guanli">修改登录密码</h1>
+			
+			<div class="iptStyle">
+				<span class="allType l">原密码</span>
+				<input type="password" name="rePwd" id="rePwd" class="iptTwo" placeholder="请输入原密码">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">新密码</span>
+				<input type="password" name="newPwd" id="newPwd" class="iptTwo" placeholder="请输入新密码">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">确认新密码</span>
+				<input type="password" name="newPwdRe" id="newPwdRe" class="iptTwo" placeholder="请再次输入新密码">
+			</div>
+			
+			<button>提交</button>			
+			
+			<div style="width: 100%, height:1rem"></div>
+		</div>
+		</form>
+	</body>	
+</html>

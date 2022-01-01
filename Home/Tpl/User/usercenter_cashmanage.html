@@ -1,0 +1,100 @@
+<!doctype>
+<html>
+	<head>
+		<title>提现管理</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+
+	</head>
+	<body>
+		<include file="Common:top" />
+		<form action="/index.php?m=user&a=userCenter_CashManage&act=1" id="userCenter_CashManage" method="post" >
+		<div id="changeThings">
+			<h1 class="guanli">提现账户管理</h1>
+			<div class="juMessage">
+				<p class="juList">温馨提示</p>
+				<p class="juList">1.绑定的收款账户开户人需与实名认证姓名一致！</p>
+				<p class="juList">2.请仔细确认您的帐号是否填写正确。</p>
+				<!-- <p class="juList">温馨提示温馨提示温馨提示</p> -->
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">收款姓名</span>
+				<input type="text" name="bank_account_name" id="bank_account_name" class="iptTwo" value="">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">收款帐号</span>
+				
+				<select class="iptTwo" name="bank_name">
+					<option value="1" >微信</option>
+					<option value="2" >支付宝</option>
+				</select>
+				<span class="jinbi">选择</span>
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">收款帐号</span>
+				<input type="text" name="bank_card_number" class="iptTwo" value="">
+			</div>
+			<button>提交</button>
+			<div style="width: 100%, height:1rem"></div>
+		</div>
+		</form>
+	</body>	
+
+	<script>
+	
+            $(function() {				
+				
+                $('#userCenter_CashManage').ajaxForm({
+                    beforeSubmit: checkInfo, // 此方法主要是提交前执行的方法，根据需要设置
+                    success: complete, // 这是提交后的方法
+                    dataType: 'json'
+                });
+
+               function checkInfo(){
+		var bank_account_name = $("#bank_account_name").val();
+		var bank_card_number=$("input[name='bank_card_number']").val();
+		
+		if($.trim(bank_account_name) == '')
+		{
+			alert('请输入收款姓名');
+			return false;		
+		}
+		var reg= /^\d{19}$/g;
+		var reg1= /^\d{16}$/g;
+		//if(reg.test(bank_card_number) || reg1.test(bank_card_number)){
+			
+			//return true;
+		//}else{
+			//alert('请输入正确的收款帐号');
+			//return false;
+		//}
+		
+	}
+                function complete(data){
+				
+                    if(data.status==1){
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                            window.location.href=data.url;
+                        });
+                    }else{
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                        });
+                        return false;
+                    }
+                }
+
+            })
+		</script>	
+	
+	
+</html>

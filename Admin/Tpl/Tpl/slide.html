@@ -1,0 +1,67 @@
+<include file="Common:header" />
+    <title>后台管理-添加导航</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start"><if condition="$info['id']">修改<else />添加</if>轮播图</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <form action="{:U('Tpl/addupimg')}" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>图片名称</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="img_name" size="50" placeholder="请填写图片名称" data-validate="required:必填," value="{$info['img_name']}" />
+                        </div>
+                    </div>
+                    <if condition="$info['id']">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>图片路径</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="img_src" size="50" value="{$info['img_src']}" />
+                        </div>
+                    </div>
+                    <else />
+                    <div class="form-group">
+                        <div class="label">
+                            <label>上传图片</label>
+                        </div>
+                        <div class="field">
+                            <a class="button input-file" href="javascript:void(0);">上传图片
+                                <input size="100" name="upload" type="file">
+                            </a>
+                        </div>
+                    </div>
+                    </if>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>链接地址</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="jump_link" size="50" data-validate="required:必填" value="{$info['jump_link']}" />
+                        </div>
+                    </div>
+                    <div class="form-button">
+                    <input type="hidden" name="id" value="{$info['id']}">
+                    <button class="button" type="submit">保存</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

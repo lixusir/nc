@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">     
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no,email=no" /> 
+  	<meta name="apple-mobile-web-app-capable" content="yes">
+  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  	<script type="text/javascript" src="/Public/home/js/jquery-1.4.2.min.js"></script> 
+    <script type="text/javascript" src="/Public/home/js/plunder.js"></script> 
+  	<link href="/Public/home/css/public.css" rel="stylesheet" type="text/css">
+    <link href="/Public/home/css/plunder.css" rel="stylesheet" type="text/css">
+  	<title>打劫</title> 
+	</head>    
+	<body ontouchstart="" style="background:#9A8F83"> 
+		<!-- 背景 -->
+<div class="bg" style="position:relative">
+  <canvas id="mycanvas" width="540px" height="960px">
+    您的浏览器不支持canvas！
+  </canvas>
+	<!-- 个人信息背景 -->
+	<div class="head">
+		<div style="float:right; border:0px solid #000;width:35px;height:110px;"></div>
+	<!-- .........资源................. -->
+	<!-- 矿石 -->
+  	<div class="zywk">
+  		<div class="ziyuan"><i class="i-kuangshi kuangshi"></i><span id="kssl"></span></div>
+  		<!-- 金币 -->
+  		<div class="ziyuan"><i class="i-shuijing shuijing"></i><span id="sjsl"></span></div>
+  		<!-- 水晶 -->
+  		<div class="ziyuan"><i class="i-zuanshi zuanshi"></i><span id="zssl"></span></div>
+  	</div>
+		<div class="username"><span style="color:#fff;" id ="boss" ></span></div>
+		<div class="touxi"><img id="txtp" src="/Public/home/picture/kttx.png" ></div>
+    
+	</div>
+  <div class="countDown">
+      <svg class="alert-circle" width="100" height="100">
+     <circle cx="50" cy="50" r="22" fill="rgba(66,65,41,0.9)" stroke="rgba(66,65,41,0.9)" stroke-width="55"></circle>
+      <circle id="js-sec-circle" class="alert-sec-circle" cx="50" cy="50" r="26" fill="transparent" stroke="#6b8152" stroke-width="50" transform="rotate(-90 50 50)" style="stroke-dashoffset: 0;"></circle>
+      </svg>
+      <div id="js-cout-text" class="alert-sec-text"></div>
+    </div>
+	<!-- 中间部分 -->
+	<div class="Mine">
+		<ul>
+			<li>
+				<div class="market mone"><img src="/Public/home/picture/01.gif"></div>
+			</li>
+			<li>
+				<div class="lobby mone"><img src="/Public/home/picture/ckc.gif"></div>
+			</li>
+		</ul>
+		<div style="clear:both"></div>
+		<div class="Machine" style="top:110px" >
+      <div id="getOre"></div>
+      <div id="stone"><img src="/Public/home/picture/stone1.gif" alt="stone" /></div>
+			<div id="machine" style="position:absolute" >&nbsp;</div>
+      <div class="shield" ></div>
+      <div id="han" ></div>
+		</div> 
+	</div>
+  <div class="goHome gohome_js"></div>
+  <!--开始动画-->
+  <div class="animate closed">
+    <div class="yunright"></div><div class="yunleft"></div>
+    <div id="searchPhoto" style="display:none"> <p></p> <p>正在搜索矿场<span>.</span><span>.</span><span>.</span></p> </div>
+  </div>
+</div>
+ <div class="g-pop pop_js" id="pop_con" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px;  height: 960.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">-</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">取 消</a>
+                        <a class="btn btn-1 ok_js">好 的</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+   <div class="g-pop pop_js" id="dajie_tis" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px;  height: 960px;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">-</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 gohome_js">回 家</a>
+                        <!-- <a class="btn btn-1 ok_js">再次打劫</a> -->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+       <div class="g-pop pop_js" id="pop_plunder" style="display: none;">
+           <div class="g-popwp" style="transform-origin: left top 0px;  height: 960px; ">
+               <div class="g-pop-main pop-c-gxn">
+                   <div class="g-pop-txt">  
+                     
+                       <p class="ctr lind" >恭喜您攻破<i class="dred" id="gkfy"></i>防御</br>获得<i class="dred" id="hdks"></i>衰变矿石<span id="hdsj">获得<i class="dred" id="sjsp"></i>水晶碎片</span></br><i class="dred shengji" style="font-weight: inherit; display:none">恭喜你升级到<span id="dj"></span>级</i></p>
+                   </div>
+                   <div class="g-popbtn">
+                       <a class="btn btn-2 gohome_js">回 家</a>
+                       <a class="btn btn-1 next_js">再次打劫</a>
+                   </div>
+                   
+               </div>
+           </div>
+       </div> 
+	   
+	   <include file="Common:footer" />
+	   
+</body>
+</html>
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

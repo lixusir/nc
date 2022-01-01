@@ -1,0 +1,172 @@
+<include file="Common:header" />
+    <title>后台管理-排名奖励</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-expe">体验排行榜</a></li>
+                <li><a href="#tab-game">游戏排行榜</a></li>
+                <li><a href="#tab-task">任务排行榜</a></li>
+                <li><a href="#tab-code">打码排行榜</a></li>
+                <li><a href="#tab-rebate">返利排行榜</a></li>
+                <li><a href="#tab-invite">邀请排行榜</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-expe">
+                <div class="panel admin-panel">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>排名</th>
+                            <th>会员ID</th>
+                            <th>会员昵称</th>
+                            <th>上月收入</th>
+                            <th>管理操作</th>
+                        </tr>
+                        <volist name="tiyan" id="v">
+                        <tr>
+                            <td>{$i}</td>
+                            <td>{$v['uid']}</td>
+                            <td>{$v['username']}</td>
+                            <td>{$v['score']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Score/index',array('uid'=>$v['uid'],'score'=>$v['reward'],'why'=>$v['why']))}">发放奖励</a> 
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-game">
+                <div class="panel admin-panel">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>排名</th>
+                            <th>会员ID</th>
+                            <th>会员昵称</th>
+                            <th>上月收入</th>
+                            <th>管理操作</th>
+                        </tr>
+                        <volist name="game" id="v">
+                        <tr>
+                            <td>{$i}</td>
+                            <td>{$v['uid']}</td>
+                            <td>{$v['username']}</td>
+                            <td>{$v['points']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Score/index',array('uid'=>$v['uid'],'score'=>$v['reward'],'why'=>$v['why']))}">发放奖励</a> 
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-task">
+                <div class="panel admin-panel">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>排名</th>
+                            <th>会员ID</th>
+                            <th>会员昵称</th>
+                            <th>上月收入</th>
+                            <th>管理操作</th>
+                        </tr>
+                        <volist name="task" id="v">
+                        <tr>
+                            <td>{$i}</td>
+                            <td>{$v['uid']}</td>
+                            <td>{$v['username']}</td>
+                            <td>{$v['points']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Score/index',array('uid'=>$v['uid'],'score'=>$v['reward'],'why'=>$v['why']))}">发放奖励</a> 
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-code">
+                <div class="panel admin-panel">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>排名</th>
+                            <th>会员ID</th>
+                            <th>会员昵称</th>
+                            <th>上月收入</th>
+                            <th>管理操作</th>
+                        </tr>
+                        <volist name="code" id="v">
+                        <tr>
+                            <td>{$i}</td>
+                            <td>{$v['uid']}</td>
+                            <td>{$v['username']}</td>
+                            <td>{$v['jine']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Score/index',array('uid'=>$v['uid'],'score'=>$v['reward'],'why'=>$v['why']))}">发放奖励</a> 
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-rebate">
+                <div class="panel admin-panel">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>排名</th>
+                            <th>会员ID</th>
+                            <th>会员昵称</th>
+                            <th>上月收入</th>
+                            <th>管理操作</th>
+                        </tr>
+                        <volist name="rebate" id="v">
+                        <tr>
+                            <td>{$i}</td>
+                            <td>{$v['uid']}</td>
+                            <td>{$v['username']}</td>
+                            <td>{$v['jine']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Score/index',array('uid'=>$v['uid'],'score'=>$v['reward'],'why'=>$v['why']))}">发放奖励</a> 
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-invite">
+                <div class="panel admin-panel">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>排名</th>
+                            <th>会员ID</th>
+                            <th>会员昵称</th>
+                            <th>上月收入</th>
+                            <th>管理操作</th>
+                        </tr>
+                        <volist name="invi" id="v">
+                        <tr>
+                            <td>{$i}</td>
+                            <td>{$v['userid']}</td>
+                            <td>{$v['username']}</td>
+                            <td>{$v['score']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Score/index',array('uid'=>$v['userid'],'score'=>$v['reward'],'why'=>$v['why']))}">发放奖励</a> 
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

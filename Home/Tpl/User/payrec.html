@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>账号明细 - {$Think.config.WEB_NAME}</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" media="screen" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/css/account.css" />
+<script type="text/javascript" src="__PUBLIC__/js/mebmer.js"></script>
+</head>
+<body class="n0 u2">
+<!-- 页头 -->
+<include file="Common:top" />
+<!--页中-->
+<include file="Common:userlift" />
+<div class="right-con">
+   <p class="list-nav" style="margin-bottom: 15px;">当前位置：账户管理 &gt; 账号明细</p> 
+   <div class="mingxi box"> 
+    <div class="menu"> 
+      <a href="{:U('User/record',array('id'=>0))}">
+       <div>
+        收入明细
+       </div></a>
+      <a href="{:U('User/record',array('id'=>1))}">
+       <div>
+        邀请收益
+       </div></a> 
+      <a href="{:U('User/payrec')}">
+       <div class="xd">
+        提现记录
+       </div></a> 
+     <span class="fr red">注：明细数据仅保留30天，过期后系统会清空~</span> 
+    </div> 
+    <div class="biaoge" style="margin-top: 10px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody>
+            <tr>
+              <th width="5%"> ID </th>
+              <th width="20%"> 申请时间 </th>
+              <th width="10%"> 姓名 </th>
+              <th width="25%"> 支付宝 </th>
+              <th width="10%"> 申请金额 </th>
+              <th width="10%"> 支付状态 </th>
+              <th width="25%"> 备注 </th>
+            </tr>
+            <volist name="pay" id="v" empty="$empty">
+            <tr>
+              <td height="35">{$key+1}</td>
+              <td height="35">{$v.applytime|date='Y-m-d H:i:s',###}</td>
+              <td height="35">{$v.realname}</td>
+              <td height="35">{$v.alipay}</td>
+              <td><font color="red"</font>{$v.money}</td>
+              <td><if condition="$v.applyState eq 0"><font color="red"</font>待支付<elseif condition="$v.applyState eq 2"/><font color="#DDD"</font>已退回<else />已支付</if></td>
+              <td>{$v.note}</td>
+            </tr>
+            </volist>
+          </tbody>
+        </table>
+      </div>
+    <div id="page">
+     {$page}
+    </div> 
+   </div> 
+  </div>
+</div>
+<!-- 页尾 -->
+<include file="Common:bottom" />

@@ -1,0 +1,121 @@
+﻿html,body{
+	width: 100%;height: 100%;background: url(../images/bj.jpg);
+	background-size: cover;overflow-x: hidden;
+}
+.logo{
+	width:7.5rem;height: 4.92rem;position: absolute;
+	left: 0;right: 0;margin: auto;top:0;z-index: 100;
+}
+.loginBox{
+	width:6.16rem;height:9.16rem;background: url(../images/10.png);
+	background-size: cover;position: absolute;left: 0;right: 0;margin: auto;
+	top: 2.76rem;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:#6c3011;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color:#6c3011;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+　　color:#6c3011;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+　　color:#6c3011;
+}
+.loginBox input:nth-of-type(1){
+	width: 3.17rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top: 2.27rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(2){
+	width: 3.17rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top: 2.97rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(3){
+	width: 3.17rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top:3.7rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(4){
+	width: 3.17rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top:4.42rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(5){
+	width: 3.17rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top:5.14rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(6){
+	width: 3.17rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top:5.85rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(7){
+	width: 1.27rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top:6.57rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox input:nth-of-type(8){
+	width: 1.27rem;height: 0.53rem;background: none;border: none;
+	position: absolute;left: 2.45rem;top:7.28rem;color: #6c3011;
+	font-size: 0.22rem;line-height: 0.53rem;
+}
+.loginBox .submit{
+	width: 2.23rem;height: 0.98rem;background:url(../images/15.png);border: none;
+	position: absolute;right: 0.44rem;top: 8.3rem;background-size: cover;
+	outline: none;-webkit-tap-highlight-color:rgba(255,0,0,0);background-color: none;
+}
+.loginBox .zhuce{
+	width: 2.23rem;height: 0.99rem;background:url(../images/8.png);border: none;
+	position: absolute;left: 0.44rem;top: 8.3rem;background-size: cover;
+	outline: none;-webkit-tap-highlight-color:rgba(255,0,0,0);background-color: none;
+}
+input:focus{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	background-color: none;
+	-webkit-user-modify:read-write-plaintext-only;
+}
+input:active{
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	background-color: none;
+	-webkit-user-modify:read-write-plaintext-only;
+}
+.shade{
+	width: 100%;height: 100%;background: rgba(0,0,0,.3);
+	position: fixed;left: 0;top: 0;z-index: 998;display: none;
+}
+.alertBox{
+	width:6.21rem;height:5.01rem;background:url(../images/kk.png);
+	background-size: cover;position: fixed;left: 0;right: 0;
+	margin: auto;top: 0;bottom: 0;
+}
+.alertsubmit{
+	width:2.49rem;height:1.17rem;background: url(../images/qd.png);
+	background-size: cover;position: absolute;left: 0;right: 0;
+	margin: auto;bottom: -0.3rem;
+}
+.alertBox img{
+	width: 1.92rem;height: 1.49rem;position: absolute;left: 0;
+	right: 0;margin: auto;top: 0.6rem;
+}
+.alertBox p{
+	width:5.23rem;height:0.82rem;background: none;position: absolute;
+	line-height: 0.82rem;font-size: 0.25rem;color: #6c3011;
+	text-align: center;left: 0.51rem;top: 2.44rem;
+}
+.loginBox a:nth-of-type(1){
+	display: block;width: 1.08rem;height: 0.515rem;background: none;
+	text-align: center;line-height: 0.53rem;color: #6c3011;
+	font-size: 0.22rem;position: absolute;left: 4.33rem;top:6.57rem;
+}
+.loginBox a:nth-of-type(1) img{
+	width: 100%;height: 100%;position: absolute;left: 0;top: 0;
+}
+.loginBox a:nth-of-type(2){
+	display: block;width: 1.08rem;height: 0.515rem;background: none;
+	text-align: center;line-height: 0.53rem;color: #6c3011;
+	font-size: 0.22rem;position: absolute;left: 4.33rem;top:7.28rem;
+}

@@ -1,0 +1,55 @@
+<include file="Common:header" />
+    <title>后台管理-修改导航</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start">修改导航</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <form action="{:U('Tpl/save')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>排序</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="navrand" value="{$dh['navrand']}" size="50" data-validate="required:必填,number:必须为数字" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>导航名称</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="navname" value="{$dh['navname']}" size="50" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>链接地址</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="navurl" value="{$dh['navurl']}" size="50" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-button">
+                    <input type="hidden" name="id" value="{$dh['id']}">
+                    <button class="button" type="submit">保存添加</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

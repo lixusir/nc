@@ -1,0 +1,63 @@
+<include file="Common:header" />
+    <title>后台管理-{$Think.config.MONEY_NAME}设置</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab" data-toggle="click">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start2">矿场设置</a></li>
+                <!--<li><a href="#tab-css">游戏设置</a></li>-->
+            </ul>
+        </div>
+        <div class="tab-body tab-body-bordered">
+            <div class="tab-panel active" id="tab-start2">
+			    
+                <form action="{:U('Setup/edit')}" method="post">
+				<foreach name="info" item="v">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>每天铁矿产量</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="tiek" size="50" value="{$v['tiechanliang']}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>每天水晶产量</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="jink" size="50" value="{$v['sjchanliang']}" />
+                            <span>1万水晶=1元 </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>首页出矿小密提示（倒计时多少秒：默认120）</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="ckremaintime" size="50" value="{$v['ckremaintime']}" />
+                            <span>秒</span>
+                        </div>
+                    </div>
+                    
+                  
+                    <div class="form-button">
+                        <button class="button" type="submit">保存设置</button>
+                    </div>
+					</foreach>
+                </form>
+				
+            </div>
+            
+        </div>
+    </div>
+</div>
+</body>
+</html>

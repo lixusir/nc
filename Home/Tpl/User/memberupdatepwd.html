@@ -1,0 +1,111 @@
+<!doctype>
+<html>
+	<head>
+		<title>修改密码</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+
+		<script>
+            $(function() {
+
+                $('#memberUpdatePwd').ajaxForm({
+                    beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+                    success: complete, // 这是提交后的方法
+                    dataType: 'json'
+                });
+
+                function checkForm(){
+
+                    if( '' == $.trim($('#rePwd').val())){
+                        layer.alert('原密码不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#rePwd').focus();
+                        });
+                        return false;
+                    }
+
+                    if( '' == $.trim($('#newPwd').val())){
+                        layer.alert('新密码不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#newPwd').focus();
+                        });
+                        return false;
+                    }
+
+                    if( '' == $.trim($('#newPwdRe').val())){
+                        layer.alert('确认密码不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#newPwdRe').focus();
+                        });
+                        return false;
+                    }
+
+                    if('' != $.trim($('#newPwd').val()) && '' != $.trim($('#newPwdRe').val())){
+
+                        if($.trim($('#newPwd').val()) != $.trim($('#newPwdRe').val())){
+                            layer.alert('新密码与确认密码输入的不同', {icon: 6}, function(index){
+                                layer.close(index);
+                            });
+                            return false;
+						}
+
+					}
+
+
+
+				}
+
+                function complete(data){
+				
+                    if(data.status==1){
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                            window.location.href=data.url;
+                        });
+                    }else{
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                        });
+                        return false;
+                    }
+                }
+
+            })
+		</script>
+	</head>
+	<body>
+
+		<include file="Common:top" />
+	
+		<form method="post" id="memberUpdatePwd" action="/index.php?m=user&a=memberUpdatePwd2">
+		<div id="changeThings">
+			<h1 class="guanli">修改登录密码</h1>
+			
+			<div class="iptStyle">
+				<span class="allType l">原密码</span>
+				<input type="text" name="rePwd" id="rePwd" class="iptTwo" placeholder="请输入原密码">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">新密码</span>
+				<input type="text" name="newPwd" id="newPwd" class="iptTwo" placeholder="请输入新密码">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">确认新密码</span>
+				<input type="text" name="newPwdRe" id="newPwdRe" class="iptTwo" placeholder="请再次输入新密码">
+			</div>
+			
+			<button>提交</button>			
+			
+			<div style="width: 100%, height:1rem"></div>
+		</div>
+		</form>
+	</body>	
+</html>

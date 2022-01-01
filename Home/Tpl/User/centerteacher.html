@@ -1,0 +1,78 @@
+<!doctype>
+<html>
+	<head>
+		<title>推广奖励</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		
+		<include file="Common:top" />
+<div id="changeThings">
+			<h1 class="guanli">我的导师</h1>
+			<table cellspacing="0" class="tableList">
+				<thead>
+					<tr>
+						
+						<th>导师ID</th>
+						<th>导师名称</th>
+						<th>手机号码</th>
+						<th>QQ号码</th>
+						<th>微信账号</th>
+					</tr>
+					
+				</thead>
+				<tbody>
+				<foreach name="info2" item="v">
+					<tr>
+						<td>{$v.userid}</td>
+						<td>{$v.name}</td>
+						<td>{$v.phone}</td>
+						<td>{$v.qq}</td>
+						<td>{$v.weiixn}</td>
+						
+					</tr>
+					</foreach>
+				</tbody>
+			</table>	
+			<div class="wenxinshow">
+				<p class="coinP">温馨提示:</p>
+				<p class="coinP">1.您可以通过上面的导师列表去的您导师的联系方式</p>
+			</div>	
+		</div>
+		
+		
+		
+	</body>	
+	<script type="text/javascript" src="js/layui.js"></script>
+	<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  var start = {
+    //min: laydate.now()
+    min:'2000-01-01 23:59:59'
+    ,max: '2099-06-16 23:59:59'
+    ,istoday: false
+    ,choose: function(datas){
+    }
+  }; 
+  document.getElementById('LAY_demorange_s').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+  document.getElementById('LAY_demorange_s1').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+});
+</script>
+</html>

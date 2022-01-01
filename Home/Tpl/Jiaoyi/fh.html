@@ -1,0 +1,343 @@
+﻿<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/public.css">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/chushou.css">
+
+<title></title>
+<script type="text/javascript">
+  
+</script>
+<style type="text/css">
+   .c-s-txt table{
+      width: 100%;
+      font-size: 17px;
+
+   }
+   .c-s-txt tr{
+     line-height: 1.7em;
+   }
+   .biaotou{
+     font-weight: bold;
+   }
+   .tbtle{
+    width: 25%;
+   }
+</style>
+</head>
+<body>
+        <div class="title" >
+
+            <span id="biaoti">-</span>
+            <a href="javascript:void(0)" onclick="history.back()">&nbsp;</a>
+        </div>
+    
+
+<div class="cloud cloudbgcol2" id="buyBox" style="display: none; transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+    <header class="cloud-hd">
+        <h1 class="cloud-h-sell">请选择您出售的矿石</h1>
+    </header>
+    <section class="cloud-sell">
+        <ol class="cloud-list" id="buyList"></ol>
+        <a class="cloud-loadmore" id="buyMore" style="display: none;">加载更多</a>
+    </section>
+</div> 
+    
+<div class="cloud cloudbgcol2" id="sellBox" style="display: none; transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+    <header class="cloud-hd">
+        <h1 class="cloud-h-sell">请选择您出售的矿石</h1>
+    </header>
+    <section class="cloud-sell">
+        <ol class="cloud-list" id="sellList"></ol>
+        <a class="cloud-loadmore" id="sellMore" style="display: none;">加载更多</a>
+    </section>
+</div>    
+    
+<div class="cloud" id="sellNoBox" style="display: none; transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+    <!-- <header class="cloud-hd">
+      <h1 class="cloud-h-sell">请选择您出售的矿石</h1>
+      </header>  -->
+    <section class="cloud-steps"> 
+      <!--   <i class="i-c-pity"></i> -->
+      <!--   <p>抱歉！您当前没有可以出售的矿机流量，<br>请先购买矿机获得流量包。</p> -->
+      <ol class="cloud-list">
+            <li style="min-height:212px;">
+                
+                <span class="c-step">矿主信息</span>
+               
+<div class="c-s-pic" style="border-style: solid solid;border-radius:15px;width:132px;height:132px;left:16px;top:45px;"><img src="/Public/home/picture/kgtx.png" alt=""></div>
+                <h1><span id="jiaose"></span></h1>
+                                <a href="" class="shenq"></a>
+                               <!--  <p class="c-s-tip" id="numX">非采乐赚官方出售</p> -->
+                <div class="c-s-txt" style="padding-right: 0px;">
+                   <!--  <p>今日成交:1笔  &nbsp;&nbsp;累计成交：1笔/500笔</p>
+                   <p >矿区人数：300人&nbsp;&nbsp;今日新增：3人</p>
+                   <p >矿石余额：3000万&nbsp;&nbsp;我的水晶：30万</p> -->
+                    <table >
+                        <tr>
+                             <td class="tbtle">投资:</td>
+                            <td class="tbtle"><span id="gmdj" class="jnum">0</span> 元</td>
+                            <td class="tbtle">可分红:</td>
+                            <td class="tbtle"> <span id="jrcj" class="jnum">0</span> </td>
+                            
+                            
+                         
+                        </tr>
+                         <tr>
+                            <td>总基金:</td>
+                            <td><span id="jrxz" class="jnum">0</span> 元</td>
+                              <td>投资人数:</td>
+                            <td><span id="mysj" class="jnum">0</span> 人</td>
+                            
+                            
+                            
+                        </tr>
+                         <tr>
+                            <td>矿区人数:</td>
+                            <td><span id="kqrs" class="jnum">0</span> 人</td>
+                            <td>累计成交:</td>
+                            <td><span id="ljcj" class="jnum">0</span> 元</td>
+                        </tr>
+                    </table>
+
+                </div>
+                                 <a class="btn btn-1 dt_alert" style="left: 15px;" > 我要投资</a> 
+                                 <a class="btn btn-1 but go_js" > 我要投资</a> 
+								 <a class="btn btn-1 dt_alert" style="left: 15px;" > 分红大厅</a> 
+                                 
+
+            </li>
+           <li style="padding-left:15px;">
+                <span class="c-step">分红说明</span>
+                 <p><span class="biaotou"></span>每日投资随机1至20元，每日可领取9元。</p>
+                 
+
+                
+            </li>
+          
+        </ol>
+     
+      <!--    <a class="btn btn-1 go_js" style="margin-left:36%;">去出售</a>  -->
+    </section> 
+
+</div>    
+       
+    <!-- <iframe class="pay-iframe" frameborder="0"></iframe>   --> 
+  
+<!-- 说明 -->
+<div class="g-pop pop_js" id="pop_rule" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main-big-tit">
+            <h1>交易说明</h1>
+            <div class="pop-c-intro">
+                <!-- <img src="/Public/home/picture/pop_pic.jpg" alt=""> -->
+                <div style="height:80px;">
+                    
+                </div>
+                <dl>
+                    <dt>购买矿石：</dt>
+                    <dd>玩家可以购买其他玩家出售的永久矿石，购买后自动到账！</dd>
+                    <dt>出售矿石：</dt>
+                    <dd>任意角色的玩家可以将自己的永久矿石出售在交易市场中，其他玩家购买后赚取对应金额的水晶，水晶可以用来提现。根据出售量来提升角色，角色越高获得收益比率越高。</dd>
+                    
+                </dl>
+                <div style="height:50px;">
+                    
+                </div>
+                <div class="g-popbtn">
+                    <a class="btn btn-1 close_js">好的</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+    
+<!-- 确认购买 -->
+<div class="g-pop pop_js" id="pop_confirm_xia" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">
+                <p class="ctr">如当前有玩家正在购买将受到影响</p>
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-2 close_js">取消下架</a>
+                <a class="btn btn-1 ok_xia_js">继续下架</a>                
+            </div>
+        </div>
+    </div>
+</div>  
+<!-- 提示升级 -->
+<div class="g-pop pop_js" id="pop_alert" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">
+                <p class="ctr">您的角色不能出售矿石<br/>请先升级<font color="red" style="font-weight:bold">矿长</font></p>
+            </div>
+            <div class="g-popbtn">
+                <!-- <a class="btn btn-2 close_js">取 消</a> -->
+                <a class="btn btn-1 qsj">去升级</a>                
+            </div>
+             <a class="g-close close_js"></a>
+        </div>
+    </div>
+</div>  
+
+<!-- 购买成功 -->
+<div class="g-pop" id="pop_buy_success" style="display:none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main pop-c-gxn">
+            <div class="g-pop-txt">
+                <p class="pop-c-text">购买成功，您可以进行出售获得水晶，<br>出售价格会根据流量单价有一定的波<br>动。</p>
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-1">完 成</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 出售loading -->
+<div class="g-pop" id="pop_sell_loading" style="display:none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt-loading">
+                <p class="ctr">正在获取当前矿石价格</p>
+                <p class="g-pop-loading">请稍候<span>.</span><span>.</span><span>.</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 出售确认 -->
+<div class="g-pop pop_js" id="pop_confirm_sell" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">
+                <!-- <p class="pop-c-text">官方将扣除您<em>-</em>10%作为后续研发，请确保水晶余量充足。是否要将永久矿石出售到您的矿区？</p> -->
+                <p class="pop-c-text" >每类矿石上架库存至少为1才可展示在自己的矿区供玩家购买。<br/><font color="red">上架后不能下架，确定要上架吗？</font></p> 
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-2 close_js">取 消</a>
+                <a class="btn btn-1 ok_sell_js">好 的</a>                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 出售成功 -->
+<div class="g-pop" id="pop_sell_success" style="display:none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main pop-c-gxn">
+            <div class="g-pop-txt">
+                <p class="ctr">出售成功，获得<em>-</em>水晶！</p>
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-1">好 的</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="g-pop pop_js" id="pop_nomoney" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">
+                <p class="ctr">永久矿石余量不足</p>				
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-2 close_js">取消</a>
+                <!-- <a class="btn btn-1 pay_btn_js" data-type="0">充值</a> -->
+            </div>
+            <a class="g-close close_js"></a>
+        </div>
+    </div>
+</div>    
+
+<div class="g-pop pop_js" id="pop_tip" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">
+                <p class="ctr" style="line-height:1.8;">网络繁忙，请稍后再试。</p>
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-1 close_js">好 的</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="g-pop" id="pop_loading" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt-loading">
+                <p class="g-pop-loading">请稍候<span>.</span><span>.</span><span>.</span></p>
+            </div>
+        </div>
+    </div>
+</div>    
+    <div class="g-pop pop_js" id="pop_error" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 986.4px;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">已经被别的玩家抢走啦！</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">购买别的</a>
+                        
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+        
+         <div class="g-pop pop_js" id="pop_ts" style="display: none;">
+             <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">
+                <!-- <p class="pop-c-text">官方将扣除您<em>-</em>10%作为后续研发，请确保水晶余量充足。是否要将永久矿石出售到您的矿区？</p> -->
+                <p class="pop-c-text" style="text-align:center">是否要出售永久矿石到大厅？</p> 
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-2 close_js">取 消</a>
+                <a class="btn btn-1 ok_todt_js">好 的</a>                
+            </div>
+        </div>
+    </div>
+        </div> 
+        <div class="g-pop pop_js" id="pop_sm" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.766667); height: 960px;">
+        <div class="g-pop-main-big-tit">
+            <h1>扫码支付</h1>
+            <div class="pop-c-intro">
+                <img id="wxsm" src="" alt=""> 
+                <!-- <div style="height:80px;">
+                    
+                </div> -->
+                <dl>
+                                        <dt>第一步：</dt>
+                    <dd>请长按二维码进入支付页面完成支付</dd>
+                    <dt>第二步：</dt>
+                    <dd>回到矿场查看收益</dd>
+                                    </dl>
+                <!-- <div style="height:50px;">
+                    
+                </div> -->
+                <div class="g-popbtn">
+                    <a class="btn btn-1 close_js">取 消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+        <div id="zfb" style="display: none;">
+           
+       </div>
+
+<script type="text/javascript" src="/Public/home/js/zepto.min.js"></script>
+<script type="text/javascript" src="/Public/home/js/chushou.js"></script>
+
+
+</body></html>

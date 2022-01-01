@@ -1,0 +1,84 @@
+<include file="Common:header" />
+    <title>后台管理-模板设置</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+	<div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start">模板设置</a></li>
+                <li><a href="#tab-css">首页轮播</a></li>
+                <!-- <li><a href="#tab-units">其他设置</a></li> -->
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <div class="panel admin-panel">
+                    <div class="padding border-bottom">
+                        <input onclick="window.location.href='{:U('Tpl/addnav')}'" type="button" class="button button-small border-green" value="添加导航" />
+                    </div>
+                    <table class="table table-hover">
+                        <tr>
+                            <th width="100">ID</th>
+                            <th width="100">排序</th>
+                            <th width="200">导航名称</th>
+                            <th width="*">导航地址</th>
+                            <th width="100">管理操作</th>
+                        </tr>
+                        <foreach name="dh" item="n">
+                        <tr>
+                            <td>{$n['id']}</td>
+                            <td>{$n['navrand']}</td>
+                            <td>{$n['navname']}</td>
+                            <td>{$n['navurl']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Tpl/savenav',array(id=>$n['id']))}">修改</a> 
+                                <a class="button border-yellow button-little" href="{:U('Tpl/del',array(id=>$n['id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+                            </td>
+                        </tr>
+                        </foreach>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-panel" id="tab-css">
+                <div class="panel admin-panel">
+                    <div class="padding border-bottom">
+                        <input onclick="window.location.href='{:U('Tpl/slide')}'" type="button" class="button button-small border-green" value="添加轮播图" />
+                    </div>
+                    <table class="table table-hover">
+                        <tr>
+                            <th width="50">ID</th>
+                            <th width="150">图片名称</th>
+                            <th width="250">图片路径</th>
+                            <th width="*">跳转地址</th>
+                            <th width="100">管理操作</th>
+                        </tr>
+                        <volist name="List" id="v">
+                        <tr>
+                            <td>{$v['id']}</td>
+                            <td>{$v['img_name']}</td>
+                            <td><img src="__ROOT__/Public/Uploads/{$v['img_src']}" width="100"></td>
+                            <td>{$v['jump_link']}</td>
+                            <td>
+                                <a class="button border-blue button-little" href="{:U('Tpl/slide',array(id=>$v['id']))}">修改</a> 
+                                <a class="button border-yellow button-little" href="{:U('Tpl/delimg',array(id=>$v['id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+                            </td>
+                        </tr>
+                        </volist>
+                    </table>
+                </div>
+            </div>
+            <!-- div class="tab-panel" id="tab-units">
+                其他
+            </div> -->
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

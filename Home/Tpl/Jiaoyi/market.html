@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>农贸市场</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/usercenter.css">
+	<link rel="stylesheet" href="/css/market.css">
+	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/echarts.simple.min.js"></script>		
+	<script type="text/javascript" src="/js/index2.js"></script>
+<style>
+.duihuan_chenggong {
+    width: 1.67rem;
+    height: 0.6rem;
+    background: rgba(255,255,255,.5);
+    text-align: center;
+    line-height: 0.6rem;
+    z-index: 998;
+    display: none;
+    font-size: 0.28rem;
+    color: #ff0000;
+    border-radius: 0.15rem;
+    font-weight: bold;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.shade {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 997;
+    background: rgba(0,0,0,.3);
+    display: none;
+}
+.bounceIn,.bounceOut{
+	/*animate-duration: 2s !important;*/
+	animation-duration:.7s !important;
+	-webkit-animation-duration:.7s !important;
+}
+
+</style>
+</head>
+<body>
+	<div id="ma_head1"></div>
+	<div style="width: 100%;height: 2.15rem;"></div>
+	<!-- 种子列表 -->
+	<!--  -->
+	<ul class="bigBoss">
+	<li>
+			<p>1.00</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=2" onclick="return nowTime();"><img src="/picture/593f499ba27ce.png" /></a>
+			<p>核桃</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=8" onclick="return nowTime();"><img src="/picture/593f4c4de30b1.png" /></a>
+			<p>石榴</p>
+		</li><li>
+			<p>1.00</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=9" onclick="return nowTime();"><img src="/picture/593f4d4b80858.png" /></a>
+			<p>红枣</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=10" onclick="return nowTime();"><img src="/picture/593f4e0fab12d.png" /></a>
+			<p>葡萄</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=14" onclick="return nowTime();"><img src="/picture/593f4fd714a7d.png" /></a>
+			<p>哈密瓜</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=15" onclick="return nowTime();"><img src="/picture/593f555e62f2c.png" /></a>
+			<p>香梨</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=16" onclick="return nowTime();"><img src="/picture/593f57eac3de7.png" /></a>
+			<p>沙漠果</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=17" onclick="return nowTime();"><img src="/picture/593f58e568485.png" /></a>
+			<p>人参果</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=18" onclick="return nowTime();"><img src="/picture/593f5dbc92ee8.png" /></a>
+			<p>薰衣草</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=19" onclick="return nowTime();"><img src="/picture/593f5ffeb3c00.png" /></a>
+			<p>沙漠人参</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=20" onclick="return nowTime();"><img src="/picture/593f7712159d1.png" /></a>
+			<p>巴旦木</p>
+		</li><li>
+			<p>1</p>
+			<p>0%</p>
+			<a href="/index.php?m=jiaoyi&a=market_Detail&id=21" onclick="return nowTime();"><img src="/picture/593f786e570bd.png" /></a>
+			<p>和田玉</p>
+		</li>	
+		
+	</ul>
+<div class="shade"></div>
+<div class="duihuan_chenggong animated ">
+    <span>兑换成功</span><!--兑换不成功-->
+</div>	
+<!-- 种子列表结束 -->
+<input type="hidden" name="open_time" id="open_time" value="1499043600">	
+<input type="hidden" name="close_time" id="close_time" value="1499094000">		
+<input type="hidden" name="now_time" id="now_time" value="1499074307">		
+	
+	<div style="width: 100%;height: 1.8rem;" class="heheda"></div>
+	<div id="ma_foot">
+            <a href="/"> <img src="/picture/fanhuinongchang.png" class="fanhui"></a>
+	</div>
+	
+	
+	
+	
+</body>
+<script>
+	$(function(){
+        var zyW=$(".cardItem").width();
+        var zyH=$(".cardItem").height();
+        $("#echart").css("width",zyW)
+        $("#echart").css("height",zyH)
+		
+		// 基于准备好的dom，初始化echarts实例
+var myChart = echarts.init(document.getElementById('echart'));
+option = {
+    title: {
+        text: '堆叠区域图'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                backgroundColor: '#6a7985'
+            }
+        }
+    },
+    grid: {
+        left: '1%',
+        right: '9%',
+        bottom: '3%',
+		top:'3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['4.3','4.4','4.5','4.6','4.7','4.8','4.9'],
+            splitLine:{
+               show: true,
+               lineStyle: {
+                //   虚线
+                   type: 'dashed' 
+                }
+                
+            }
+        }
+    ],
+    yAxis: {
+        axisLine: {
+            show: false
+        },
+        axisTick: {
+            show: false
+        },
+        axisLabel: {
+            show: false
+        },
+        splitLine:{
+        	show: false
+        }
+    },
+    label: {
+            normal: {
+                show: true,
+                position: 'top'
+            }
+     },
+     textStyle: {
+            fontSize: 10
+                   // 主标题文字颜色
+    },
+    series : [
+        {
+            name:'邮件营销',
+            type:'line',
+            itemStyle : {  
+                normal : {  
+                    lineStyle:{  
+                        color:'#ff795d'
+                        //线条颜色
+                    }  
+                }  
+            }, 
+            // 是否堆叠
+            stack: '总量',
+            // 区域颜色
+            areaStyle: {normal: {color:'#fcedd6'}},
+            data:[120, 132, 101, 134, 90, 230, 210]
+        },
+        {
+            name:'联盟广告',
+            type:'line',
+            itemStyle : {  
+                normal : {  
+                    lineStyle:{  
+                        color:'#8bcdf0'
+                        //线条颜色
+                    }  
+                }  
+            }, 
+            data:[220, 182, 191, 234, 290, 330, 310]
+        },
+    ]
+};
+// 使用刚指定的配置项和数据显示图表。
+myChart.setOption(option);
+var browser = {
+		versions: function () {
+			var u = navigator.userAgent, app = navigator.appVersion;
+			return ; 
+		}(), 
+		language: (navigator.browserLanguage || navigator.language).toLowerCase() 
+	}        
+	//document.writeln("语言版本: "+browser.language);
+	//document.writeln(" 是否为移动终端: "+browser.versions.mobile);
+	//document.writeln(" ios终端: "+browser.versions.ios);
+	//document.writeln(" android终端: "+browser.versions.android);
+	//document.writeln(" 是否为iPhone: "+browser.versions.iPhone);
+	//document.writeln(" 是否iPad: "+browser.versions.iPad);
+	//document.writeln(navigator.userAgent);
+
+		
+	})
+	
+	function nowTime()
+	{
+		var open_time = $("#open_time").val();
+		var close_time = $("#close_time").val();
+		var now_time = $("#now_time").val();		
+		if(now_time >= open_time && now_time<=close_time)
+		{
+			return true;
+		}else{
+			$(".shade").css("display","block");
+			$(".duihuan_chenggong").css("display","block").removeClass("bounceOut").addClass("bounceIn");
+			$(".duihuan_chenggong")("未开盘")
+			setTimeout(function(){
+				$(".duihuan_chenggong").removeClass("bounceIn").addClass("bounceOut");
+				setTimeout(function(){
+					$(".duihuan_chenggong").css("display","none");
+					$(".shade").css("display","none");
+				},800)
+			},1500)			
+			return false;
+		}
+		
+	}
+</script>
+</html>

@@ -1,0 +1,837 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>农贸市场</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="/Public/gold/rem_zy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/Public/gold/rem_zy/css/userCenter.css">
+	<link rel="stylesheet" href="/Public/gold/rem_zy/css/market.css">	
+	<script src="/Public/gold/rem_zy/js/jquery.min.js"></script>
+	<!-- <script src="/Public/gold/rem_zy/js/echarts.simple.min.js"></script>		 -->
+	<script type="text/javascript" src="/Public/gold/rem_zy/js/index.js"></script>
+	 <!-- <script src="/Public/gold/rem_zy/js/echarts.js"></script> -->
+	  <script src="/Public/echarts/echarts.min.js"></script>
+	<script>
+	if(-1 == 1){
+		history.go(-1);		
+	}
+	</script>
+</head>
+<body>
+	<div id="ma_head1"></div>
+	<div style="width: 100%;height: 2.15rem;"></div>
+         <div id="mengban" style="display:none;z-index:99;width:100%;height:100%;position:fixed;top:0;left:0;background:rgba(0,0,0,.7);">
+                <!-- <img src="/Public/gold/img/index/jiazai.gif" />  -->
+           </div> 
+	<div class="alert_zy">
+		<div style="width: 100%;height: 2.15rem;"></div>
+		
+		<!--内容开始-->
+		<div class="saleRose">
+			<div class="saleImg">
+				<img src="/Public/market/<?php echo $_GET['id']; ?>.png" style="width:1.2rem;">
+				<h1>{$x_price}</h1>
+			</div>
+			<div class="fudu">
+				<p>涨额：<span>{$x_price-$kp_b}</span></p>
+				<p>涨幅：<span>{$zf}</span>%</p>
+			</div>
+		</div>
+		<table class="saleTable">
+			<tbody>
+				<tr>
+					<td>今开</td>
+					<td>最低</td>
+					<td>最高</td>
+					<td>成交</td>
+				</tr>
+				<tr>
+					<td>{$kp_b}</td>
+					<td>{$low}</td>
+					<td>{$high}</td>
+					<td>{$today_cjnum}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div class="selectCard">
+			<div style="width: 100%; height:0.5rem;">
+				<ul class="changeLi l">
+					<!-- <li>分时</li> -->
+					<li>日K</li>
+					<li>分时</li>
+				</ul>
+				
+			</div>
+			<div style="width: 6.26rem; height:6rem;">
+				<!-- <div class="cardItem"> -->
+					<!-- <div id="echart"></div> -->
+				<!-- </div> -->
+				<div class="cardItem" style="display: block;border:0px;">
+					<!--<div id="echart"></div>-->
+					<div id="container" style="width: 100%; height:90%"></div>					
+				</div>
+
+				<div class="cardItem" style="display: none; border:0px;">
+					<div id="container1" style="width: 6.26rem; height:5.4rem"></div>					
+				</div>
+			</div>
+		</div>
+			<ul class="biaoge">			
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=2">核桃</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=8">石榴</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=9">红枣</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=10">葡萄</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=14">哈密瓜</a></li>
+			<li><a style="color:#f4771c" href="index.php?m=jiaoyi&a=market_Detail&id=15">香梨</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=16">沙漠果</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=17">人参果</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=18">薰衣草</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=19">沙漠人参</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=20">巴旦木</a></li>
+			<li><a  href="index.php?m=jiaoyi&a=market_Detail&id=21">和田玉</a></li>
+			<li style="border-left:1px solid #b6b5b5;margin-left: -1px;"><a href="index.php?m=jiaoyi&a=market_Detail&id=0"  >种子</a></li>
+			</ul>		
+		<!-- <button class="fanhuiBtn">返回农场</button> -->
+		<div class="productDes">
+			<span>产品：</span>
+			<span>{$guoshi}</span>
+			<span>现价</span>
+			<span>{$x_price}</span>
+			<span>涨停</span>
+			<span>{$kp_b+$kp_b*50/100}</span>
+			<span>跌停</span>
+			<span>{$kp_b-$kp_b*50/100}</span>
+		</div>
+		<div class="buy">
+			<h2 class="maiTitle">买入</h2>
+			<div class="inputStyle">
+				<span class="allType l">买入价格</span>
+				<input type="text" name="buyPrice" id="buyPrice" value=""  class="ipt">
+				<span class="rightPart">金币</span>
+			</div>
+			<div class="inputStyle">
+				<span class="allType l">买入数量</span>
+				<input type="text" name="buyNums" id="buyNums" value=""  class="ipt">
+				<span class="rightPart">果实</span>
+			</div>
+			<div class="inputStyle">
+				<span class="allType l">总计金币</span>
+				<input type="text" name="buyTotal" id="buyTotal" value='' placeholder="0" readonly  class="ipt">
+				<span class="rightPart">金币</span>
+			</div>
+			<div class="fee">
+				<p class="left">金币持有量：<span>{$gold}</span></p>
+				<p class="right">手续费：<span>0</span>金币</p>
+			</div>
+			<button class="buyBtn" id="buyNow">限价买入</button>
+		</div>
+
+
+		<div class="buy sell">
+			<h2 class="maiTitle">卖出</h2>
+			<div class="inputStyle">
+				<span class="allType l">卖出价格</span>
+				<input type="text" name="sellPrice" id="sellPrice" value=""  class="ipt">
+				<span class="rightPart">金币</span>
+			</div>
+			<div class="inputStyle">
+				<span class="allType l">卖出数量</span>
+				<input type="text" name="sellNums" id="sellNums" value=""  class="ipt">
+				<span class="rightPart">果实</span>
+			</div>
+			<div class="inputStyle">
+				<span class="allType l">总计金币</span>
+				<input type="text"  name="sellTotal" id="sellTotal" value='' readonly placeholder="0" class="ipt">
+				<span class="rightPart">金币</span>
+			</div>
+			<div class="fee">
+				<p class="left">果实持有量：<span>{$gsnum}</span></p>
+				<p class="right">手续费：<span class="sellcost">0</span>金币</p>
+			</div>
+			<button class="buyBtn" id="sellNow">限价卖出</button>
+		</div>
+		
+		<h2 class="table_h2">委托信息</h2>
+		<table class="messTable">
+			<thead>
+				<tr>
+					<th>买/卖</th>
+					<th>价格</th>
+					<th>委托量</th>
+				</tr>
+			</thead>
+			<tbody>
+			<foreach name="info" item="v">
+				<tr>
+					<td><?php if($v['type']==1){echo '求购';}else{echo '挂售';} ?></td>
+					<td>{$v.price}</td>
+					<td>{$v.num}</td>
+				</tr>
+				</foreach>
+						</tbody>
+		</table>
+<input type="hidden" name="member_gold" id="member_gold" value="">
+<input type="hidden" name="haveNums" id="haveNums" value="">
+<input type="hidden" name="crops_id" id="crops_id" value="<?php echo $_GET['id'];?>">
+<input type="hidden" name="limit_up" id="limit_up" value="100000" >
+<input type="hidden" name="limit_down" id="limit_down" value="100" >
+<input type="hidden" name="trade_cost" id="trade_cost" value="" >
+		<h2 class="table_h2">当前委托<span class="right renew"><!--[刷新]--></span></h2>
+		<table class="messTable">
+			<thead>
+				<tr>
+					<th>委托时间</th>
+					<th>产品</th>
+					<th>类型</th>
+					<th>价格</th>
+					<th>委托量</th>
+					<th>已成交</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+			<foreach name="info" item="v">
+					<tr>
+					<td>13:08:49</td>
+					<td><?php if($v['gsid']==2){echo '核桃';}else{
+					if($v['gsid']==8){echo '石榴';}if($v['gsid']==9){echo '红枣';}
+					if($v['gsid']==10){echo '葡萄';}if($v['gsid']==14){echo '哈密瓜';}
+					if($v['gsid']==15){echo '香梨';}if($v['gsid']==16){echo '沙漠果';}
+					if($v['gsid']==17){echo '人参果';}if($v['gsid']==18){echo '薰衣草';}
+					if($v['gsid']==19){echo '沙漠人参';}if($v['gsid']==20){echo '巴旦木';}
+					if($v['gsid']==21){echo '和田玉';}
+					} ?></td>
+					<td><?php if($v['type']==1){echo '求购';}else{echo '挂售';} ?></td>
+					<td>{$v.price}</td>
+					<td>{$v.num}</td>
+					<td>{$v.num}</td>
+					<td>匹配</td>
+					<td>
+					<a style="color:#f49e1c;" class="revoked" code="{$v.id}">撤销</a>					</td>
+					<!-- <td></td> -->
+				</tr>
+               </foreach>	
+                  <foreach name="info2" item="v">
+					<tr>
+					<td>13:08:49</td>
+					<td><?php if($v['gsid']==2){echo '核桃';}else{
+					if($v['gsid']==8){echo '石榴';}if($v['gsid']==9){echo '红枣';}
+					if($v['gsid']==10){echo '葡萄';}if($v['gsid']==14){echo '哈密瓜';}
+					if($v['gsid']==15){echo '香梨';}if($v['gsid']==16){echo '沙漠果';}
+					if($v['gsid']==17){echo '人参果';}if($v['gsid']==18){echo '薰衣草';}
+					if($v['gsid']==19){echo '沙漠人参';}if($v['gsid']==20){echo '巴旦木';}
+					if($v['gsid']==21){echo '和田玉';}
+					} ?></td>
+					<td><?php if($v['type']==1){echo '求购';}else{echo '挂售';} ?></td>
+					<td>{$v.price}</td>
+					<td>{$v.num}</td>
+					<td>{$v.num}</td>
+					<td>匹配</td>
+					<td>
+					<a style="color:#f49e1c;" class="revoked" code="{$v.id}">撤销</a>					</td>
+					<!-- <td></td> -->
+				</tr>
+               </foreach>			   
+			</tbody>
+		</table>
+
+		<h2 class="table_h2">历史委托<span class="right renew"><!--[刷新]--></span></h2>
+		<table class="messTable">
+			<thead>
+				<tr>
+					
+					<th>产品</th>
+					<th>类型</th>
+					<th>价格</th>
+					<th>委托量</th>
+					<th>已成交</th>
+					<th>状态</th>
+					<!-- <th>操作</th> -->
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+					
+					<td><?php if($v['gsid']==2){echo '核桃';}else{
+					if($v['gsid']==8){echo '石榴';}if($v['gsid']==9){echo '红枣';}
+					if($v['gsid']==10){echo '葡萄';}if($v['gsid']==14){echo '哈密瓜';}
+					if($v['gsid']==15){echo '香梨';}if($v['gsid']==16){echo '沙漠果';}
+					if($v['gsid']==17){echo '人参果';}if($v['gsid']==18){echo '薰衣草';}
+					if($v['gsid']==19){echo '沙漠人参';}if($v['gsid']==20){echo '巴旦木';}
+					if($v['gsid']==21){echo '和田玉';}
+					} ?></td>
+					<td><?php if($v['type']==1){echo '求购';}else{echo '挂售';} ?></td>					
+					<td>{$v.price}</td>
+					<td>{$v.num}</td>
+					<td>{$v.num}</td>
+					<td><?php if($v['zt']==1){echo '完成';}else{echo '进行';} ?></td>
+					<!-- <td></td> -->
+				</tr>
+				</tbody>
+		</table>
+		
+		<div class="wenxinshow">
+			<p class="coinP">温馨提示:</p>
+			<p class="coinP">1.交易数量以整倍进行交易</p>
+			<p class="coinP">2.果实出售手续费1%</p>
+			<!-- <p class="coinP">3.领取推广大礼包后，需将农场等级提升四级后方可在淘金果园出售种子和果实</p> -->
+		</div>
+		<!--内容结束-->
+		
+		<div style="width: 100%;height: 1.8rem;"></div>
+	</div>
+	
+	<!--提示框-->
+        <div class="duihuan_chenggong animated" style="display:none;background:rgba(244,158,28,.5);width:4rem;height: 0.6rem;text-align: center;line-height: 0.6rem;position: fixed;font-weight: bold;border-radius: 0.15rem;left: 0;right: 0;top: 0;bottom: 0;margin: auto;color: #ff0000;font-size: 0.28rem;z-index: 999;">
+            <span></span>
+        </div>	
+	
+	<div style="width: 100%;height: 1.8rem;" class="heheda"></div>
+	<div id="ma_foot">
+            <a href="index.php?m=index"> <img src="/Public/gold/rem_zy/images/exhibition/fanhuinongchang.png" class="fanhui"></a>
+	</div>
+	
+	
+	
+	
+</body>
+<script>
+	$(function(){
+        var zyW=$(".cardItem").width();
+        var zyH=$(".cardItem").height();
+        <!-- $("#echart").css("width",zyW) -->
+        <!-- $("#echart").css("height",zyH) -->
+        $("#main").css("width",zyW)
+        $("#main").css("height",zyH)
+	
+
+var browser = {
+		versions: function () {
+			var u = navigator.userAgent, app = navigator.appVersion;
+			return ; 
+		}(), 
+		language: (navigator.browserLanguage || navigator.language).toLowerCase() 
+	}        
+	//document.writeln("语言版本: "+browser.language);
+	//document.writeln(" 是否为移动终端: "+browser.versions.mobile);
+	//document.writeln(" ios终端: "+browser.versions.ios);
+	//document.writeln(" android终端: "+browser.versions.android);
+	//document.writeln(" 是否为iPhone: "+browser.versions.iPhone);
+	//document.writeln(" 是否iPad: "+browser.versions.iPad);
+	//document.writeln(navigator.userAgent);
+
+		
+	})
+	$(function(){	
+                function alertMessage(msg){
+                    $(".duihuan_chenggong").css("display", "block").removeClass("bounceOut").addClass("bounceIn");
+                    $(".duihuan_chenggong").html(msg)
+                        setTimeout(function () {
+                            $(".duihuan_chenggong").css("display", "none");
+                            $(".duihuan_chenggong").html('');
+                            $("#mengban").hide();
+                        }, 1800)
+                       
+                }
+	//买入
+		$("#buyNow").click(function(){
+                $("#mengban").show();
+		$("#buyPrice").blur();
+		$("#buyNums").blur();
+			var buyPrice = $("#buyPrice").val();
+			var buyNums = $("#buyNums").val();
+			var buyTotal = $("#buyTotal").val();
+			var haveNums = $("#member_gold").val();
+			var limit_up = $("#limit_up").val();
+			var limit_down = $("#limit_down").val();
+			//if(isNaN(buyPrice) || isNaN(buyNums) || isNaN(buyTotal) || '' == $.trim(buyPrice) ||  '' == $.trim(buyNums) || '' == $.trim(buyTotal) || 0 == Number(buyPrice) || 0 == Number(buyNums) || 0== Number(buyTotal) || buyPrice>limit_up || buyPrice<limit_down)
+			//{
+                //alertMessage('请填写正确数值');
+				//return false;
+			//}
+
+			//if(buyNums % 10 != 0)
+			//{
+				//alertMessage("交易数量以整百倍进行交易");
+				//return false;				
+			//}			
+			if(parseInt(buyTotal) > parseInt(haveNums) || buyTotal == 0)
+			{
+				alertMessage("金币不足");
+				return false;
+			}	
+			var crops_id = $("#crops_id").val();
+			$.ajax({
+				url:"/index.php?m=jiaoyi&a=buyNow",
+				type:'post',
+				data:{buyPrice:buyPrice,buyNums:buyNums,crops_id:crops_id},
+				dataType:'json',
+				beforeSend:function(){
+					$("#mengban").show();
+				},
+				success:function(data){	
+			
+					if(data.code == 2)
+					{
+						$("#mengban").hide();
+						alertMessage(data.message);
+						<!-- return false; -->
+						window.location.href=window.location.href;
+					}else{
+						$("#mengban").hide();
+						alertMessage(data.message);
+						return false;
+					}
+				},
+				error:function(){
+					alertMessage("网络错误");
+					return false;
+				}
+			})				
+			
+		})
+		
+		//卖出
+		$("#sellNow").click(function(){
+        $("#mengban").show();
+		$("#sellPrice").blur();
+		$("#sellNums").blur();		
+			var sellPrice = $("#sellPrice").val();
+			var sellNums = $("#sellNums").val();
+			var sellTotal = $("#sellTotal").val();
+			var haveNums = $("#haveNums").val();
+			var limit_up = $("#limit_up").val();
+			var limit_down = $("#limit_down").val();	
+                        <!-- console.log(sellNums,haveNums); -->
+			//if(isNaN(sellPrice) || isNaN(sellNums) || isNaN(sellTotal) || '' == $.trim(sellPrice) ||  '' == $.trim(sellNums) || '' == $.trim(sellTotal) || 0 == Number(sellPrice) || 0 == Number(sellNums) || 0== Number(sellTotal) || sellPrice>limit_up || sellPrice<limit_down)
+			//{
+				//alertMessage("请填写正确数值");
+				//return false;
+			//}
+			//if(sellNums % 10 != 0)
+			//{
+				//alertMessage("交易数量以整百倍进行交易");
+				//return false;				
+			//}
+			//if(parseInt(sellNums) > parseInt(haveNums) || haveNums == 0)
+			//{
+				//alertMessage("库存不足");
+				//return false;
+			//}
+			var crops_id = $("#crops_id").val();
+			$.ajax({
+				url:"index.php?m=jiaoyi&a=sellNow",
+				type:'post',
+				data:{sellPrice:sellPrice,sellNums:sellNums,crops_id:crops_id},
+				dataType:'json',
+				beforeSend:function(){
+					$("#mengban").show();
+				},				
+				success:function(data){	
+					if(data.code == 2)
+					{
+						$("#mengban").hide();
+						alertMessage(data.message);
+						<!-- return false; -->
+						window.location.href=window.location.href;
+					}else{
+						$("#mengban").hide();
+						alertMessage(data.message);
+						return false;
+					}
+				},
+				error:function(){
+					alertMessage("网络错误");
+					return false;
+				}
+			})			
+			
+		})
+
+		$("#buyPrice").blur(function(){
+			var buyPrice = $("#buyPrice").val();
+			var buyNums = $("#buyNums").val();
+			$("#buyTotal").val(Math.round(buyPrice*buyNums*100)/100)
+		})
+		$("#buyNums").blur(function(){
+			var buyPrice = $("#buyPrice").val();
+			var buyNums = $("#buyNums").val();
+			$("#buyTotal").val(Math.round(buyPrice*buyNums*100)/100)
+		})
+		$("#sellPrice").blur(function(){
+			var sellPrice = $("#sellPrice").val();
+			var sellNums = $("#sellNums").val();
+			var trade_cost = parseInt($("#trade_cost").val());			
+			$("#sellTotal").val(Math.round(sellPrice*sellNums*100)/100)
+			$('.sellcost').text(sellPrice*sellNums*trade_cost/100);
+		})
+		$("#sellNums").blur(function(){
+			var sellPrice = $("#sellPrice").val();
+			var sellNums = $("#sellNums").val();
+			var trade_cost = parseInt($("#trade_cost").val());	
+			$("#sellTotal").val(Math.round(sellPrice*sellNums*100)/100)
+			$('.sellcost').text(sellPrice*sellNums*trade_cost/100);
+		})
+
+		$('#buyPrice').bind('input propertychange', function() {  
+			var buyPrice = Number($("#buyPrice").val());
+			var limit_up = $("#limit_up").val();
+			var limit_down = $("#limit_down").val();
+			if(buyPrice > limit_up)
+			{
+				$("#buyPrice").val(limit_up);
+			}
+		
+		});  	
+		$('#sellPrice').bind('input propertychange', function() {  
+			var sellPrice = Number($("#sellPrice").val());
+			var limit_up = $("#limit_up").val();
+			var limit_down = $("#limit_down").val();
+			if(sellPrice > limit_up)
+			{
+				$("#sellPrice").val(limit_up);				
+			}
+					
+		});
+		
+	//撤销农贸市场订单
+	$(".revoked").click(function(){
+		var code = $(this).attr('code');
+            $.ajax({
+                type: "POST",
+                url: "/index.php?m=jiaoyi&a=revoked_order",
+                data: {code:code},
+                dataType: "json",
+				beforeSend:function(){
+					$("#mengban").show();
+				},				
+                success: function (data) {
+					if(data.code == 1)
+					{
+						$("#mengban").hide();
+						alert(data.msg);
+						window.location.href=window.location.href;
+					}else{
+						$("#mengban").hide();
+						alert(data.msg);
+						return false;
+					}
+					
+                },
+				error:function(){
+					alert("网络错误");
+					return false;
+				}
+            })
+	})
+})
+</script>
+<script type="text/javascript">
+	$( function () {
+
+
+            // 基于准备好的dom，初始化echarts实例    
+            var myChart = echarts.init(document.getElementById('container'));
+            // 数据意义：开盘(open)，收盘(close)，最低(lowest)，最高(highest)
+            var data0 = splitData([
+                ['2017/07/06',1,1,1,1],['2017/07/07',1,1,1,1],['2017/07/08',1,1,1,1],            ]);
+
+            function splitData(rawData) {
+                var categoryData = [];
+                var values = []
+                for (var i = 0; i < rawData.length; i++) {
+                    categoryData.push(rawData[i].splice(0, 1)[0]);
+                    values.push(rawData[i])
+                }
+                return {
+                    categoryData: categoryData,
+                    values: values
+                };
+            }
+            function calculateMA(dayCount) {
+                var result = [];
+                for (var i = 0, len = data0.values.length; i < len; i++) {
+                    if (i < dayCount) {
+                        result.push('-');
+                        continue;
+                    }
+                    var sum = 0;
+                    for (var j = 0; j < dayCount; j++) {
+                        sum += data0.values[i - j][1];
+                    }
+                    result.push(sum / dayCount);
+                }
+                return result;
+            }
+            option = {
+               
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross'
+                    }
+                },
+//                legend: {
+//                    data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30']
+//                },
+                grid: {
+                    top:'5%',
+                    left: '0%',
+                    right: '0%',
+                    bottom: '15%',
+                    containLabel: 'true'
+                },
+                xAxis: {
+                    type: 'category',
+                    data: data0.categoryData,
+                    scale: true,
+                    boundaryGap: false,
+                    axisLine: {onZero: false},
+                    splitLine: {show: false},
+                    splitNumber: 20,
+                    min: 'dataMin',
+                    max: 'dataMax',
+                    boundaryGap: ['20%', '20%']
+                },
+                yAxis: {
+                    scale: true,
+                    splitArea: {
+                        show: true
+                    }
+                },
+                dataZoom: [
+                    {
+                        type: 'inside',
+//                        start: 1,
+//                        end: 100
+                    },
+                    {
+                        show: true,
+                        type: 'slider',
+                        y: '92%',
+//                        start: 1,
+//                        end: 100
+                    }
+                ],
+                series: [
+                    {
+                        name: '日K',
+                        type: 'candlestick',
+                        data: data0.values,
+                        markPoint: {
+                            label: {
+                                normal: {
+                                    formatter: function (param) {
+                                        return param != null ? Math.round(param.value) : '';
+                                    }
+                                }
+                            },
+//                            data: [
+//                                {
+//                                    name: 'XX标点',
+//                                    coord: ['2013/5/31', 2300],
+//                                    value: 2300,
+//                                    itemStyle: {
+//                                        normal: {color: 'rgb(41,60,85)'}
+//                                    }
+//                                },
+//                                {
+//                                    name: 'highest value',
+//                                    type: 'max',
+//                                    valueDim: 'highest'
+//                                },
+//                                {
+//                                    name: 'lowest value',
+//                                    type: 'min',
+//                                    valueDim: 'lowest'
+//                                },
+//                                {
+//                                    name: 'average value on close',
+//                                    type: 'average',
+//                                    valueDim: 'close'
+//                                }
+//                            ],
+                            tooltip: {
+                                formatter: function (param) {
+                                    return param.name + '<br>' + (param.data.coord || '');
+                                }
+                            }
+                        },
+                        markLine: {
+                            symbol: ['none', 'none'],
+                            data: [
+                                [
+                                    {
+                                        name: 'from lowest to highest',
+                                        type: 'min',
+                                        valueDim: 'lowest',
+                                        symbol: 'circle',
+                                        symbolSize: 1,
+                                        label: {
+                                            normal: {show: false},
+                                            emphasis: {show: false}
+                                        }
+                                    },
+                                    {
+                                        type: 'max',
+                                        valueDim: 'highest',
+                                        symbol: 'circle',
+                                        symbolSize: 1,
+                                        label: {
+                                            normal: {show: false},
+                                            emphasis: {show: false}
+                                        }
+                                    }
+                                ],
+//                                {
+//                                    name: 'min line on close',
+//                                    type: 'min',
+//                                    valueDim: 'close'
+//                                },
+//                                {
+//                                    name: 'max line on close',
+//                                    type: 'max',
+//                                    valueDim: 'close'
+//                                }
+                            ]
+                        }
+                    },
+                    {
+                        name: 'MA5',
+                        type: 'line',
+                        data: calculateMA(5),
+                        smooth: true,
+                        lineStyle: {
+                            normal: {opacity: 0.5}
+                        }
+                    },
+                    {
+                        name: 'MA10',
+                        type: 'line',
+                        data: calculateMA(10),
+                        smooth: true,
+                        lineStyle: {
+                            normal: {opacity: 0.5}
+                        }
+                    },
+                    {
+                        name: 'MA20',
+                        type: 'line',
+                        data: calculateMA(20),
+                        smooth: true,
+                        lineStyle: {
+                            normal: {opacity: 0.5}
+                        }
+                    },
+                    {
+                        name: 'MA30',
+                        type: 'line',
+                        data: calculateMA(30),
+                        smooth: true,
+                        lineStyle: {
+                            normal: {opacity: 0.5}
+                        }
+                    },
+                ]
+            };
+            // 使用刚指定的配置项和数据显示图表。    
+            myChart.setOption(option);
+
+            //
+            var myChart1 = echarts.init(document.getElementById('container1'));
+            var symbolSize = 20;
+			var data = [[0, 0], [10, 10], [30, 20], [40, 30], [-22.1, 40]];
+
+			option = {
+    title: {
+        
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+    },
+    toolbox: {
+        show: false,
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    grid: {
+        top:'5%',
+        left: '0%',
+        right: '0%',
+        bottom: '15%',
+        containLabel: 'true'
+    },
+    xAxis:  {
+        type: 'category',
+        boundaryGap: false,
+        data: ['08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+    },
+    yAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value}'
+        },
+        axisPointer: {
+            snap: true
+        }
+    },
+    visualMap: {
+        show: false,
+        dimension: 0,
+        pieces: [{
+            gt:0,
+            lte:7,
+            color: 'red'
+        }]
+    },
+     dataZoom: [
+                    {
+                        type: 'inside',
+//                        start: 1,
+//                        end: 100
+                    },
+                    {
+                        show: true,
+                        type: 'slider',
+                        y: '92%',
+//                        start: 1,
+//                        end: 100
+                    }
+                ],	
+    series: [
+        {
+            name:'交易价格',
+            type:'line',
+            smooth: true,
+            data: [1],
+            
+        }
+    ]
+};
+
+
+			myChart1.setOption(option);
+            //
+
+    })
+	setInterval(function(){
+		$.ajax({
+			url:"/index.php/Market/matching.html",
+			type:"POST",
+			data:{},
+			success:function(){
+			},
+			error:function(){
+			}
+		})
+	},3000)	
+    </script>
+</html>

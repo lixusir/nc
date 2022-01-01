@@ -1,0 +1,146 @@
+<include file="Common:header" />
+    <title>后台管理-签到设置</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab" data-toggle="click">
+    <div class="tab-head">
+        <ul class="tab-nav">
+            <li class="active">
+                <a href="#tab-start2">签到设置</a>
+            </li>
+        </ul>
+    </div>
+    <div style="padding-left: 20px; padding-top: 50px;" class="tab-body">
+        <div class="tab-panel active" id="tab-start2">
+            <form action="{:U('Setup/edit')}" method="post" class="form-inline">
+                
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_LEVEL_1">金币数量：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_LEVEL_1" value="{$Think.config.SIGN_LEVEL_1}" size="20"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_RATIO_1">奖励比例：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_RATIO_1" value="{$Think.config.SIGN_RATIO_1}" size="20"/>
+                    </div>
+                </div>
+
+                <br></br>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_LEVEL_2">金币数量：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_LEVEL_2" value="{$Think.config.SIGN_LEVEL_2}" size="20"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_RATIO_2">奖励比例：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_RATIO_2" value="{$Think.config.SIGN_RATIO_2}" size="20"/>
+                    </div>
+                </div>
+
+                <br></br>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_LEVEL_3">金币数量：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_LEVEL_3" value="{$Think.config.SIGN_LEVEL_3}" size="20"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_RATIO_3">奖励比例：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_RATIO_3" value="{$Think.config.SIGN_RATIO_3}" size="20"/>
+                    </div>
+                </div>
+
+                <br></br>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_LEVEL_4">金币数量：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_LEVEL_4" value="{$Think.config.SIGN_LEVEL_4}" size="20"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_RATIO_4">奖励比例：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_RATIO_4" value="{$Think.config.SIGN_RATIO_4}" size="20"/>
+                    </div>
+                </div>
+
+                <br></br>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_LEVEL_5">金币数量：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_LEVEL_5" value="{$Think.config.SIGN_LEVEL_5}" size="20"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_RATIO_5">奖励比例：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_RATIO_5" value="{$Think.config.SIGN_RATIO_5}" size="20"/>
+                    </div>
+                </div>
+
+                <br></br>
+
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_LEVEL_5">大于数量：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_LEVEL_5" value="{$Think.config.SIGN_LEVEL_5}" size="20"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label for="SIGN_RATIO_5">奖励比例：</label>
+                    </div>
+                    <div class="field">
+                        <input type="text" class="input" name="SIGN_RATIO_6" value="{$Think.config.SIGN_RATIO_6}" size="20"/>
+                    </div>
+                </div>
+
+                <br></br>
+
+                <div class="form-button">
+                    <button class="button" type="submit">保存设置</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

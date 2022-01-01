@@ -1,0 +1,24 @@
+<div class="header">
+        <div class="container clear">
+            <a href="/" class="logo"></a>
+            <ul class="menu clear" id="menu">
+                <li class=select><i class="icon">&#xe601;</i><a href="/">首页</a><i class="icon arrow">&#xe603;</i></li>
+                
+                    
+                <li ><i class="icon">&#xe609;</i><a href="index.php?m=jiaoyi&a=market2">农贸市场</a><i class="icon arrow">&#xe603;</i></li>
+                <li ><i class="icon">&#xe609;</i><a href="index.php?m=index&a=index2">进入农场</a><i class="icon arrow">&#xe603;</i></li>
+              
+            </ul>
+
+            <div class="link clear">
+			<?php if(session('uid')==null){ ?>
+                    <a href="index.php?m=login&a=login2">登录</a>
+                    <a href="index.php?m=reg&a=reg2">注册</a>
+			<?php }else{ ?>
+			<a href="/index.php?m=user">用户中心</a>
+                    <a href="index.php?m=login&a=logout">退出</a>
+			<?php } ?>
+            </div>
+            <div class="switch" id="switch"><i></i></div>
+        </div>
+    </div>

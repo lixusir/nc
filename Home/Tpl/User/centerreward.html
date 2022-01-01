@@ -1,0 +1,89 @@
+<!doctype>
+<html>
+	<head>
+		<title>推广奖励</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		
+		<include file="Common:top" />
+<div id="changeThings">
+			<h3 class="changePw">推广奖励列表</h3>
+			<!-- <div class="iptStyle"> -->
+				<!-- <span class="allType l">来源</span> -->
+				<!-- <input type="text" placeholder="用户ID" class="ipt"> -->
+			<!-- </div> -->
+			<!-- <div class="iptStyle"> -->
+				<!-- <span class="allType l">类型</span> -->
+				<!-- <select class="allSelect l" style="padding-left: 0.2rem;"> -->
+					<!-- <option>全部</option> -->
+					<!-- <option>全部</option> -->
+				<!-- </select> -->
+			<!-- </div> -->
+			<!-- <div class="iptStyle"> -->
+				<!-- <span class="allType l">开始</span> -->
+				<!-- <input type="text" class="ipt"> -->
+			<!-- </div> -->
+			<!-- <div class="iptStyle"> -->
+				<!-- <span class="allType l">结束</span> -->
+				<!-- <input type="text" class="ipt"> -->
+			<!-- </div> -->
+			<!-- <button>查询</button> -->
+			<table cellspacing="0" class="tableList">
+				<thead>
+					<tr>
+						<th>来源</th>
+						<th>类型</th>
+						<th>奖励</th>
+						<th>数量</th>
+						<th>时间</th>
+					</tr>
+				</thead>
+				<tbody>
+				<foreach name="info" item="v">
+					<tr>
+						<td>{$v.userid}</td>
+						<td>{$v.username}</td>
+						<td>{$v.regtime}</td>
+						<td>{$v.username}</td>
+						<td>{$v.regtime}</td>
+					</tr>
+</foreach>					
+				</tbody>
+				
+							</table>		
+		</div>
+	</body>	
+	<script type="text/javascript" src="js/layui.js"></script>
+	<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  var start = {
+    //min: laydate.now()
+    min:'2000-01-01 23:59:59'
+    ,max: '2099-06-16 23:59:59'
+    ,istoday: false
+    ,choose: function(datas){
+    }
+  }; 
+  document.getElementById('LAY_demorange_s').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+  document.getElementById('LAY_demorange_s1').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+});
+</script>
+</html>

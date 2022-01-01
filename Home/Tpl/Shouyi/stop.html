@@ -1,0 +1,123 @@
+<html class="pixel-ratio-3 retina ios ios-9 ios-9-1 ios-gt-8 ios-gt-7 ios-gt-6"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/Public/web/css/lib.css?2">
+   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1, minimum-scale=1.0">
+   <meta content="telephone=no" name="format-detection">
+    <title>矿机收益</title>
+    <script src="/Public/web/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="/Public/web/css/weui.min.css">
+    <link rel="stylesheet" href="/Public/web/css/jquery-weui.min.css">
+    <link href="/Public/web/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Public/web/fonts/iconfont.css" rel="stylesheet">
+    <script src="/Public/web/js/layer.js"></script><link href="http://china4.green-entrepreneurship.cc/Public/web/js/need/layer.css" type="text/css" rel="styleSheet" id="layermcss">
+</head>
+<body>
+<div id="zhe" style="width:100%;height:100%;background:rgba(0,0,0,0.5);position: fixed;z-index:90;display:none">
+	
+</div>
+<!--顶部开始-->
+<header class="header">
+    <span class="header_l"><a href="javascript:history.go(-1);"><i class="fa fa-chevron-left"></i></a></span>
+    <span class="header_c">矿机收益</span>
+	<span style="position: absolute;right: 40px;top: 0px;text-align:center;width:70px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size: 12px; ">未来之星</span>
+    <span class="header_r"><a href="//"><i class="fa fa-user"></i></a></span>
+</header>
+<div>
+  	   <ul style="width:90%;padding-top:15%;margin-left:5%">
+        <li style="width:50%;float:left;text-align:center;color:#000;background-color:#fff;height: 30px;line-height: 30px;border-bottom-left-radius: 5px;border-top-left-radius:5px;"><a style="color:#000" href="index.php?m=shouyi">运行中云矿机</a></li>
+		<li style="width:50%;float:left;text-align:center;color:#05B6A3;background-color:#05B6A3;height: 30px;line-height: 30px;border-bottom-right-radius: 5px;border-top-right-radius:5px;"><a style="color:#fff" href="index.php?m=shouyi&a=stop">已停止云矿机</a></li>
+	   </ul>
+</div>
+<div class="height40"></div>
+<!--顶部结束-->
+
+<!--列表开始-->
+<div class="zhul" style="padding-bottom:5px;margin-bottom:80px">
+    <table style="width: 90%;margin-left: 5%;color: #333333;margin-top: 20px;border-collapse:collapse;">
+        <thead style="font-size: 12px; ">
+            <tr style="height: 35px;line-height: 35px;">
+                
+				<th style="border-bottom:2px solid #ddd ">矿机名称</th>
+				 <th style="border-bottom:2px solid #ddd ">编号</th>
+               
+                <th style="border-bottom:2px solid #ddd ">运行时间/(h)</th>
+                <th style="border-bottom:2px solid #ddd ">收入(GEC)</th>
+                <th style="border-bottom:2px solid #ddd ">状态</th>
+               
+            </tr>
+
+        </thead>
+        <tbody style="font-size: 10px;text-align: center">
+			
+		
+		<foreach name="info" item="v">
+		<tr style="display:<?php if($v['kc1']==2){echo 'block';}else{echo 'none';}?>"><td  align="center" height="30">微型云矿机</td><td  align="center">1号</td><td  align="center">{$v.runtime1}</td><td  align="center">{$v.sy1}</td><td  align="center">已停止</td></tr>
+        <tr style="display:<?php if($v['kc1']==2){echo 'block';}else{echo 'none';}?>"><td  align="center" height="30"">小型云矿机</td><td  align="center">2号</td><td  align="center">{$v.runtime2}</td><td  align="center">{$v.sy2}</td><td  align="center">已停止</td></tr>
+		<tr style="display:<?php if($v['kc1']==2){echo 'block';}else{echo 'none';}?>"><td  align="center" height="30">中型云矿机</td><td  align="center">3号</td><td  align="center">{$v.runtime3}</td><td  align="center">{$v.sy3}</td><td  align="center">已停止</td></tr>
+		<tr style="display:<?php if($v['kc1']==2){echo 'block';}else{echo 'none';}?>"><td  align="center" height="30">大型云矿机</td><td  align="center">4号</td><td  align="center">{$v.runtime4}</td><td  align="center">{$v.sy4}</td><td  align="center">已停止</td></tr>
+		<tr style="display:<?php if($v['kc1']==2){echo 'block';}else{echo 'none';}?>"><td  align="center" height="30">超级云矿机</td><td  align="center">5号</td><td  align="center">{$v.runtime5}</td><td  align="center">{$v.sy5}</td><td  align="center">已停止</td></tr>
+		
+		</foreach>
+		</tbody>
+    </table>
+</div>
+
+<style>.weui_media_box:before {left:0}</style>
+<!--列表结束-->
+
+<div class="height55"></div>
+<!--底部开始-->
+<style>
+    .footer ul li{
+        width: 25%;
+    }
+</style>
+		<div class="footer">
+     <ul>
+        <li><a href="index.php?m=jiaoyi&a=kjsc" class="block"><i class="iconfont">&#xe604;</i>矿机商城</a></li>
+		<li><a href="index.php?m=user&a=mykj" class="block"><i class="iconfont">&#xe601;</i>我的矿机</a></li>
+		<li><a href="index.php?m=jiaoyi" class="block"><i class="iconfont">&#xe645;</i>交易中心</a></li>
+        <li style="width:24%" ><a href="/" class="block"><i class="iconfont">&#xe684;</i>个人中心</a></li>
+    </ul>
+</div>
+<!--底部结束-->
+<script>
+	$(function(){
+		$(".jiesuan").click(function(){
+			$("#zhe").css({"display":"block"});
+			var kuangji =$(this).parents("tr").find("#bianhao").text();
+			$.showLoading("云矿机连接中...");
+			setTimeout(function(){
+				$.hideLoading();
+				$.showLoading("矿机收益结算中...");
+			},2000)
+			
+			$.ajax({
+				   url:"/index.php/Home/Info/shouyi/user.html",
+				   type:"get",
+				   data:{pwd:kuangji},
+				   dataType:"json",
+				   
+				   success:function(data){
+					   $.hideLoading()
+					   $.alert("结算已完成！",function(){location.reload()
+					});				  
+				   },error:function(){
+				   $.alert("网络错误",function(){
+					   location.reload()
+				   });
+				   }
+				   })
+		})
+	
+	})
+</script>
+
+
+<script src="/Public/web/js/jquery-weui.min.js"></script>
+<p style="display:none;">
+
+</p>
+
+
+</body></html>

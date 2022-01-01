@@ -1,0 +1,84 @@
+<include file="Common:header" />
+    <title>后台管理-发放奖励</title>
+</head>
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab border-sub" data-toggle="click">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start2">增加奖励</a></li>
+                <li><a href="#tab-css">减少奖励</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start2">
+                <form action="{:U('Score/add')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>用户ID</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="uid" value="{$_GET['uid']}" size="50" placeholder="会员的数字ID" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>奖励水晶数量</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="jink" value="{$_GET['jinkz']}" size="50" placeholder="给会员的水晶数量" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>奖励铁矿</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="tiek" size="50" placeholder="发放铁矿奖励" value="{:iconv('GB2312', 'UTF-8',$_GET['tiekz'])}" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-button">
+                        <button class="button" type="submit">确定发放</button>
+                    </div>
+                </form>
+            </div>
+            <div class="tab-panel active" id="tab-css">
+                <form action="{:U('Score/red')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>用户ID</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="uid" value="{$_GET['uid']}" size="50" placeholder="会员的数字ID" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>减少水晶数量</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="jink" value="{$_GET['jinkz']}" size="50" placeholder="给会员的水晶数量" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>减少铁矿</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="tiek" size="50" placeholder="发放铁矿奖励" value="{:iconv('GB2312', 'UTF-8',$_GET['tiekz'])}" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-button">
+                        <button class="button" type="submit">确定发放</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<include file="Common:header" />
+    <title>后台管理-管理员列表</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong>管理员列表</strong></div>
+        <div class="padding border-bottom">
+            <input onclick="window.location.href='{:U('Admin/addadmin')}'" type="button" class="button button-small border-green" value="添加管理员" />
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th width="50">ID</th>
+                <th width="100">管理员名称</th>
+                <th width="100">登录IP</th>
+                <th width="100">登录时间</th>
+                <th width="100">用户状态</th>
+                <th width="100">管理操作</th>
+            </tr>
+            <foreach name="list" item="admin">
+            <tr>
+                <td>{$admin['id']}</td>
+                <td>{$admin['username']}</td>
+                <td>{$admin['loginip']}</td>
+                <td>{$admin['logintime']|date='Y-m-d',###}</td>
+                <td><if condition="!$admin['lock']">正常<else />锁定</if></td>
+                <td><a class="button border-blue button-little" href="{:U('Admin/saveadmin',array(id=>$admin['id']))}">修改</a> 
+                    <a class="button border-yellow button-little" href="{:U('Admin/del',array(id=>$admin['id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+                </td>
+            </tr>
+            </foreach>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<html><head>
+        <meta charset="utf-8">        
+        <script>
+            var getUA = navigator.userAgent.toLowerCase();
+            if (/iphone/i.test(getUA)) {
+                document.write('<meta name="viewport" content="width=261, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>');
+            } else {
+                document.write('<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>');
+            }
+        </script><meta name="viewport" content="width=261, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <link rel="stylesheet" type="text/css" href="/Public/home/css/public.css">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/stealv2.css">
+
+
+
+		<script type="text/javascript" src="/Public/home/js/jquery.js"></script>
+<script type="text/javascript" src="/Public/home/js/slvmall.js"></script>
+
+<title>消息</title>        
+    </head>
+    <style type="text/css">
+    .title {
+    background: url(/Public/home/images/shake_titlebar_bg.png) no-repeat;
+    background-size: 100% 100%;
+    height: 45px;
+    width: 100%;
+}
+.title span {
+    padding-left: 45.5%;
+    line-height: 42px;
+    color: #fbebd9;
+}
+.title a {
+    text-decoration: none;
+    background: url(/Public/home/images/game_webview_btn_close.png) no-repeat;
+    background-size: 45px 40px;
+    -moz-background-size: 45px 40px;
+    margin-right: 3%;
+    line-height: 42px;
+    width: 45px;
+    float: right;
+
+
+
+
+	.mengban{
+			background: url(../images/crystal_enter_mine_bg.png) no-repeat;
+			background-size: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			display: none;
+
+		}
+		.mengban img{
+			width: 150px;
+			height: 150px;
+			margin-left: 30%;
+			margin-top: 45%;
+		}
+}
+    </style>
+    <body class="bg-darkbrown"> 
+    <div class="title" >
+            <span>商城</span>
+            <a href="javascript:void(0)" onClick="history.back()">&nbsp;</a>
+        </div>    
+         
+        <div class="revenge" id="boxid" style="height: 902.88px; transform-origin: left top 0px; transform: scale(0.694444);">
+            <div class="revengebox">
+                <header class="iron-hd">
+                    <nav class="tab-nav">
+                        <a class="" href="index.php?m=slvmall">提现</a>
+						<a class="on" href="index.php?m=slvmall&a=txinfo">记录</a>
+                                                                     </nav>
+                </header>                
+                <div class="revbox">                    
+                    <div class="revlist cont_js" id="" style="display:  ;"><ul class="rev-list">					
+				<foreach name="info" item="v">
+				<li><p class="stealer"></p><div class="accountbox"><i class="i-cristal i-cristal-2" style="background-position: 0 <?php if($v['type']=='水晶'){echo '-261';}else{if($v['type']=='永久矿石'){echo '-87';}else{echo '0';}}  ?>px;"></i><div class="account-txt"><p>花费<font style="color:red;font-weight:bold;"><?php echo $v['cost'];  ?></font>{$v.type}<?php if($v['type2']==2){echo '兑换了';}else{echo '提现了';}  ?><em><font style="color:red;">{$v.good_name}</font></em></p><p></p></div></div><div class="evaluate"><div class="starbox lvl-2"><i class="i-star"></i><i class="i-star"></i><i class="i-star"></i></div><p class="font-h">{$v.zt}</p><p>{$v.dh_time}</p></div></li>
+				</foreach>
+				
+				</ul></div> <!--0 - 复仇-->                    
+                    <div class="revlist cont_js" id="" style="display:none ;"><ul class="rev-list">
+					<foreach name="jg" item="t">
+					<li><p class="stealer">被进攻者{$t.dj_userid}</p><div class="accountbox"><i class="i-cristal i-cristal-2"></i><div class="account-txt"><p>获得<em>{$t.sunshi}</em>个矿石</p><p>超过今日12%平均进攻收益</p></div></div><div class="evaluate"><div class="starbox lvl-1"><i class="i-star"></i><i class="i-star"></i><i class="i-star"></i></div><p class="font-h">再接再厉!</p><p>6天前</p></div></li>
+					</foreach>
+					</ul></div> <!--1 - 进攻-->                
+                    <div class="rookies cont_js" id="taskBox" style="display: none;">-</div> <!--2 - 新手任务-->
+                    <div class="revenge-loading ex_js" id="loading" style="display: none;"> <!--0 - 复仇loading-->
+                        <i class="i-rloading"></i>
+                        <p>正在载入...</p>
+                    </div>                    
+                    <div class="revenge-loading ex_js" id="noRecords" style="display: none;"> <!-- 1 -->
+                        <i class="i-rloading"></i>
+                        <p>没有记录，赶紧玩一局</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop" id="pop_tip" style="display: none;">
+            <div class="popwp3" style="zoom: 0.694444;">
+                <div class="popmain2">
+                    <div class="pop_txt">
+                        <p class="text_cent">网络繁忙，请稍后再试(132)。</p>
+                    </div>            
+                </div>       
+            </div>
+        </div>       
+        
+        <div class="g-pop" style="display:none;" id="pop_loading">
+            <div class="g-popwp" style="height: 902.88px; transform-origin: left top 0px; transform: scale(0.694444);">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt-loading">
+                        <p class="g-pop-loading">请稍候<span>.</span><span>.</span><span>.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="g-pop pop_js" id="yes" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 602.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">您已成功兑换了</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">知道了</a>
+                        <!-- <a class="btn btn-1 ok_js">再次打劫</a> -->
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+
+		<div  class="mengban" >
+			<img src="/Public/Home/picture/fdj.gif">
+		</div>
+
+
+		<div class="g-pop pop_js" id="no" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 602.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">您水晶不足</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">知道了</a>
+                        <!-- <a class="btn btn-1 ok_js">再次打劫</a> -->
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="g-pop" style="display:none;" id="popTask">
+            <div class="g-popwp" style="height: 902.88px; transform-origin: left top 0px; transform: scale(0.694444);">
+                <div class="g-pop-main-big-tit">
+                    <h1>新手任务</h1>
+                    <div class="rookie-pop-miyin">
+                        <p>欢迎体验秘银进攻功能！搜索并进入其他玩家矿场，可以收取他人矿机上的秘银。</p>
+                        <h2>进攻任务</h2>
+                        <p>10天内至少3天发起进攻，可获得<em>【进攻先锋】<br>秘银红包</em>一个（拆开随机获得1888-8888秘银）</p>
+                        <p>10天内至少7天发起进攻，可获得<em>【进攻高手】<br>水晶红包</em>一个（拆开随机获得8-8888水晶）</p>
+                        <div class="rookie-tip">
+                            <p>提示：任务领取后需在<em>10天内完成</em></p>
+                            <p><i class="i-rookie-msg"></i>内查看任务进度</p>
+                        </div>
+                        <div class="rookie-btnbox">
+                            <a class="btn btn-1 close_js">朕知道了</a>
+                        </div>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>                
+
+
+
+</body></html>        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

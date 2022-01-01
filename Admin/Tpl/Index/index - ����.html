@@ -1,0 +1,65 @@
+<include file="Common:header" />
+    <title>后台管理-后台首页</title>
+</head>
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+	<div class="line-big">
+    	<div class="xm3">
+        	<div class="panel">
+            	<div class="panel-head"><strong>站点统计</strong></div>
+                <ul class="list-group">
+                	<li><span class="float-right badge bg-red">{$user}</span><span class="icon-user"></span> 所有会员</li>
+                    <li><span class="float-right badge bg-main">{$reg}</span><span class="icon-pencil"></span> 今日注册</li>
+                    
+                    
+                </ul>
+            </div>
+            <br />
+            <div class="panel">
+                <div class="panel-head"><strong>财务统计</strong></div>
+                <ul class="list-group">
+                    <li><span class="float-right badge bg-red">{$nomoney}</span><span class="icon-rmb"></span> 待支付款项</li>
+                    <li><span class="float-right badge bg-main">{$yesmoney}</span><span class="icon-usd"></span> 已支付款项</li>
+                    
+                </ul>
+            </div>
+        </div>
+		
+        <div class="xm9">
+            <div class="panel">
+            	<div class="panel-head"><strong>系统信息</strong></div>
+                <table class="table">
+                	<tr>
+                        <th colspan="2">服务器信息</th><th colspan="2">系统信息</th>
+                    </tr>
+                    <tr>
+                        <td width="" align="left">操作系统：</td>
+                        <td>{$Think.const.PHP_OS}</td><td width="" align="left">系统开发：</td>
+                        <td>5G云资源网（<a href="http://www.yunziyuan.com.cn" style="color:blue;" target=_blank>查看店铺>>></a>）</td>
+                    </tr>
+                    <tr>
+                        <td align="left">Web服务器：</td>
+                        <td></td><td align="left">最新版演示站：</td>
+                        <td><a href="http://www.yunziyuan.com.cn" target="_blank">http://www.yunziyuan.com.cn</a></td>
+                    </tr>
+                    <tr>
+                        <td align="left">当前版本：</td><td><font style="color:#ff0000;font-weight:bold;">V5.0</font>  
+						<a href="http://www.yunziyuan.com.cn" style="color:blue;" target=_blank>获取最新版本>>></a></td>
+                        <td align="left">技术支持QQ号：</td><td><a href="http://wpa.qq.com/msgrd?v=3&uin=570602783&site=qq&menu=yes" target="_blank">570602783</a><img  style="CURSOR: pointer" onClick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=570602783&o=采客赚&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:570602783:10 alt="点击这里给我发消息"></td>
+                    </tr>
+                    <tr>
+                        <td align="left">数据库：</td><td>MySQL {:mysql_get_server_info()}</td>
+                        <td align="left">群交流：</td><td><a target="_blank" href="http://www.yunziyuan.com.cn/13333.html"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="5G云资源网售后交流" title="5G云资源网售后交流"></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+		
+    </div>
+</div>
+</body>
+</html>

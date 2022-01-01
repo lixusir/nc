@@ -1,0 +1,54 @@
+<include file="Common:header" />
+    <title>后台管理-添加管理员</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start">添加管理员</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <form action="{:U('Admin/add')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>管理员名称</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="username" size="50" placeholder="请填写管理员名称" data-validate="required:必填,username:英文字母开头的字母、下划线、数字" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>管理员密码</label>
+                        </div>
+                        <div class="field">
+                            <input type="password" class="input input-auto" name="password" size="50" placeholder="请填写管理员密码" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>确认管理员密码</label>
+                        </div>
+                        <div class="field">
+                            <input type="password" class="input input-auto" name="pwd" size="50" placeholder="请再次确认管理员密码" data-validate="required:必填,repeat#password:两次输入的密码不一致" />
+                        </div>
+                    </div>
+                    <div class="form-button">
+                    <button class="button" type="submit">保存添加</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

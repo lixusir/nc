@@ -1,0 +1,42 @@
+<include file="Common:header" />
+    <title>后台管理-接口回调记录</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <form method="post" action="{:U('Apilog/del')}">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong>接口回调记录</strong></div>
+        <div class="padding border-bottom">
+            <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
+            <input type="submit" class="button button-small border-yellow" onclick="{if(confirm('确认批量删除选中项?')){return true;}return false;}"value="批量删除" />
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th>选择</th>
+                <th>ID</th>
+                <th>内容</th>
+            </tr>
+            <foreach name="api" item="vo">
+            <tr>
+                <td width="45"><input type="checkbox" name="id[]" value="{$vo.id}" /></td>
+                <td width="45">{$vo.id}</td>
+                <td>提交操作：{$vo.feedback}</br>
+                    提交来源：{$Think.config.DOMAINNAME}{$vo.source}</br>
+                </td>
+            </tr>
+            </foreach>
+        </table>
+        <div class="panel-foot text-center">
+            {$page}
+        </div>
+    </div>
+    </form>
+    <br />
+</div>
+</body>
+</html>

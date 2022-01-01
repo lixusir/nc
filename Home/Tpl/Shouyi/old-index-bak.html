@@ -1,0 +1,816 @@
+﻿        <!--#include file="../conn_db.asp"-->
+
+                
+        <html>    
+	<head>    
+		<meta http-equiv="Content-Type" content="textml; charset=utf-8" />   
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"> 
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>收益</title>   
+		<script type="text/javascript" src="/Public/home/js/jquery-1.7.1.min.js"></script> 
+	
+	<script type="text/javascript" src="/Public/home/js/yxindex.js"></script> 
+
+    <link href="/Public/home/css/tishi.css" rel="stylesheet" type="text/css">
+    <link href="/Public/home/css/shouyi.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript">
+
+   
+     $(function () {
+      $('#kscs').click(function(){
+        
+       // $('#pop_tip').css('display','block');
+        window.location.href="";
+        //$('#pop_tip .ctr').html("交易市场正在研发中，敬请等待！");
+       });
+       $('#bangd').click(function(){
+        $('.g-pop').hide();
+        $('#pop_bangd').show();
+       });
+
+      })
+    
+     
+    </script>
+    <style>    
+    .g-pop-main {top:45%;}
+
+		</style>   
+		
+	</head>    
+	<body> 
+	
+		<!-- 背景 -->
+		<div class="shouyi">
+			<!-- 标题 -->
+			<div class="title" >
+			<span>我的收益</span>
+			<a href="/">&nbsp;</a>
+		</div>
+		
+		<!--个人信息-->
+		<div class="grxx">
+			<div class="yuan">
+			<foreach name="info" item="v">
+			 <table border="0"   cellpadding="0" cellspacing="0">
+				<tr>
+					<td id="tou" rowspan="4" >
+            <div >
+              <img src="/Public/home/picture/kgtx.png" width="60px">
+            </div>
+						
+						
+					</td>
+					<td class="tdzt"  style="background: url(/Public/home/images/jiantou.png) no-repeat;background-size:100% 100%;
+">
+						<font color="#cea8a8">ID:{$Think.session.uid}</font>
+						<span>身份：
+						{$v.type}
+						{$v.kg_lv}级</span>
+					</td>
+					<td rowspan="4" style="width:25%;text-align: right;">
+						<a href="index.php?m=jiaose"><img src="/Public/home/picture/shengjianniu.png" width="70px;"></a>
+					</td>
+				</tr>
+        
+				<tr>
+					<td class="tdbd" style="padding-top:5px;">
+						矿石总量：<span>{$v.tiekz}</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="tdbd" style="padding-top:-5px;">
+						已提现水晶：<span>{$v.txjin}个</span>
+					</td>
+				
+				</tr>
+				<tr>
+					<td class="tdbd" style="padding-top:-5px;">
+						矿工经验<span>{$v.jinyan}</span> <a href="/Public/home/images/exp.jpg">?说明</a> 
+					</td>
+				
+				</tr>
+
+				<!-- <tr>
+          <td class="tdbd">
+            昨日打劫矿石：<span>10000个矿石</span>
+          </td>
+        </tr> -->
+			</table> 
+			</foreach>
+			</div>
+		</div>  
+		<!--数据信息-->
+		<foreach name="info" item="v">
+		<div class="shuju">
+			<div class="neishu">
+				<ul class="tabs">
+<li class="wli">
+<input type="radio" name="tabs" id="tab1" checked />
+<label for="tab1" >
+	<b>衰变矿石 </b><br/>
+	<span>{$v.tiekz}个</span>
+	 <img src="/Public/home/picture/kbjg.png" class="kbjg"> 
+</label>
+<img src="/Public/home/picture/xjt.png" width="40%" id="xjt1" class="xjt">
+ <div id="tab-content1" class="tab-content">
+ 	<div class="jieshao">
+ 		<h3>
+ 			衰变矿石
+ 		</h3>
+    <span><a href="index.php?m=game" style="color:#14ddf5;font-size:12px;text-decoration: none;">换成永久矿石>></a> </span>
+ 		<p>
+ 			由矿机、打劫所得矿石也堆放在这里，只保存3天，可被打劫。矿工等级越高领取时获取永久矿石越多。
+			当前采矿方式：<font color=red>手动自动 <font color=green>已采得个</font><font color=green>满2000个自动为您收矿</font></font>
+ 		</p>
+ 	</div>
+   	 	<div class="zhu">
+   	 	
+   	 			
+   	 		</div>
+   	
+   <table  >
+   	 <tr>
+   	 	<td >
+   	 		
+   	 		<div class="content">
+   	 			今日存量
+   	 		</div>
+   	 	</td>
+   	 	<td width="80%">
+   	 		<div class="fang">
+   	 	   <em>&#9670;</em>
+          <span>&#9670;</span>
+          <img src="/Public/home/picture/jrcl.png" class="climg">
+          <div class="kuang">
+          	  <n>   </n><br/>
+          	  <b>衰变矿石</b>
+          </div>
+		     	 		</div>
+   	 	</td>
+   	 </tr>
+   	 
+   	 <tr>
+   	 	<td ><div class="content">
+   	 			昨日存量
+   	 		</div></td>
+   	 	<td>
+   	 			<div class="fang">
+   	 	   <em>&#9670;</em>
+          <span>&#9670;</span>
+          <img src="/Public/home/picture/zrcl.png" class="climg">
+          <div class="kuang">
+          	  <n>个</n><br/>
+          	  <b>衰变矿石</b>
+          </div>
+		              <img src="/Public/home/picture/yxzc.png" id="zcimg1" class="zcimg">
+            <div id="daoqi1" class="daoqi">2天后到期</div>
+			   	 		</div>
+   	 	</td>
+   	 </tr>
+   	 <tr>
+   	 	<td>
+   	 		<div class="content">
+   	 			前日存量
+   	 		</div>
+   	 	</td>
+   	 	<td>
+   	 		<div class="fang">
+   	 	   <em>&#9670;</em>
+          <span>&#9670;</span>
+          <img src="/Public/home/picture/qrcl.png" class="climg">
+          <div class="kuang">
+          	  <n>个</n><br/>
+          	  <b>衰变矿石</b>
+          </div>
+		     	 		</div>
+   	 	</td>
+   	 </tr>
+   	 <tr>
+   	 	<td >
+   	 		<div class="tcontent">
+   	 			最近过期
+   	 		</div></td>
+   	 	<td>
+   	 		<div class="tfang">
+   	 	   <em>&#9670;</em>
+          <span>&#9670;</span>
+          <img src="/Public/home/picture/jqgq.png" class="climg">
+          <div class="kuang">
+          	  <n>个</n><br/>
+          	  <b>衰变矿石</b>
+          </div>
+          <!--   <img src="/Public/home/picture/yxzc.png" id="zcimg1" class="zcimg">
+          <div id="daoqi1" class="daoqi">3天后到期</div> -->
+   	 		</div>
+   	 	</td>
+   	 </tr>
+   </table>
+</div> 
+</li>
+
+<li class="wli">
+<input type="radio" name="tabs" id="tab2" />
+<label for="tab2" >
+	<b>永久矿石</b><br/>
+	<span >{$v.tieky}个</span>
+</label>
+<img src="/Public/home/picture/xjt.png" width="40%" id="xjt2" class="xjt">
+ <div id="tab-content2" class="tab-content">
+    <div class="jieshao">
+    <h3>
+      永久矿石
+    </h3>
+    <p>
+      充值、游戏所得，不会过期，不会被打劫。可以将永久矿石出售给其他玩家购买。市场价：21万永久矿石=3元
+    </p>
+  </div>
+    <div class="shuijing">
+      <div class="neishuijing">
+        <table border="0" >
+          <tr>
+            <td rowspan="2" width="50%" style="text-align: center;">
+              <img src="/Public/home/picture/jrcl.png" width="90%">
+            </td>
+           <td style="padding-left:10px;">
+              <div class="yjks">
+                
+              <b>永久矿石</b><br/>
+              <n><span>{$v.tieky}</span>万个</n>
+              </div>
+           </td>
+           
+          </tr>
+          <tr>
+           
+            <td style="padding-left:10px;" valign="top">
+               <div class="btns">
+                 <a href="index.php?m=jiaoyi">矿石出售</a>
+               </div>
+            </td>
+            
+          </tr>
+          
+       </table>
+      </div>
+       
+    </div>
+    <div class="dban">
+      <a href="">领更多矿石>></a>
+    </div>
+</div> 
+</li>
+<li class="wli">
+<input type="radio" name="tabs" id="tab3"  />
+<label for="tab3" >
+	<b>我的水晶</b><br/>
+	<span>{$v.jinkz}个</span></label>
+<img src="/Public/home/picture/xjt.png" width="40%" id="xjt3" class="xjt">
+<div id="tab-content2" class="tab-content">
+  <div class="jieshao">
+    <h3>
+      水晶
+    </h3>
+    <span><a href="index.php?m=user&a=zhsz" style="color:#14ddf5;font-size:12px;text-decoration: none;">帐户设置&gt;&gt;</a> </span>
+    <p>
+      采矿机出矿水晶，可以提现(1万水晶=1元)；升级角色招聘矿工为自己打工可赚更多水晶。
+    </p>
+  </div>
+    <div class="shuijing">
+      <div class="neishuijing">
+        <table border="0" >
+          <tr>
+            <td rowspan="2" width="50%" style="text-align: center;">
+              <img src="/Public/home/picture/shuijing.png" width="90%">
+            </td>
+           <td style="padding-left:10px;">
+              <div class="yjks">
+                
+              <b>水晶</b><br/>
+              <n>{$v.jinkz}个&nbsp;&nbsp;<font color="#fff">10000水晶=1元</font></n> 
+              
+              </div>
+           </td>
+           
+          </tr>
+          <tr>
+           
+            <td style="padding-left:10px;" valign="top">
+
+               <div class="btns">
+                 <a href="index.php?m=slvmall">去提现</a>
+               </div>
+            </td>
+            
+          </tr>
+          
+       </table>
+      </div>
+       
+    </div>
+    <div class="syqk">
+      <ul>
+        <li>招聘矿工：{$v.userendsnum}人</li>
+        <li style="margin-left: 30px;">累计上交：{$v.zp_sj_nums3}个水晶</li>
+      </ul>
+      <!-- <br/>
+      <p></p> -->
+    </div>
+</div> 
+</li>
+</ul>
+			</div>
+		</div>
+		</foreach>
+		<!--数据内容-->
+		<!-- <div class="shunr">
+			<div id="tab-content1" class="tab-content">
+		            选项卡内容 1
+		           </div>
+		           <div id="tab-content2" class="tab-content">
+		            选项卡内容 2
+		           </div>
+		           <div id="tab-content3" class="tab-content">
+		            选项卡内容 3
+		           </div>
+		</div> -->
+		
+   
+<script type="text/javascript">
+   
+     $(function () {
+      $('#sjpay').click(function(){
+         var price=$('#diam').val();
+        $('#pop_confirm').css('display','block');
+        $('#pop_confirm .ctr').html("确定支付"+price*1000+"个水晶吗？");
+       });
+
+       $('.close_js').click(function(){
+        $('.pop_js').css('display','none');
+       });
+
+        $('#silvList li').click(function(){
+          $('#silvList li').removeClass('on');
+          $(this).addClass('on');
+         
+          $('#sil').val($(this).find('del').html());
+          /*$('.g-recharge-select li').attr('class', 'on');*/
+         /* $(this).find('b').attr('class', 'current');diamPay
+          $('#hidden_input').val($(this).find('b').attr('alt'));*/
+       
+        });
+
+        $('#diamList li').click(function(){
+          $('#diamList li').removeClass('on');
+          $(this).addClass('on');
+         
+          $('#diam').val($(this).find('del').html());
+          /*$('.g-recharge-select li').attr('class', 'on');*/
+         /* $(this).find('b').attr('class', 'current');
+          $('#hidden_input').val($(this).find('b').attr('alt'));*/
+        });
+
+        $('#diamPay').click(function(){
+           var price=$('#sil').val();
+        $('#pop_confirm').css('display','block');
+        $('#pop_confirm .ctr').html("确定支付"+price+"个钻石吗？");
+        });
+        $('#wxPay').click(function(){
+           var price=$('#diam').val();
+        $('#pop_confirm').css('display','block');
+        $('#pop_confirm .ctr').html("确定支付"+price+"元购买钻石吗？");
+        });
+        $('#zfclose').click(function(){
+           $('#light').css('display','none');
+            $('#fade').css('display','none');
+        })
+      })
+    
+     
+</script>
+
+
+
+<div id="light" class="white_content"> 
+   <!--  This is the lightbox content. 
+   <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"> 
+   Close</a> -->
+   <div class="close">
+     <a href="javascript:void(0)" id="zfclose" >&nbsp;</a>
+   </div>
+   <ul class="labs">
+<li>
+<input type="radio" name="labs" id="lab1" checked />
+<label for="lab1" >矿石</label>
+<div id="lab-my1" class="lab-my">
+  <table width="100%">
+    <tr style="line-height:50px;">
+      <td><img src="/Public/home/picture/dks.png" width="30px;"></td>
+      <td style="color:#fff;font-size:20px;">我的矿石：1000</td>
+    </tr>
+  </table>
+  
+</div>
+<div id="lab-content1" class="lab-content g-recharge-miyin">
+<form action="" class="g-rechargebox">
+  <input type="hidden" id="sil" value="30"/>
+  <ul class="g-recharge-select " id="silvList">
+
+    <li class="on">
+      <div class="i-rec-my-lvl i-rec-lvl-1">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <img src="/Public/home/picture/diamond.png" width="30px;" height="30px;">
+           <del>30</del>
+           
+         </div>
+      </div>
+
+    </li>
+    <li>
+      <div class="i-rec-my-lvl i-rec-lvl-2">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <img src="/Public/home/picture/diamond.png" width="30px;" height="30px;">
+           <del>60</del>
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-my-lvl i-rec-lvl-3">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <img src="/Public/home/picture/diamond.png" width="30px;" height="30px;">
+           <del>90</del>
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-my-lvl i-rec-lvl-4">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <img src="/Public/home/picture/diamond.png" width="30px;" height="30px;">
+           <del>120</del>
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-my-lvl i-rec-lvl-5">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <img src="/Public/home/picture/diamond.png" width="30px;" height="30px;">
+           <del>150</del>
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-my-lvl i-rec-lvl-6">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <img src="/Public/home/picture/diamond.png" width="30px;" height="30px;">
+           <del>180</del>
+           
+         </div>
+      </div>
+    </li>
+   
+  </ul>
+    
+    <div class="g-popbtn">
+   
+    <a class="btn btn-1" id="diamPay">充值矿石</a>
+   
+   </div>
+      
+       <p class="g-rechargetip">您充值的是永久矿石，不会过期，也不可被进攻。</p>                            
+     
+     </form>
+</div>
+</li>
+
+<li>
+<input type="radio" name="labs" id="lab2" />
+<label for="lab2" >钻石</label>
+
+<div id="lab-my2" class="lab-my">
+   <table width="100%" >
+    <tr style="line-height:50px;">
+      <td ><img src="/Public/home/picture/main_diamond.png" width="30px;" ></td>
+      <td style="color:#fff;font-size:20px;">我的钻石：1000</td>
+      <!-- <td width="30%" align="right" style="padding-right:20px;"><a class="g-my-why" id="detail"><i class="i-question"></i>了解钻石</a>
+       
+      </td> -->
+    </tr>
+  </table> 
+
+ <!--  <div class="g-rec-tit">
+                           <p class="g-my-wealth"><i class="g-i-diamond"></i>我的钻石：<span id="myDiamond">-</span></p>                            
+                           <div class="g-my-introbox">
+                               <a class="g-my-why" id="detail"><i class="i-question"></i>了解钻石</a>                                
+                               <div class="g-bubble-t" id="pop_detail" style="display: none;"><p>钻石是水晶矿场的代币，您充值的钻石可用来充值永久秘银，即可玩转矿场获取更多奖励。</p></div>
+                           </div>
+                       </div> -->
+  
+</div>
+<div id="lab-content2" class="lab-content">
+<form action="" class="g-rechargebox">
+  <input type="hidden" id="diam" value="10"/>
+  <ul class="g-recharge-select " id="diamList">
+
+    <li class="on">
+      <div class="i-rec-lvl i-rec-lvl-1 ">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+       
+           <del style="top:0px;">10</del>元
+           
+         </div>
+      </div>
+
+    </li>
+    <li>
+      <div class="i-rec-lvl i-rec-lvl-2">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <del style="top:0px;">20</del>元
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-lvl i-rec-lvl-3">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <del style="top:0px;">30</del>元
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-lvl i-rec-lvl-4">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <del style="top:0px;">40</del>元
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-lvl i-rec-lvl-5">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <del style="top:0px;">50</del>元
+           
+         </div>
+      </div>
+    </li>
+     <li>
+      <div class="i-rec-lvl i-rec-lvl-6">
+        <div class="g-account">
+          <span>21万个</span>
+        </div>
+
+         <div class="g-price ">
+          <!-- <div class="g-i-diamond">
+            &nbsp;
+          </div>  -->
+          <del style="top:0px;">60</del>元
+           
+         </div>
+      </div>
+    </li>
+   
+  </ul>
+    
+    <div class="g-popbtn">
+   
+    <a class="btn btn-1" id="wxPay">充值钻石</a><br/>
+   <a href="javaScript:void(0)" id="sjpay" style="line-height:50px;color:#18d3e4">或使用水晶支付>></a>
+   </div>
+      
+       <!-- <p class="g-rechargetip">您充值的是永久秘银，不会过期，也不可被进攻。</p>                             -->
+     
+     </form>
+</div>
+<!-- <div class="g-bubble-t" id="pop_detail" style="display:none ;"><p>钻石是水晶矿场的代币，您充值的钻石可用来充值永久秘银，即可玩转矿场获取更多奖励。</p></div> -->
+
+</li>
+</ul>
+</div> 
+<div id="fade" class="black_overlay"> 
+</div> 
+ <div class="g-pop pop_js" id="pop_confirm" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 602.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">-</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">取 消</a>
+                        <a class="btn btn-1 ok_js">好 的</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+		 <div class="g-pop pop_js" id="dajie_success" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 602.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">-</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">回家</a>
+                        <a class="btn btn-1 ok_js">再次打劫</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+		 <div class="g-pop pop_js" id="dajie_tili" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 602.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">进攻体力已用完，你可以选择支付1000个水晶或1钻石，即可马上恢复全部体力，或者也可以等待每3个小时恢复一个体力</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 sjzf_js">1000</a>
+                        <a class="btn btn-1 zszf_js">1</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+         <div class="g-pop pop_js" id="pop_success_diamond" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 902.88px;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">充值成功，获得xx钻石</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">好 的</a>
+                        <a class="btn btn-1 tab_x_js" data-type="0">充值矿石</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="g-pop pop_js" id="pop_error_silver" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 902.88px;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">
+                        <p class="ctr">您的钻石余额不足，请先充值钻石</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-2 close_js">取消</a>
+                        <a class="btn btn-1 tab_x_js" data-type="1">充值钻石</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="g-pop pop_js" id="pop_tip" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 902.88px;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">               
+                        <p class="ctr">网络繁忙，请稍后再试。</p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-1 close_js">好 的</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div>   
+<div class="g-pop pop_js" id="pop_sy" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 602.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">               
+                        <p class="ctr" style="font-size:18px;color:#fc2508;font-weight:bold"></p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-1 close_js">好 的</a>
+                    </div>
+                    <a class="g-close close_js"></a>
+                </div>
+            </div>
+        </div> 		
+        
+        <div class="g-pop pop_js" id="pop_loading" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 902.88px;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt-loading">
+                        <p class="g-pop-loading">正在载入<span>.</span><span>.</span><span>.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+
+		</div>
+		<div class="g-pop pop_js" id="pop_bangd" style="display: none;">
+            <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.694444); height: 902.88px; overflow:hidden;">
+                <div class="g-pop-main">
+                    <div class="g-pop-txt">               
+                        <p class="ctr bdts" ><font color="red">小蜜说：</font><br/>您还没有绑定收款信息呢 提现的可是人民币噢！~<br/></p>
+                    </div>
+                    <div class="g-popbtn">
+                        <a class="btn btn-1 close_js">好 的</a>
+                    </div>
+                    <!-- <a class="g-close close_js"></a> -->
+                </div>
+            </div>
+        </div> 
+	</body>   
+	<script type="text/javascript" src="/Public/home/js/tongji.js"></script> 
+<html>
+
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

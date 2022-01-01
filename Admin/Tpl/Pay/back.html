@@ -1,0 +1,66 @@
+<include file="Common:header" />
+    <title>后台管理-支付管理</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+    <div class="admin">
+        <form method="post" action="{:U('Pay/refund')}">
+            <div class="tab">
+                <div class="tab-head">
+                    <ul class="tab-nav">
+                        <li class="active"><a href="#tab-start">退回提现</a></li>
+                    </ul>
+                </div>
+                <div class="tab-body" style="padding-top: 30px;">
+                    <div class="tab-panel active" id="tab-start">
+                        <div class="form-group">
+                            <div class="label">
+                                <label>申请提现ID：</label>
+                            </div>
+                            <div class="field">
+                                <input class="input input-auto text-dot" size="10" type="text" disabled="disabled" value="{$Think.get.pid}">
+                                <input type="hidden" name="id" value="{$Think.get.pid}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="label">
+                                <label>申请用户ID：</label>
+                            </div>
+                            <div class="field">
+                                <input class="input input-auto text-dot" size="10" type="text" disabled="disabled" value="{$Think.get.uid}">
+                                <input type="hidden" name="userid" value="{$Think.get.uid}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="label">
+                                <label>退回金额：</label>
+                            </div>
+                            <div class="field">
+                                <input class="input input-auto text-dot" name="money" size="10" type="text" disabled="disabled" value="{$Think.get.money}">
+                                <input type="hidden" name="money" value="{$Think.get.money}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="label">
+                                <label>退回原因：</label>
+                            </div>
+                            <div class="field">
+                                <textarea rows="3" name="note" class="input" style="width: 300px;" placeholder="不要超过20个汉字，太长会影响表格显示效果！" data-validate="required:必填"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-button">
+                        <button class="button" type="submit">确定退回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

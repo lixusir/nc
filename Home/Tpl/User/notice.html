@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>show</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/show.css">
+	<script src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/index2.js"></script>
+</head>
+<body>
+	<div id="show_head"></div>
+	<div id="main">
+		<h1 class="title">游戏公告</h1>
+                <h1 class="title2">游戏公告</h1>
+				<foreach name="info" item="v">
+                    <p class="up">{$v.content}</p><h1 class="title2">{$v.title}</h1>
+		        </foreach>
+		<div style="width: 100%;height: 1.8rem;background: #fff;"></div>
+	</div>
+
+	<div id="ex_foot">
+            <a href="javascript:history.go(-1);"> <img src="/picture/fanhuinongchang.png" class="fanhui"></a>
+	</div>
+
+</body>
+	
+</html>

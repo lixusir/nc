@@ -1,0 +1,92 @@
+<!doctype>
+<html>
+	<head>
+		<title>金币明细</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		
+		<include file="Common:top" />
+	<div id="changeThings">
+		<form method="post"  action="/index.php?m=jiaoyi&a=cropsGive_act">
+			<h3 class="give">果实赠送</h3>
+			<div class="iptStyle">
+				<span class="allType l">赠送果实</span>
+				<select class="iptTwo" name="crops_id">
+								<option value="16">沙漠果</option>
+								<option value="17">人参果</option>
+								<option value="18">薰衣草</option>
+								<option value="19">沙漠人参</option>
+								<option value="20">巴旦木</option>
+								<option value="21">和田玉</option>
+								<option value="8">石榴</option>
+								<option value="15">香梨</option>
+								</select>
+				<span class="jinbi">选择</span>
+			</div>
+
+			<div class="iptStyle">
+				<span class="allType l">接收对象</span>
+				<input type="text" placeholder="请输入对方id" name="recieve" id="rePhone" class="ipt">
+			</div>
+
+			<div class="iptStyle">
+				<span class="allType l">赠送数量</span>
+				<input type="text" placeholder="请输入赠送数量" name="number" id="number" class="ipt">
+			</div>
+			<!-- <div class="iptStyle">
+				<span class="allType l">图片验证</span>
+				<input type="text" placeholder="8888" class="ipt">
+			</div> 
+			<div class="iptStyle">
+				<span class="allType l">短信验证</span>
+				<input type="text" placeholder="8888" maxlength="4" name="messageCode" class="ipt">
+				<input style="color:#fff;" type="button" class="getCode" id="yanCode" value="获取验证码">
+			</div>-->
+
+			<button>提交</button>
+			<div class="fruitNotice">
+				<p class="fruitP">温馨提示</p>
+				<p class="fruitP">1.本功能仅用于果实赠送，请勿通过此功能进行线下交易，出现任何所示，责任自负</p>
+				<p class="fruitP">2.接受对象可以是对方的ID</p>
+				<p class="fruitP">3.赠送果实的数量必须是10的整倍</p>
+				<p class="fruitP">4.接收方将支付赠送果实总额（按当前价格计算）10%的手续费</p>
+				<!-- <p class="fruitP">5.温馨提示温馨提示温馨提示温馨提示温馨提示</p> -->
+				<!-- <p class="fruitP">6.温馨提示温馨提示温馨提示</p> -->
+			</div>
+			</form>
+		</div>
+	</body>	
+	<script type="text/javascript" src="js/layui.js"></script>
+	<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  var start = {
+    //min: laydate.now()
+    min:'2000-01-01 23:59:59'
+    ,max: '2099-06-16 23:59:59'
+    ,istoday: false
+    ,choose: function(datas){
+    }
+  }; 
+  document.getElementById('LAY_demorange_s').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+  document.getElementById('LAY_demorange_s1').onclick = function(){
+    start.elem = this;
+    laydate(start);
+  } 
+});
+</script>
+</html>

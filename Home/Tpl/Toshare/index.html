@@ -1,0 +1,307 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/public.css">
+<link rel="stylesheet" type="text/css" href="/Public/home/css/task.css">
+<script type="text/javascript" src="/Public/home/js/zepto.min.js"></script>
+
+
+<script type="text/javascript" src="/Public/home/js/ajax.js"></script>
+
+<script type="text/javascript">
+  var pznum=10;
+  var shareid=170583;
+</script>
+ 
+
+
+
+<title>招聘矿工</title>
+</head>
+<body>
+
+    <div class="title">
+
+      <span>招聘矿工</span>
+      <a href="index.php">&nbsp;</a>
+    </div>
+    
+
+<div class="missionlevel" id="taskBox" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+<foreach name="info" item="v">
+    <div class="ml-top">
+        <div class="ml-userbox">
+            <div class="ml-user-pic"><img src="/Public/home/picture/kgtx.png" alt=""></div>
+            <h1>ID:{$v.userid}</h1>
+            <p id="viewRule"><a><i class="i-question"></i>任务说明</a></p>
+        <div class="ml-zpbox">
+          <ul>
+            <li>累计招聘矿工：<em><?php   echo $count; ?></em>人</li>
+            <li>收到上交水晶：<em><?php   echo $v['sj_lq_nums4'] ?></em>个</li>
+          </ul>
+        </div>
+        </div>
+
+    </div>
+	
+    <div class="monetask" style="height: 720px;">
+      <div class="ml-cont" id="taskList">
+	  
+	  <div class="ml-ulist">
+	  <ul class="ml-list" style="left:0%;">
+	  <li><div class="ml-list-box">
+	  <div class="ml-lb-top"><div class="ml-lb-pic">
+	  <img src="/Public/home/images/c_sxs.png" alt=""></div>
+	  <h2>完善账户</h2><p>完善账户信息以及头像有奖励</p>
+	  
+	  <?php if($v['zliaonum']==200000){echo '<a href="index.php?m=user&a=zhsz" class="btn btn-2">立即前往</a>';}   ?>
+	  <?php if($v['zliaonum']==0){echo '<a href="javascript:;"   class="btn btn-3">已完成</a>';} ?>
+	  <?php if($v['zliaonum']==1){echo '<a href="javascript:;"  onclick="tasklq(1);" class="btn btn-1">领取奖励</a>';} ?>
+	  
+	  
+	  </div><div class="ml-lb-bot"><p>完成任务奖励：20万衰变矿石</p>
+	  <div class="m-lvl"><i class="m-lvl-bg" style="width:<?php if($v['zliaonum']==200000){echo '0';}  ?>%"></i><span>
+	  <?php if($v['zliaonum']==200000){   ?>0<?php  }else{  ?>1<?php  } ?>/1</span></div></div></div>
+	  <span class="ml-addnum1" style="display:none">+200000</span></li>
+	  </ul></div>	  
+	  <p class="ml-tip" style="display: none;" id="taskTip">-</p>
+	  
+
+
+	  
+	  <!--<div class="ml-ulist"><ul class="ml-list" style="left:0%;">
+	  <li><div class="ml-list-box"><div class="ml-lb-top"><div class="ml-lb-pic"><img src="/Public/home/images/zrcl.png" alt=""></div><h2>猜石首赢奖励</h2><p>多人猜石每天首次赢得矿石领取衰变矿石奖励(亏损无效)</p><a href="index.php?mod=games&amp;act=guess" class="btn btn-2">立即前往</a></div>
+	  <div class="ml-lb-bot"><p>完成任务奖励：21万衰变矿石</p><div class="m-lvl"><i class="m-lvl-bg" style="width:0%"></i><span>0/1</span></div></div></div>
+	  <span class="ml-addnum" style="display:none">+210000</span></li>
+	  </ul></div>-->
+	  
+	  <p class="ml-tip" style="display: none;" id="taskTip">-</p>
+	  
+	  <!--<div class="ml-ulist">
+	  <ul class="ml-list" style="left:0%;">
+	  <li><div class="ml-list-box"><div class="ml-lb-top"><div class="ml-lb-pic"><img src="/Public/home/images/zrcl.png" alt=""></div><h2>原石对切首赢</h2>
+	  <p>每天玩原石对切首次获胜可领取21万衰变矿石奖励</p><a href="index.php?mod=games&amp;act=banker" class="btn btn-2">立即前往</a></div><div class="ml-lb-bot"><p>完成任务奖励：21万衰变矿石</p>
+	  <div class="m-lvl"><i class="m-lvl-bg" style="width:0%"></i><span>0/1</span></div></div></div><span class="ml-addnum" style="display:none">+210000</span></li>
+	  </ul></div>-->
+	  
+	  <p class="ml-tip" style="display: none;" id="taskTip">-</p>
+	  
+	  
+	  <!--<div class="ml-ulist">
+	  <ul class="ml-list" style="left:0%;"><li><div class="ml-list-box"><div class="ml-lb-top"><div class="ml-lb-pic"><img src="/Public/home/images/c_sj.png" alt=""></div><h2>首次招聘奖励</h2><p>每天首次成功招聘1人获得20个钻石</p><a class="btn btn-2 ts">立即前往</a></div><div class="ml-lb-bot"><p>完成任务奖励：20钻石</p><div class="m-lvl"><i class="m-lvl-bg" style="width:0%"></i><span>0/1</span></div></div></div>
+	  <span class="ml-addnum" style="display:none">+0</span></li></ul>
+	  </div>-->
+	  
+	  <p class="ml-tip" style="display: none;" id="taskTip">-</p>
+	  
+
+	  
+	  
+	  
+	  <div class="ml-ulist"><ul class="ml-list" style="left:0%;">
+	  <li><div class="ml-list-box">
+	  <div class="ml-lb-top">
+	  <foreach name="invite" item="s">
+	  <div class="ml-lb-pic"><img src="/Public/home/images/c_sksz.png" alt=""></div><h2>矿工招聘</h2><p>奖励<font color="#f02212" style="font-weight:bold">{$s.invite_tiek}铁矿</font>矿石,<font color="#f02212" style="font-weight:bold">{$s.invite_jink}水晶</font>矿石,<font color="#f02212" style="font-weight:bold">{$s.invite_tieky}永久</font>矿石,<font color="#f02212" style="font-weight:bold">{$s.invite_zhuanshi}</font>个钻石</p>
+	  <?php if($s['zpsj_lq_tiek']>0 || $s['zpsj_lq_jink']>0 || $s['zpsj_lq_tieky']>0 || $s['zpsj_lq_zhuanshi']>0){echo '<a href="javascript:;"  onclick="tasklq(2);" class="btn btn-1">领取奖励</a>';}else{ ?>
+	  <?php echo '<a href="index.php?m=dating"   class="btn btn-2">去招聘</a>'; ?><?php }?>
+	  </div>
+	  <div class="ml-lb-bot"><p><br>可领铁{$s.zpsj_lq_tiek},水晶{$s.zpsj_lq_jink},永矿{$s.zpsj_lq_tieky},钻石{$s.zpsj_lq_zhuanshi}</p></div></div><span style="display:none">+<br>当前可领取矿石：0个,钻石：0个</span><span class="ml-addnum2" style="display:none">铁+{$s.zpsj_lq_tiek},水晶+{$s.zpsj_lq_jink},永矿+{$s.zpsj_lq_tieky},钻石+{$s.zpsj_lq_zhuanshi}</span></li>
+	  </foreach>
+	  </ul>
+	  </div>
+	  
+	  <p class="ml-tip" style="display: none;" id="taskTip">-</p></div>
+    </div>
+   </foreach> 
+</div>
+    
+<!-- 任务说明 -->
+<div class="g-pop" id="pop_rule" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main-mid-tit">
+            <h1>任务说明</h1>
+
+            <div class="g-pop-notice">
+                <!-- <dl class="pop-ml-rule">
+                    <dt>【矿工招聘】</dt>
+                    <dd>您可以招聘矿工获得矿石奖励，每招聘1位矿工可一次性获得5万矿石奖励。</dd>
+                    <dt>【矿头招聘】</dt>
+                    <dd>您可以招聘矿工为自己打工，招聘到的每位矿工每次领取收益都需将出矿的水晶上交给矿头一部分，招聘的矿工越多赚取的水晶越多。并且每招聘1位矿工可一次性领取5万矿石奖励</dd>
+                </dl> -->
+
+                <dl class="pop-ml-rule">
+                  <dt>【任务介绍】</dt>
+               <dd> 根据任务提示完成任务回到任务中心领取任务即可，招聘打工为自动打工上交水晶无需领取。
+</dd>
+
+               <dt>【任务规则】</dt>
+                <dd>请勿尝试以非正常手段完成任务，包括但不限于：自我招聘，任务形式诱导，玩家非自愿，第三方作弊软件等，作弊情节严重可能被列入黑名单内永不解封！</dd>
+                 <!-- <dt>【矿头招聘】</dt>
+                             <dd>招聘的每位矿工领取收益时都会<font color="#f8f635" style="font-weight:bold;">永久</font>自动上交水晶给您</dd> -->
+</dl>
+                <div class="g-popbtn">
+                    <a class="btn btn-1 close_js">好 的</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+<div class="g-pop" id="pop_yq" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main-mid-tit">
+            <h1>招聘矿工</h1>
+            <div class="g-pop-notice">
+                <dl class="pop-ml-rule">
+                    <dt>【方法一】</dt>
+                    <dd>
+                       <p>第1步：进入采客赚官方微信 </p>
+                       <p>第2步：点击底部招聘矿工</p>
+                       <p>第3步：将获的邀请二维码发送给好友</p>
+                       <p>第4步：回到招聘界面领取矿石</p>
+                    </dd>
+                    <dt>【方法二】</dt>
+                    <dd>
+                       <p>点击右上角发送给好友或分享到朋友圈</p>
+                       
+                    </dd>
+                </dl>
+                <div class="g-popbtn">
+                    <a class="btn btn-1 close_js">好 的</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<div class="g-pop" id="pop_zp" style="display: none;">
+   <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main-mid-tit">
+            <h1>招聘矿工</h1>
+            <div class="g-pop-notice">
+                <dl class="pop-ml-rule">
+                    <dt>【方法】</dt>
+                    <dd>
+                       <p>第1步：进入采客赚官方微信 </p>
+                       <p>第2步：点击底部招聘矿工 </p>
+                       <p>第3步：将获的邀请二维码发送给好友</p>
+                       <p>第4步：每招聘1位矿工将自动获得5万矿石奖励</p>
+                       <p>第5步：招聘的所有矿工每次领取收益时都会自动给您上交水晶</p>
+                    </dd>
+                    
+                </dl>
+                <div class="g-popbtn">
+                    <a class="btn btn-1 close_js">好 的</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- 换一个 / 放弃任务？-->
+<div class="g-pop" id="pop_change_tip" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="mlpop-main">
+                <p>-</p>
+                <div class="mlpop-process">
+                    <h1>当前任务进度：</h1>
+                    <div class="m-lvl">
+                        <i class="m-lvl-bg"></i>
+                        <span>-</span>
+                    </div>
+                </div>
+            </div>
+            <div class="g-popbtn">
+                <a class="btn btn-2 close_js">取 消</a>
+                <a class="btn btn-1 change_js">-</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="g-pop" id="pop_loading" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt-loading">
+                <p class="g-pop-loading">请稍候<span>.</span><span>.</span><span>.</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="g-pop" id="pop_tip" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">                
+                <p class="ctr">网络繁忙，请稍后再试。</p>
+            </div>
+            <div class="g-popbtn">                
+                <a class="btn btn-1 close_js">好 的</a>
+            </div>
+            <a class="g-close close_js"></a>
+        </div>
+    </div>
+</div>
+<div class="g-pop" id="pop_qx" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">                
+                <p class="ctr">您取消了分享</p>
+            </div>
+            <div class="g-popbtn">                
+                <a class="btn btn-1 close_js">好 的</a>
+            </div>
+            <a class="g-close close_js"></a>
+        </div>
+    </div>
+</div>
+<div class="g-pop" id="pop_hqsy" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main">
+            <div class="g-pop-txt">                
+                <p class="ctr"></p>
+            </div>
+            <div class="g-popbtn">                
+                <a class="btn btn-1 cksy_js">知道了</a>
+            </div>
+            <a class="g-close look_js"></a>
+        </div>
+    </div>
+</div>
+
+<div class="g-pop pop_js" id="pop_rules" style="display: none;">
+    <div class="g-popwp" style="transform-origin: left top 0px; transform: scale(0.666667); height: 960px;">
+        <div class="g-pop-main-mid-tit">
+            <h1>招聘升级</h1>
+
+            <div class="g-pop-notice">
+                 <dl class="pop-ml-rule">
+                    <dt>【矿头招聘】</dt>
+                    <dd>每招聘到1位矿工可领取<font color="red" style="font-weight:bold">10万</font>永久矿石奖励。</dd>
+                    <dt>【代理矿长招聘】</dt>
+                    <dd>每招聘到1位矿工可领取<font color="red" style="font-weight:bold">21万</font>永久矿石奖励。</dd>
+                    <dt>【正式矿长招聘】</dt>
+                    <dd>每招聘到1位矿工可领取<font color="red" style="font-weight:bold">70万</font>永久矿石奖励。</dd>
+                </dl> 
+
+             
+                <div class="g-popbtn">
+                    <a class="btn btn-1 close_js">好 的</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="share-square" class="share-square" style="display:none">
+  <div class="share-box">
+    <img src="http://cdn.11h5.com/static/image/share_finger_icon.png"><span>
+    <img class="z" src="http://cdn.11h5.com/static/image/share_re_icon.png" alt="">发送微信群</span>
+  </div>
+</div> 
+<include file="Common:footer" />
+        </body></html>

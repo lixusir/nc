@@ -1,0 +1,222 @@
+<!doctype>
+<html>
+	<head>
+		<title>实名认证</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+
+<!-- webuploader lode -->
+        <link rel="stylesheet" href="css/webuploader.css" />
+        <script charset="utf-8" src="js/webuploader.js"></script>
+        <script charset="utf-8" src="js/getting-started-qiniu.js"></script>
+		<script>
+            $(function() {
+
+                $('#memberUpdatePhone').ajaxForm({
+                    beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+                    success: complete, // 这是提交后的方法
+                    dataType: 'json'
+                });
+
+                function checkForm(){
+
+                    if( '' == $.trim($('#rePhone').val())){
+                        layer.alert('原手机号不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#rePhone').focus();
+                        });
+                        return false;
+                    }
+
+                    if( '' == $.trim($('#newPhone').val())){
+                        layer.alert('新手机号不能为空', {icon: 6}, function(index){
+                            layer.close(index);
+                            $('#newPhone').focus();
+                        });
+                        return false;
+                    }
+
+				}
+
+                function complete(data){
+				
+                    if(data.status==1){
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                            window.location.href=data.url;
+                        });
+                    }else{
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                        });
+                        return false;
+                    }
+                }
+
+            })
+		</script>
+	</head>
+	<body>
+
+		<include file="Common:top" />
+	
+		
+		<div id="changeThings">
+			<h1 class="guanli">实名认证</h1>
+			<div class="wenxinshow">
+				<p class="coinP">温馨提示:</p>
+				<p class="coinP">暂只能查询一个月内的数据</p>
+			</div>
+						<form action="/index.php?m=user&a=memberCertificated" method="post" enctype="multipart/form-data">
+			<div class="card1" style="text-align:center;width:100%;min-height:3rem;display:none">
+        <div style="width:4rem;height:3rem;margin:0 auto">
+          <img src="" id="img1" alt="" style="width:100%;height:100%">
+        </div>
+        
+      </div>
+      <div class="iptStyle">
+				<span class="allType l">证件正面</span>
+				<span class="shuru path1"></span>
+				<div class="iptImg">
+					上传图片
+					<input type="file" id="card1" name="card_img1" onchange="yulan1(this)"/>
+				</div>
+				
+			</div>
+
+			
+      <div class="card2" style="text-align:center;width:100%;min-height:3rem;display:none;margin-top:0.3rem">
+        <div style="width:4rem;height:3rem;margin:0 auto">
+          <img src="" id="img2" alt="" style="width:100%;height:100%">
+        </div>
+        
+      </div>
+			<div class="iptStyle">
+				<span class="allType l">证件反面</span>
+				<span class="shuru path2"></span>
+			  <div class="iptImg">
+					上传图片
+					<input type="file" id="card2" name="card_img2" onchange="yulan2(this)"/>
+				</div>
+			</div>
+			
+			
+                           	<!-- <div class="form-group">
+                                <div id="uploader-demo" class="webuploader_col">
+                                  
+                                    <div id="fileList" class="uploader-list">
+                                        <div class="file-item upload-state-done">
+                                            <img src="" width="100">
+                                        </div> 
+                                    </div>
+                                    <input type="hidden" value="" id="uploader_file" name="uploader_file1"/>
+                                    <div id="filePicker">选择图片</div>
+
+                                </div>
+                            </div> -->
+
+			<button>申请[C2]实名认证</button>
+				</form>			<div class="juMessage">
+				<p class="juList">温馨提示</p>
+				<p class="juList">温馨提示温馨提示温馨提示</p>
+				<p class="juList">温馨提示温馨提示温馨提示</p>
+				<p class="juList">温馨提示温馨提示温馨提示</p>
+			</div>
+			<div style="width: 100%, height:0.3rem"></div>
+		</div>
+	
+	</body>	
+
+	<script>
+
+	function yulan1(obj){
+     var path=obj.value;
+     $('.path1').text(path);
+	   var file_img=document.getElementById("img1"),
+	   iptfileupload = document.getElementById('card1') ;
+	   getPath(file_img,iptfileupload,file_img) ;
+	   $('.card1').show();
+	}
+	function yulan2(obj){
+     //alert($(obj).val());
+     var path=obj.value;
+     $('.path2').text(path);
+	   var file_img=document.getElementById("img2"),
+	   iptfileupload = document.getElementById('card2') ;
+	   getPath(file_img,iptfileupload,file_img) ;
+	   $('.card2').show();
+	}
+
+
+		//获取上传文件路径 
+function getPath(obj,fileQuery,transImg) {
+  var imgSrc = '', imgArr = [], strSrc = '' ;
+ 
+  if(window.navigator.userAgent.indexOf("MSIE")>=1){ // IE浏览器判断
+  if(obj.select){
+   obj.select();
+   var path=document.selection.createRange().text;
+   alert(path) ;
+   obj.removeAttribute("src");
+   imgSrc = fileQuery.value ;
+   imgArr = imgSrc.split('.') ;
+   strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+   if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+   obj.setAttribute("src",transImg);
+   obj.style.filter=
+    "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+path+"', sizingMethod='scale');"; // IE通过滤镜的方式实现图片显示
+   }else{
+   //try{
+   throw new Error('File type Error! please image file upload..'); 
+   //}catch(e){
+   // alert('name: ' + e.name + 'message: ' + e.message) ;
+   //}
+   }
+  }else{
+   // alert(fileQuery.value) ;
+   imgSrc = fileQuery.value ;
+   imgArr = imgSrc.split('.') ;
+   strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+   if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+   obj.src = fileQuery.value ;
+   }else{
+   //try{
+   throw new Error('File type Error! please image file upload..') ;
+   //}catch(e){
+   // alert('name: ' + e.name + 'message: ' + e.message) ;
+   //}
+   }
+  }
+  } else{
+  var file =fileQuery.files[0];
+  var reader = new FileReader();
+  reader.onload = function(e){
+ 
+   imgSrc = fileQuery.value ;
+   imgArr = imgSrc.split('.') ;
+   strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+   if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+   obj.setAttribute("src", e.target.result) ;
+   }else{
+   //try{
+   throw new Error('File type Error! please image file upload..') ;
+   //}catch(e){
+   // alert('name: ' + e.name + 'message: ' + e.message) ;
+   //}
+   }
+ 
+   // alert(e.target.result); 
+  }
+  reader.readAsDataURL(file);
+  }
+ }
+	</script>
+</html>

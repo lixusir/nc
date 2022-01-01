@@ -1,0 +1,78 @@
+<include file="Common:header" />
+    <title>后台管理-支付管理</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active">
+                    <a href="{:U('Pay/index')}">所有</a>
+                </li>
+                <li class="">
+                    <a href="{:U('Pay/wei')}">未交易</a>
+                </li>
+                <li>
+                    <a href="{:U('Pay/jyz')}">交易中</a>
+                </li>
+                <li>
+                    <a href="{:U('Pay/jy')}">交易完成</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active">
+                <form method="post" action="#">
+                    <div class="panel admin-panel">
+                        
+                        <table class="table table-hover" width="100%">
+                            <tr>
+                                
+                                <th width="86">ID</th>
+                                <th width="146">卖家ID</th>
+                                <th width="156">用户名</th>
+                                <th width="295">挂售时间</th>
+                                <th width="259">状态</th>
+                                <th width="278">单价</th>
+                                <th width="316">数量</th>
+								<th width="316">类型</th>
+								
+								<th width="316">买家/卖家</th>
+								<th width="316">成交/购买时间</th>
+                                <th width="222">管理操作</th>
+                            </tr>
+                            <foreach name="list" item="v">
+                            <tr>
+                                
+                                <td>{$v['id']}</td>
+                                <td>{$v['userid']}</td>
+                                <td>{$v['username']}</td>
+                                <td>{$v.add_time}</td>
+                                <td><?php if($v['zt']==0){echo '未交易';} ?><?php if($v['zt']==1){echo '交易成功';} ?></td>
+                                <td>{$v['price']}元</td>
+                                <td><b>{$v.num}</b></td>								
+								<td><b><?php if($v['type']==1){echo '求购';} ?><?php if($v['type']==2){echo '挂单';} ?></b></td>
+                                <td><b>{$v.buy_username}</b></td>
+								<td><b>{$v.buy_time}</b></td>
+								<td>
+                                    <a class="button border-blue button-little" href="{:U('Pay/yespay',array(id=>$v['id']))}" onClick="{if(confirm('确认支付?')){return true;}return false;}">支付</a>
+                                    <a class="button border-yellow button-little" href="{:U('Pay/back',array('uid'=>$pay['userid'],'pid'=>$v['id'],'money'=>$pay['money']))}">退回</a>                                </td>
+                            </tr>
+                            </foreach>
+                        </table>
+                        <div class="panel-foot text-center">
+                            {$page}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

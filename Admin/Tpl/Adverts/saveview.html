@@ -1,0 +1,175 @@
+<include file="Common:header" />
+    <title>后台管理-修改任务</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start">修改任务</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <form action="{:U('Adverts/savetask')}" method="post">
+                    <div class="form-group">
+                        <div class="label">
+                            <label>任务名称</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="taskname" size="50" value="{$task.taskname}" data-validate="required:必填" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label"><strong>任务状态</strong></div>
+                        <div class="field">
+                            <div class="button-group radio">
+                                <label class="button <if condition="$task.taskstate eq 0">active</if>">
+                                    <input name="taskstate" value="0" checked="checked" type="radio">
+                                    <span class="icon icon-check text-green"></span>开启
+                                </label>
+                                <label class="button <if condition="$task.taskstate eq 1">active</if>">
+                                    <input name="taskstate" value="1" type="radio">
+                                    <span class="icon icon-times"></span>关闭
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label"><strong>审核类型</strong></div>
+                        <div class="field">
+                            <div class="button-group radio">
+                                <label class="button <if condition="$task.auditway eq 0">active</if>">
+                                    <input name="auditway" value="0" type="radio">
+                                    <span class="icon icon-check text-green"></span>手动审核
+                                </label>
+                                <label class="button <if condition="$task.auditway eq 1">active</if>">
+                                    <input name="auditway" value="1" type="radio">
+                                    <span class="icon icon-check text-green"></span>自动审核
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>任务分类</label>
+                        </div>
+                        <div class="field">
+                            <select class="input input-auto" name="taskclass" id="ss">
+                                <foreach name="class" item="c">
+                                    <option style="text-indent: 10px;" value="{$c.id}">{$c.classname}</option>
+                                </foreach>
+                                <script>document.getElementById('ss').value="{$task.taskclass}";</script>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>广告区分</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="taskmain" size="20" value="{$task.taskmain}" data-validate="#" />
+                            <span style="color: #F00;">接口返回数据时，验证任务标识，不能重复</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>任务数量</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="tasknum" size="20" value="{$task.tasknum}" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>可做次数</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="taskasnum" size="20" value="{$task.taskasnum}" data-validate="required:必填,plusinteger:必须为正整数" />
+                            <span style="color: #F00;"> 0 表示不限次数</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>奖励{$Think.config.MONEY_NAME}</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="taskreward" size="20" value="{$task.taskreward}" data-validate="required:必填,plusinteger:必须为正整数" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>到期时间</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="tasktime" size="20" id="time" data-validate="required:必填" value="{$task.tasktime|date='Y-m-d H:i:s',###}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>任务链接</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="tasklink" size="50" value="{$task.tasklink}" data-validate="required:必填" />
+                            <span style="color: #F00;"><literal>{$_SESSION.uid}</literal>&nbsp;表示会员ID</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>提示信息</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="prompt" size="50" value="{$task.prompt}" data-validate="#" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>任务图片</label>
+                        </div>
+                        <div class="field">
+                            <input type="text" class="input input-auto" name="taskimg" value="{$task.taskimg}" data-validate="#" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="label">
+                            <label>任务要求</label>
+                        </div>
+                        <div class="field">
+                            <script id="container" name="taskdemand" type="text/plain">{$task.taskdemand|htmlspecialchars_decode}</script>
+                            <!-- 配置文件 -->
+                            <script type="text/javascript" src="__ROOT__/Public/ueditor/ueditor.config.js"></script>
+                            <!-- 编辑器源码文件 -->
+                            <script type="text/javascript" src="__ROOT__/Public/ueditor/ueditor.all.js"></script>
+                            <!-- 实例化编辑器 -->
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container');
+                            </script>
+                        </div>
+                    </div>
+                    <div class="form-button">
+                    <input type="hidden" name="id" value="{$task.id}">
+                    <button class="button bg-main" type="submit">确认修改</button>
+                    </div>
+                </form>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    laydate({
+        elem: '#time',
+        format: 'YYYY-MM-DD hh:mm:ss', //日期格式
+        choose: function(datas){ //选择日期完毕的回调
+
+        }
+    });
+</script>
+</body>
+</html>

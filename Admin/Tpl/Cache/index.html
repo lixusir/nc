@@ -1,0 +1,58 @@
+<include file="Common:header" />
+    <title>后台管理-清除缓存</title>
+</head>
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="tab">
+        <div class="tab-head">
+            <ul class="tab-nav">
+                <li class="active"><a href="#tab-start">清除缓存</a></li>
+            </ul>
+        </div>
+        <div class="tab-body">
+            <div class="tab-panel active" id="tab-start">
+                <button class="button swing-hover bg-blue dialogs" data-toggle="click" data-target="#home" data-mask="1" data-width="35%">清空前台缓存</button>
+                <button class="button swing-hover bg-yellow dialogs" data-toggle="click" data-target="#admin" data-mask="1" data-width="35%">清空后台缓存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 弹出对话框 -->
+<div id="home">
+    <div class="dialog">
+        <div class="dialog-head">
+            <span class="close rotate-hover"></span>
+            <strong>确定前台清空缓存？</strong>
+        </div>
+        <div class="dialog-body">
+            如果没有修改代码，建议不要清除缓存，否则会影响网页打开速度哦！
+        </div>
+        <div class="dialog-foot">
+            <button class="button dialog-close">取消</button>
+            <button class="button bg-yellow" onclick="window.location.href='{:U('Cache/home')}'">确认</button>
+        </div>
+    </div>
+</div>
+<!-- 弹出对话框 -->
+<div id="admin">
+    <div class="dialog">
+        <div class="dialog-head">
+            <span class="close rotate-hover"></span>
+            <strong>确定后台清空缓存？</strong>
+        </div>
+        <div class="dialog-body">
+            如果没有修改代码，建议不要清除缓存，否则会影响网页打开速度哦！
+        </div>
+        <div class="dialog-foot">
+            <button class="button dialog-close">取消</button>
+            <button class="button bg-yellow" onclick="window.location.href='{:U('Cache/admin')}'">确认</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

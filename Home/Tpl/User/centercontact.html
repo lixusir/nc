@@ -1,0 +1,81 @@
+<!doctype>
+<html>
+	<head>
+		<title>联系资料</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/usercenter.css">
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<script src="js/jquery.min.js"></script>
+
+		<script src="js/layer.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+		<script>
+            $(function() {
+
+                $('#centerContact').ajaxForm({
+                    beforeSubmit: checkForm, // 此方法主要是提交前执行的方法，根据需要设置
+                    success: complete, // 这是提交后的方法
+                    dataType: 'json'
+                });
+
+                function checkForm(){
+
+				}
+
+                function complete(data){
+				
+                    if(data.status==1){
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                            window.location.href=data.url;
+                        });
+                    }else{
+                        layer.alert(data.info, {icon: 6}, function(index){
+                            layer.close(index);
+                        });
+                        return false;
+                    }
+                }
+
+            })
+		</script>
+
+	</head>
+	<body>
+		
+		<include file="Common:top" />
+<form method="post" id="centerContact" action="/index.php?m=user&a=centerContact&act=1">
+		<div id="changeThings">
+			<h3 class="changePw">联系资料</h3>
+			
+			<div class="iptStyle">
+				<span class="allType l">手机号码</span>
+				<input type="text" name="telphone" id="telphone" class="iptTwo" value="{$phone}" placeholder="请输入手机号">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">微信账号</span>
+				<input type="text" name="wechat" id="wechat" class="iptTwo" value="{$weixin}" placeholder="请输入微信">
+			</div>
+			<div class="iptStyle">
+				<span class="allType l">QQ号码</span>
+				<input type="text" name="qq" id="qq" class="iptTwo" value="{$qq}" placeholder="请输入QQ">
+			</div>
+			
+			<button>提交</button>
+			<div class="wenxinshow">
+				<p class="coinP">温馨提示:</p>
+				<p class="coinP">1.完善您的联系资料可以方便推荐用户及机构团队成员联系您</p>
+				<p class="coinP">2.联系方式至少填写一种</p>
+			</div>			
+			
+			<div style="width: 100%, height:1rem"></div>
+		</div>
+		</form>
+		
+	</body>	
+	<script type="text/javascript" src="js/layui.js"></script>
+	
+</html>

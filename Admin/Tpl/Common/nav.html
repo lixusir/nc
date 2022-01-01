@@ -1,0 +1,109 @@
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+        <div class="admin-navbar">
+            <span class="float-right">
+            	<a class="button button-little bg-main" href="{$Think.config.DOMAINNAME}" target="_blank">{$Think.session.adminname}</a>
+                <a class="button button-little bg-yellow" href="{:U('Login/logout')}">注销登录</a>
+            </span>
+            <ul class="nav nav-inline admin-nav">
+                <li <if condition="MODULE_NAME eq Index OR MODULE_NAME eq Pay OR MODULE_NAME eq Score OR MODULE_NAME eq Apilog OR MODULE_NAME eq Cache">class="active"</if>>
+                    <a href="{:U('Index/index')}" class="icon-home"> 开始</a>
+                    <ul>
+                        <li <if condition="MODULE_NAME eq Index">class="active"</if>>
+                            <a class="icon-home" href="{:U('Index/index')}"> 后台首页</a>
+                        </li>
+                        <li <if condition="MODULE_NAME eq Pay">class="active"</if>>
+                            <a class="icon-rmb" href="{:U('Pay/index')}"> 交易大厅</a>
+                        </li>
+						<li <if condition="MODULE_NAME eq Score">class="active"</if>>
+                            <a class="icon-usd" href="{:U('user/jiangjin_cfg')}"> 系统设置</a>
+                        </li>
+                        
+					
+						<li <if condition="MODULE_NAME eq Score">class="active"</if>>
+                            <a class="icon-usd" href="admin.php?m=user&a=kczt&zt=1"> 矿场开启</a>
+                        </li>
+						<li <if condition="MODULE_NAME eq Score">class="active"</if>>
+                            <a class="icon-usd" href="admin.php?m=user&a=kczt&zt=0"> 矿场关闭</a>
+                        </li>
+					
+			
+                        
+                        <li <if condition="MODULE_NAME eq Cache">class="active"</if>>
+                            <a class="icon-times" href="{:U('Cache/index')}"> 清除缓存</a>
+                        </li>
+						
+                    </ul>
+                </li>
+                <li <if condition="MODULE_NAME eq User OR MODULE_NAME eq Sign OR MODULE_NAME eq Top"></if>>
+                    <a href="{:U('User/index')}" class="icon-user"> 会员</a>
+                    <ul>
+                        <li <if condition="MODULE_NAME eq User AND ACTION_NAME eq index OR ACTION_NAME eq adduser">class="active"</if>>
+                            <a class="icon-user" href="{:U('User/index')}"> 会员列表</a>
+                        </li>
+                        <li <if condition="ACTION_NAME eq record">class="active"</if>>
+                            <a class="icon-tasks" href="{:U('User/record')}"> 矿场明细</a>
+                        </li>
+                        <li <if condition="MODULE_NAME eq Sign">class="active"</if>>
+                            <a class="icon-pencil" href="{:U('user/sign_cfg')}"> 签到记录</a>
+                        </li>
+						
+                        
+                    </ul>
+                </li>
+                
+               
+                <li <if condition="MODULE_NAME eq Setup OR MODULE_NAME eq Link OR MODULE_NAME eq Tpl OR MODULE_NAME eq Admin OR MODULE_NAME eq Signin OR MODULE_NAME eq Gold">class="active"</if>>
+                    <a href="{:U('Gold/index')}" class="icon-cogs"> 系统</a>
+                    <ul>
+                        <!--<li <if condition="MODULE_NAME eq Setup">class="active"</if>>
+                            <a class="icon-gear" href="{:U('Setup/index')}"> 网站设置</a>
+                        </li>-->
+                        
+                        
+                        
+                       
+                        <li  <if condition="MODULE_NAME eq Admin">class="active"</if>>
+                            <a class="icon-group" href="{:U('Admin/index')}"> 管理员设置</a>
+                        </li>
+                    </ul>
+                </li>
+				    <li <if condition="MODULE_NAME eq Setup OR MODULE_NAME eq Link OR MODULE_NAME eq Tpl OR MODULE_NAME eq Admin OR MODULE_NAME eq Signin OR MODULE_NAME eq Gold">class="active"</if>>
+                    <a href="{:U('user/info')}" class="icon-cogs"> 清理</a>
+                    <ul>
+                        <!--<li <if condition="MODULE_NAME eq Setup">class="active"</if>>
+                            <a class="icon-gear" href="{:U('Setup/index')}"> 网站设置</a>
+                        </li>-->
+                        
+                        
+                        
+                       
+                        <li  <if condition="MODULE_NAME eq Admin">class="active"</if>>
+                            <a class="icon-group" href="{:U('Admin/index')}"> 管理员设置</a>
+                        </li>
+                    </ul>
+                </li>
+				<li <if condition="MODULE_NAME eq Setup OR MODULE_NAME eq Link OR MODULE_NAME eq Tpl OR MODULE_NAME eq Admin OR MODULE_NAME eq Signin OR MODULE_NAME eq Gold">class="active"</if>>
+                    <a href="http://cli.im/url" class="icon-cogs" target=_blank> 二维码生成</a>
+                    <ul>
+                        <!--<li <if condition="MODULE_NAME eq Setup">class="active"</if>>
+                            <a class="icon-gear" href="{:U('Setup/index')}"> 网站设置</a>
+                        </li>-->
+                        
+                        
+                        
+                       
+                        <li  <if condition="MODULE_NAME eq Admin">class="active"</if>>
+                            <a class="icon-group" href="{:U('Admin/index')}"> 管理员设置</a>
+                        </li>
+                    </ul>
+                </li>
+				<li <if condition="MODULE_NAME eq Setup OR MODULE_NAME eq Link OR MODULE_NAME eq Tpl OR MODULE_NAME eq Admin OR MODULE_NAME eq Signin OR MODULE_NAME eq Gold">class="active"</if>>
+                    <a href="https://www.appbsl.com/" class="icon-cogs" target=_blank> APP免费制作</a>
+                   
+                </li>
+				
+            </ul>
+        </div>
+    </div>
+</div>

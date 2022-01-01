@@ -1,0 +1,64 @@
+<div id="head">
+			<p class="title l"><a href="/">首页</a></p>
+			<ul class="user r">
+				<li class="l">
+					<img src="/picture/yonghuzhongxin.png">
+				</li>
+				<li class="l">
+					<a href="/index.php?m=login">
+						<img src="/picture/tuichu.png">
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div id="banner">
+			
+		</div>
+		<ul id="list">
+			<li class="keng"><span>+</span> 用户中心</li>
+			<li class="zhouyun">
+				<ul>
+					<li><a href="/index.php?m=user">账户概要</a></li>
+					<li><a href="/index.php?m=user&a=memberSafeCenter" style="color:#f4771c;">安全设置</a></li>
+					<!-- <li><a href="/index.php/Member/userCenter_Wallet.html">果园钱包</a></li> -->
+					<li><a href="javascript:;" onclick="alert('购买本程序后帮您免费对接');">账户充值</a></li>
+					<li><a href="/index.php?m=user&a=userCenter_coinWithdrawals">金币提现</a></li>
+					<li><a href="/index.php?m=user&a=userCenter_withdrawlog">提现记录</a></li>
+					<li><a href="/index.php?m=user&a=userCenter_coinDetail">金币明细</a></li>
+				</ul>
+			</li>
+			<li class="keng"><span>+</span> 农贸市场</li>
+			<li class="zhouyun">
+				<ul>
+					<li><a href="/index.php?m=jiaoyi&a=cropsEntrust">委托管理</a></li>
+					<li><a href="/index.php?m=jiaoyi&a=cropsTrade">交易记录</a></li>
+					<li><a href="/index.php?m=jiaoyi&a=cropsReborn">果实重生</a></li>
+					<li><a href="/index.php?m=jiaoyi&a=cropsRebornList">重生记录</a></li>
+					<li><a href="/index.php?m=jiaoyi&a=cropsGive">果实赠送</a></li>
+					<li><a href="/index.php?m=jiaoyi&a=cropsGiveList">赠送记录</a></li>
+				</ul>
+			</li>
+			<li class="keng"><span>+</span> 推广中心</li>
+			<li class="zhouyun">
+				<ul>
+					<li><a href="/index.php?m=user&a=centerLink">推广链接</a></li>
+					<li><a href="/index.php?m=user&a=centerList">推广列表</a></li>
+					<li><a href="/index.php?m=user&a=centerReward">推广奖励</a></li>
+					<!-- <li><a href="/index.php/Member/centerCode.html">补推广码</a></li> -->
+					<li><a href="/index.php?m=user&a=centerCode">补推广码</a></li>
+					<li><a href="/index.php?m=user&a=centerContact">联系资料</a></li>
+					<li><a href="/index.php?m=user&a=centerTeacher">我的导师</a></li>
+				</ul>
+			</li>
+		</ul>
+		
+		<?php if(session('uid')==null){
+		header("Location:index.php?m=login");
+		
+		} ?>
+		
+<div style="display:none;">
+	<script language="javascript" type="text/javascript" src="//js.users.51.la/19110681.js"></script>
+<noscript><a href="//www.51.la/?19110681" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="//img.users.51.la/19110681.asp" style="border:none" /></a></noscript>
+	</div>		
+		

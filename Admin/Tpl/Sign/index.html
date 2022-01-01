@@ -1,0 +1,58 @@
+<include file="Common:header" />
+    <title>后台管理-签到记录</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="float-right" style="padding: 52px 20px 0px 10px;">
+        <form method="post" action="{:U('Sign/index')}">
+        <input type="text" class="input input-small input-auto" name="key" size="30" placeholder="用户ID、用户名" />
+        <input type="submit" name="search" value="查询" class="button button-small" />
+        </form>
+    </div>
+    <form method="post" action="{:U('Sign/delete')}"><!-- 批量删除post数据 -->
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong>签到列表</strong></div>
+        <div class="padding border-bottom">
+            <input type="button" class="button button-small checkall" name="checkall" checkfor="id[]" value="全选" />
+            <input type="submit" class="button button-small border-yellow" onclick="{if(confirm('确认批量删除选中项?')){return true;}return false;}"value="批量删除" />
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th>选择</th>
+                <th>ID</th>
+                <th>用户ID</th>
+                <th>用户名</th>
+                <th>签到奖励</th>
+                <th>记录内容</th>
+                <th>签到时间</th>
+                <th>操作</th>
+            </tr>
+            <foreach name="Sign" item="v">
+            <tr>
+                <td><input type="checkbox" name="id[]" value="{$v['id']}" /></td>
+                <td>{$v['id']}</td>
+                <td><b>{$v['uid']}</b></td>
+                <td>
+                    <a href="{:U('User/record',array('key'=>$v['uid']))}">{$v['username']}</a>
+                </td>
+                <td><b style="color: #FF0000;">{$v['reward']}</b></td>
+                <td>{$v['note']}</td>
+                <td>{$v['time']}</td>
+                <td><a class="button border-yellow button-little" href="{:U('Sign/delete',array('id'=>$v['id']))}" onclick="return confirm('确定删除?')">删除</td>
+            </tr>
+            </foreach>
+        </table>
+        <div class="panel-foot text-center">
+            {$page}
+        </div>
+    </div>
+    <br/>
+    </form>
+</div>
+</body>
+</html>

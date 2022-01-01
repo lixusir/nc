@@ -1,0 +1,39 @@
+<include file="Common:header" />
+    <title>后台管理-文章分类</title>
+</head>
+
+<body>
+<include file="Common:logo" />
+
+<include file="Common:nav" />
+
+<div class="admin">
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong>分类列表</strong></div>
+        <div class="padding border-bottom">
+            <input onclick="window.location.href='{:U('Article/jclass')}'" type="button" class="button button-small border-green" value="添加分类" />
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th width="100">ID</th>
+                <th width="*">分类名称</th>
+                <th width="100">操作</th>
+            </tr>
+            <foreach name="list" item="wzlb">
+            <tr>
+                <td>{$wzlb['id']}</td>
+                <td>{$wzlb['classname']}</td>
+                <td>
+                    <a class="button border-blue button-little" href="{:U('Article/sclass',array(id=>$wzlb['id']))}">修改</a> 
+                    <a class="button border-yellow button-little" href="{:U('Article/delclass',array(id=>$wzlb['id']))}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+                </td>
+            </tr>
+            </foreach>
+        </table>
+        <div class="panel-foot text-center">
+            {$page}
+        </div>
+    </div>
+</div>
+</body>
+</html>

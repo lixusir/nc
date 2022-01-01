@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>攻略资料</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/exhibition.css">	
+	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/layer.js"></script>
+	<script type="text/javascript" src="/js/index2.js"></script>
+	</head>
+	<style>
+	.ye{
+		background-color:#f4771c;
+	}
+	</style>
+	<script>
+		$(function(){
+			$("#comment li").click(function(){
+				if($(this).hasClass('ye'))
+				{
+					return false;
+				}else{
+					var id = $(this).index();
+					$(this).addClass('ye').siblings().removeClass('ye');
+					 $.ajax({ 
+						 url:"/index.php/Raiders/ajax_order.html", 
+						 type:'post', 
+						 dateType:'html', 
+						 data:{id:id}, 
+						 error:function(){ 
+							
+							 return false; 
+						 }, 
+						 success:function(data){ 
+							 $(".raidersLists").html(data);
+							
+							 return false; 
+						 } 
+					 }) 
+				}
+				
+				
+			})
+		})
+	</script>
+	<body>
+		<div id="ex_head"></div>
+		<div id="main">
+			<h2 id="ex_title">游戏攻略</h2>
+	<!--<ul class="fourBtn" style="width: 7rem; height: 0.8rem; margin:0 auto;">
+		<li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center;
+		line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem;margin-left: 0.2rem; border-radius: 0.1rem;"><a href="#" style="color:#fff;">我的攻略</a></li>
+		<li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center;
+		line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem;border-radius: 0.1rem;"><a style="color:#fff;" href="#">打赏记录</a></li>
+		<!-- <li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center; -->
+		<!-- line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem;border-radius: 0.1rem;">我的评论</li> 
+		<li style="width: 1.37rem; height: 0.44rem; background: #f4771c; color: #fff; text-align: center;
+		line-height: 0.44rem; float: left; margin-right: 0.27rem; margin-top: 0.16rem; border-radius: 0.1rem;"><a style="color:#fff;" href="#">玩家投稿</a></li>
+	</ul>-->			
+		<form method="post" action="" style="margin-top:-0.3rem;display:none;">
+			<div id="select" style="display:none;">
+				<ul class="selectList">
+					<li>
+						<span class="l type">类型</span>
+						<select class="l" name="raiders_type">
+						<option value="0">全部</option>
+													 <option value="8">打赏阅读</option>							 <option value="10">免费阅读</option>						</select>
+					</li>
+					<li>
+						<span class="l type">作者</span>
+						<select class="l" name="raiders_auto">
+							<option value="">全部</option>
+							
+						</select>
+					</li>
+					<li>
+						<span class="l type">标签</span>
+						<select class="l" name="raiders_label">
+							<option value="0">全部</option>
+													<option value="11">赚钱</option>							<option value="12">新手</option>							<option value="13">稳定</option>							<option value="14">经验</option>						</select>
+					</li>
+				</ul>
+			</div>
+			<ul id="comment">
+				<li class="l first ye">最新</li>
+				<li class="l">打赏</li>
+				<li class="l">好评</li>
+				<li class="l">差评</li>
+				<li class="l last">好评率</li>
+			</ul>
+			<button>查询</button>
+		</form>	
+			<div class="raidersLists">
+			<foreach name="info" item="v">
+			<div id="description">
+				<h3 class="t_des"><a href="index.php?m=user&a=glview&id={$v.id}">{$v.title}</a></h3>
+				<p class="p_des"><a href="index.php?m=user&a=glview&id={$v.id}" style="color:#999;">来源:{$v.username}   发表日期:{$v.time}     </a></p>
+				<p class="p_des"><a href="index.php?m=user&a=glview&id={$v.id}" style="color:#999;">{$v.content}</a></p>
+			</div>
+			</foreach>
+			
+			
+						</div>
+			<div style="width: 100%;height: 1.8rem;background: #fff;"></div>
+		</div>
+	<div id="ex_foot">
+            <a href="javascript:history.go(-1);"> <img src="/picture/fanhuinongchang.png" class="fanhui"></a>
+	</div>
+	</body>
+	
+</html>
